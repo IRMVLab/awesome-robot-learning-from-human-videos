@@ -453,6 +453,11 @@ This section gathers HOI analysis techniques, including hand/object detection an
 
 > Other vision foundation models like Grounding DINO, YOLO series, SAM series are also widely used in the LfHV literature.
 
+## LICENSE
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
+
+
+
 
 ## Contact
 If you have any questions or suggestions, please feel free to contact [Junyi Ma](mailto:junyi.ma@sjtu.edu.cn).
