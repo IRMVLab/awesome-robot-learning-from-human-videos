@@ -171,7 +171,7 @@ This section focuses on bridging the observation gap between humans and robots v
 - 🌟🤖 [[CVPRW](https://ieeexplore.ieee.org/document/8014803)] Time-Contrastive Networks: Self-Supervised Learning from Multi-view Observation [[Code](https://github.com/kekeblom/tcn)] [[Page](https://sermanet.github.io/imitate/)] [`Visual embeddings`]
 
 ### Action-Oriented Transfer
-This section includes methods that transfer actionable motion knowledge from human videos to robot control, including affordances and latent actions.
+This section includes methods that transfer actionable motion knowledge from human videos to robot control, including affordances (explicit interaction info) and latent actions.
 
 
 #### 2026
