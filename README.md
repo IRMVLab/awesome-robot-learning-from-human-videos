@@ -330,6 +330,7 @@ This section collects open-source human video datasets.
 
 | Dataset | Year | Venue | Website | Viewpoint |
 |---|---:|---|---|---|
+| [EgoLive](https://arxiv.org/pdf/2604.23570v1) | 2026 | arXiv 2026.04 | [Code] [[Page](https://robotdata-market.jdcloud.com/console/market)] | Ego |
 | [DreamDojo-HV](https://arxiv.org/abs/2602.06949) | 2026 | arXiv 2026.02 | [[Code](https://github.com/NVIDIA/DreamDojo)] [[Page](https://dreamdojo-world.github.io/)] | Ego |
 | [UniHand-Mix](https://arxiv.org/abs/2602.21736) | 2026 | arXiv 2026.02 | [[Code](https://github.com/BeingBeyond/JALA)] [[Page](https://research.beingbeyond.com/jala)] | Ego |
 | [UniHand-2.0](https://arxiv.org/abs/2601.12993) | 2026 | arXiv 2026.01 | [[Code](https://github.com/BeingBeyond/Being-H)] [[Page](https://research.beingbeyond.com/being-h05)] | Ego |
