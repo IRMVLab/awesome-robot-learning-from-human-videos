@@ -329,59 +329,59 @@ This section includes methods that transfer actionable motion knowledge from hum
 ### Open-Source Datasets
 This section collects open-source human video datasets.
 
-| Dataset | Year | Venue | Website | Viewpoint |
-|---|---:|---|---|---|
-| [EgoLive](https://arxiv.org/pdf/2604.23570v1) | 2026 | arXiv 2026.04 | [Code] [[Page](https://robotdata-market.jdcloud.com/console/market)] | Ego |
-| [DreamDojo-HV](https://arxiv.org/abs/2602.06949) | 2026 | arXiv 2026.02 | [[Code](https://github.com/NVIDIA/DreamDojo)] [[Page](https://dreamdojo-world.github.io/)] | Ego |
-| [UniHand-Mix](https://arxiv.org/abs/2602.21736) | 2026 | arXiv 2026.02 | [[Code](https://github.com/BeingBeyond/JALA)] [[Page](https://research.beingbeyond.com/jala)] | Ego |
-| [UniHand-2.0](https://arxiv.org/abs/2601.12993) | 2026 | arXiv 2026.01 | [[Code](https://github.com/BeingBeyond/Being-H)] [[Page](https://research.beingbeyond.com/being-h05)] | Ego |
-| [Action100M](https://arxiv.org/abs/2601.10592) | 2026 | arXiv 2026.01 | [[Code](https://github.com/facebookresearch/Action100M)] [[Page](https://huggingface.co/datasets/facebook/action100m-preview)] | Ego+Exo |
-| [EgoVid-5M](https://arxiv.org/abs/2411.08380) | 2025 | NeurIPS | [[Code](https://github.com/JeffWang987/EgoVid)] [[Page](https://egovid.github.io/)] | Ego |
-| [HO-Cap](https://arxiv.org/abs/2406.06843) | 2025 | NeurIPS | [[Code](https://github.com/IRVLUTD/HO-Cap)] [[Page](https://irvlutd.github.io/HOCap/)] | Ego+Exo |
-| [IndEgo](https://arxiv.org/abs/2511.19684) | 2025 | NeurIPS | [[Code](https://github.com/Vivek9Chavan/IndEgo)] [[Page](https://huggingface.co/datasets/FraunhoferIPK/IndEgo)] | Ego+Exo |
-| [HD-EPIC](https://arxiv.org/abs/2502.04144) | 2025 | CVPR | [[Code](https://github.com/hd-epic/hd-epic-annotations/)] [[Page](https://epic-kitchens.github.io/)] | Ego |
-| [HOT3D](https://arxiv.org/abs/2411.19167) | 2025 | CVPR | [[Code](https://github.com/facebookresearch/hot3d)] [[Page](https://facebookresearch.github.io/hot3d/)] | Ego |
-| [TASTE-Rob](https://arxiv.org/abs/2503.11423) | 2025 | CVPR | [[Code](https://github.com/GAP-LAB-CUHK-SZ/TASTE-Rob)] [[Page](https://taste-rob.github.io/)] | Ego |
-| [LVP-1M](https://arxiv.org/abs/2512.15840) | 2025 | arXiv 2025.12 | [[Code](https://github.com/buoyancy99/large-video-planner/tree/main)] [[Page](https://www.boyuan.space/large-video-planner/)] | Ego+Exo |
-| [UniHand-1.0](https://arxiv.org/abs/2507.15597) | 2025 | arXiv 2025.07 | [[Code](https://github.com/BeingBeyond/Being-H0)] [[Page](https://beingbeyond.github.io/Being-H0/)] | Ego |
-| [EgoDex](https://arxiv.org/abs/2505.11709) | 2025 | arXiv 2025.05 | [[Code](https://github.com/apple/ml-egodex)] [[Page](https://machinelearning.apple.com/research/egodex-learning-dexterous-manipulation)] | Ego |
-| [PH²D](https://arxiv.org/abs/2503.13441) | 2025 | arXiv 2025.03 | [[Code](https://github.com/RogerQi/human-policy)] [[Page](https://human-as-robot.github.io/)] | Ego |
-| Egocentric-100k | 2025 | --- | [Code] [[Page](https://huggingface.co/datasets/builddotai/Egocentric-100K)] | Ego |
-| Egocentric-10k | 2025 | --- | [Code] [[Page](https://huggingface.co/datasets/builddotai/Egocentric-10K)] | Ego |
-| [OakInk2](https://arxiv.org/abs/2403.03328) | 2024 | NeurIPS | [[Code](https://github.com/oakink/OakInk2)] [[Page](https://oakink.net/v2/)] | Ego+Exo |
-| [CaptainCook4D](https://arxiv.org/abs/2312.14556) | 2024 | NeurIPS | [[Code](https://github.com/CaptainCook4D/)] [[Page](https://captaincook4d.github.io/captain-cook/)] | Ego |
-| [Panda-70M](https://arxiv.org/abs/2402.19479) | 2024 | CVPR | [[Code](https://github.com/snap-research/Panda-70M)] [[Page](https://snap-research.github.io/Panda-70M/)] | Ego+Exo |
-| [TACO](https://arxiv.org/abs/2401.08399) | 2024 | CVPR | [[Code](https://github.com/leolyliu/TACO-Instructions)] [[Page](https://taco2024.github.io/)] | Ego+Exo |
-| [Ego-Exo4D](https://arxiv.org/abs/2311.18259) | 2024 | CVPR | [[Code](https://ego-exo4d-data.org/)] [[Page](https://ego-exo4d-data.org/)] | Ego+Exo |
-| [Nymeria](https://arxiv.org/abs/2406.09326) | 2024 | ECCV | [[Code](https://github.com/facebookresearch/nymeria_dataset)] [[Page](https://www.projectaria.com/datasets/nymeria/)] | Ego+Exo |
-| [ARCTIC](https://arxiv.org/abs/2204.13662) | 2023 | CVPR | [[Code](https://github.com/zc-alexfan/arctic)] [[Page](https://arctic.is.tue.mpg.de/)] | Ego+Exo |
-| [HoloAssist](https://arxiv.org/abs/2309.17519) | 2023 | ICCV | [[Code](https://github.com/Ember-HoloAssist/holoassist-release)] [[Page](https://holoassist.github.io/)] | Ego |
-| [RH20T-Human](https://arxiv.org/abs/2307.00595) | 2023 | ICRA | [[Code](https://github.com/rh20t/rh20t_api)] [[Page](https://rh20t.github.io/#download)] | Ego+Exo |
-| [EPIC-KITCHENS-100](https://arxiv.org/abs/2006.13256) | 2022 | IJCV | [[Code](https://github.com/epic-kitchens/epic-kitchens-100-annotations)] [[Page](https://epic-kitchens.github.io/)] | Ego |
-| [Assembly101*](https://arxiv.org/abs/2203.14712) | 2022 | CVPR | [[Code](https://github.com/assembly-101?tab=repositories)] [[Page](https://assembly-101.github.io/)] | Ego+Exo |
-| [Ego4D](https://arxiv.org/abs/2110.07058) | 2022 | CVPR | [[Code](https://github.com/facebookresearch/Ego4d)] [[Page](https://ego4d-data.org/)] | Ego |
-| [OakInk](https://arxiv.org/abs/2203.15709) | 2022 | CVPR | [[Code](https://github.com/oakink/OakInk)] [[Page](https://oakink.net/)] | Exo |
-| [HOI4D](https://arxiv.org/abs/2203.01577) | 2022 | CVPR | [[Code](https://github.com/hoi4d/HOI4D_ActionSeg)] [[Page](https://hoi4d.github.io/)] | Ego |
-| [EgoPAT3D](https://arxiv.org/abs/2203.13116) | 2022 | CVPR | [[Code](https://github.com/ai4ce/EgoPAT3D)] [[Page](https://ai4ce.github.io/EgoPAT3D/)] | Ego |
-| [AGD20K](https://arxiv.org/abs/2203.09905) | 2022 | CVPR | [[Code](https://github.com/lhc1224/Cross-View-AG)] [[Page](https://opendatalab.com/OpenDataLab/AGD20K)] | Ego+Exo |
-| [EgoHOS](https://arxiv.org/abs/2208.03826) | 2022 | ECCV | [[Code](https://github.com/owenzlz/EgoHOS)] [[Page](https://www.seas.upenn.edu/~shzhou2/projects/eos_dataset/)] | Ego |
-| [DexYCB](https://arxiv.org/abs/2104.04631) | 2021 | CVPR | [[Code](https://github.com/NVlabs/dex-ycb-toolkit)] [[Page](https://dex-ycb.github.io/)] | Exo |
-| [H2O](https://arxiv.org/abs/2104.11181) | 2021 | ICCV | [[Code](https://github.com/taeinkwon/h2odataset)] [[Page](https://taeinkwon.com/projects/h2o/)] | Ego |
-| [MOW](https://arxiv.org/abs/2012.09856) | 2021 | ICCV | [[Code](https://github.com/ZheC/MOW)] [[Page](https://zhec.github.io/rhoi/)] | Exo |
-| [100DOH](https://arxiv.org/abs/2006.06669) | 2020 | CVPR | [[Code](https://github.com/ddshan/hand_object_detector)] [[Page](https://fouheylab.eecs.umich.edu/~dandans/projects/100DOH/)] | Ego+Exo |
-| [Kinetics-700](https://arxiv.org/abs/2010.10864) | 2020 | arXiv 2020.10 | [[Code](https://github.com/cvdfoundation/kinetics-dataset)] [[Page](https://huggingface.co/datasets/bitmind/Kinetics-700)] | Exo |
-| [HowTo100M](https://arxiv.org/abs/1906.03327) | 2019 | ICCV | [[Code](https://github.com/antoine77340/howto100m)] [[Page](https://www.di.ens.fr/willow/research/howto100m/)] | Ego+Exo |
-| [FreiHAND](https://arxiv.org/abs/1909.04349) | 2019 | ICCV | [[Code](https://github.com/lmb-freiburg/freihand)] [[Page](https://lmb.informatik.uni-freiburg.de/projects/freihand/)] | Exo |
-| [FPHA](https://arxiv.org/abs/1704.02463) | 2018 | CVPR | [[Code](https://github.com/guiggh/hand_pose_action)] [[Page](https://kcvl-kaist.github.io/FPHA/)] | Ego |
-| [VLOG](https://arxiv.org/abs/1712.02310) | 2018 | CVPR | [[Code](https://github.com/dfouhey/VLOGToolkit)] [[Page](https://cs.nyu.edu/~fouhey/2017/VLOG/index.html)] | Exo |
-| [EPIC-KITCHENS](https://arxiv.org/abs/1804.02748) | 2018 | ECCV | [[Code](https://github.com/epic-kitchens/epic-kitchens-55-annotations)] [[Page](https://epic-kitchens.github.io/)] | Ego |
-| [EGTEA Gaze+](https://openaccess.thecvf.com/content_ECCV_2018/papers/Yin_Li_In_the_Eye_ECCV_2018_paper.pdf) | 2018 | ECCV | [[Code](https://github.com/amitsou/EGTEA_Gaze_Plus_Downloader)] [[Page](http://cbi.gatech.edu/fpv)] | Ego |
-| [YouCook2](https://arxiv.org/abs/1703.09788) | 2018 | AAAI | [[Code](https://github.com/LuoweiZhou/ProcNets-YouCook2)] [[Page](http://youcook2.eecs.umich.edu/)] | Exo |
-| [Something-Something](https://arxiv.org/abs/1706.04320) | 2017 | ICCV | [[Code](https://huggingface.co/datasets/HuggingFaceM4/something_something_v2)] [[Page](https://twentybn.com/datasets/something-something)] | Exo |
-| [Charades](https://arxiv.org/abs/1604.01753) | 2016 | ECCV | [[Code](https://github.com/xiaolonw/CharadesDet)] [[Page](https://leooo-huang.github.io/awesome-human-activity-recognition/datasets/multimodal/charades/)] | Exo |
-| [ActivityNet](https://openaccess.thecvf.com/content_cvpr_2015/papers/Heilbron_ActivityNet_A_Large-Scale_2015_CVPR_paper.pdf) | 2015 | CVPR | [[Code](https://github.com/activitynet/ActivityNet)] [[Page](http://activity-net.org/)] | Exo |
-| [EgoHands](https://ieeexplore.ieee.org/document/7410583) | 2015 | ICCV | [[Code](https://github.com/victordibia/handtracking)] [Page] | Ego |
-| [Breakfast](https://openaccess.thecvf.com/content_cvpr_2014/papers/Kuehne_The_Language_of_2014_CVPR_paper.pdf) | 2014 | CVPR | [Code] [[Page](https://durandtibo.github.io/aroma/datasets/breakfast/)] | Exo |
+| Dataset | Year | Venue | Website | Viewpoint | Organization (first author) |
+|---|---:|---|---|---|---|
+| [EgoLive](https://arxiv.org/pdf/2604.23570v1) | 2026 | arXiv 2026.04 | [Code] [[Page](https://robotdata-market.jdcloud.com/console/market)] | Ego | JD |
+| [DreamDojo-HV](https://arxiv.org/abs/2602.06949) | 2026 | arXiv 2026.02 | [[Code](https://github.com/NVIDIA/DreamDojo)] [[Page](https://dreamdojo-world.github.io/)] | Ego | NVIDIA |
+| [UniHand-Mix](https://arxiv.org/abs/2602.21736) | 2026 | arXiv 2026.02 | [[Code](https://github.com/BeingBeyond/JALA)] [[Page](https://research.beingbeyond.com/jala)] | Ego | BeingBeyond |
+| [UniHand-2.0](https://arxiv.org/abs/2601.12993) | 2026 | arXiv 2026.01 | [[Code](https://github.com/BeingBeyond/Being-H)] [[Page](https://research.beingbeyond.com/being-h05)] | Ego | BeingBeyond |
+| [Action100M](https://arxiv.org/abs/2601.10592) | 2026 | arXiv 2026.01 | [[Code](https://github.com/facebookresearch/Action100M)] [[Page](https://huggingface.co/datasets/facebook/action100m-preview)] | Ego+Exo | Meta |
+| [EgoVid-5M](https://arxiv.org/abs/2411.08380) | 2025 | NeurIPS | [[Code](https://github.com/JeffWang987/EgoVid)] [[Page](https://egovid.github.io/)] | Ego | Alibaba Group |
+| [HO-Cap](https://arxiv.org/abs/2406.06843) | 2025 | NeurIPS | [[Code](https://github.com/IRVLUTD/HO-Cap)] [[Page](https://irvlutd.github.io/HOCap/)] | Ego+Exo | University of Texas at Dallas |
+| [IndEgo](https://arxiv.org/abs/2511.19684) | 2025 | NeurIPS | [[Code](https://github.com/Vivek9Chavan/IndEgo)] [[Page](https://huggingface.co/datasets/FraunhoferIPK/IndEgo)] | Ego+Exo | Fraunhofer IPK |
+| [HD-EPIC](https://arxiv.org/abs/2502.04144) | 2025 | CVPR | [[Code](https://github.com/hd-epic/hd-epic-annotations/)] [[Page](https://epic-kitchens.github.io/)] | Ego | University of Bristol |
+| [HOT3D](https://arxiv.org/abs/2411.19167) | 2025 | CVPR | [[Code](https://github.com/facebookresearch/hot3d)] [[Page](https://facebookresearch.github.io/hot3d/)] | Ego | Meta |
+| [TASTE-Rob](https://arxiv.org/abs/2503.11423) | 2025 | CVPR | [[Code](https://github.com/GAP-LAB-CUHK-SZ/TASTE-Rob)] [[Page](https://taste-rob.github.io/)] | Ego | CUHK-Shenzhen |
+| [LVP-1M](https://arxiv.org/abs/2512.15840) | 2025 | arXiv 2025.12 | [[Code](https://github.com/buoyancy99/large-video-planner/tree/main)] [[Page](https://www.boyuan.space/large-video-planner/)] | Ego+Exo | MIT |
+| [UniHand-1.0](https://arxiv.org/abs/2507.15597) | 2025 | arXiv 2025.07 | [[Code](https://github.com/BeingBeyond/Being-H0)] [[Page](https://beingbeyond.github.io/Being-H0/)] | Ego | BeingBeyond |
+| [EgoDex](https://arxiv.org/abs/2505.11709) | 2025 | arXiv 2025.05 | [[Code](https://github.com/apple/ml-egodex)] [[Page](https://machinelearning.apple.com/research/egodex-learning-dexterous-manipulation)] | Ego | Apple |
+| [PH²D](https://arxiv.org/abs/2503.13441) | 2025 | arXiv 2025.03 | [[Code](https://github.com/RogerQi/human-policy)] [[Page](https://human-as-robot.github.io/)] | Ego | UC San Diego |
+| Egocentric-100k | 2025 | --- | [Code] [[Page](https://huggingface.co/datasets/builddotai/Egocentric-100K)] | Ego | Build AI |
+| Egocentric-10k | 2025 | --- | [Code] [[Page](https://huggingface.co/datasets/builddotai/Egocentric-10K)] | Ego | Build AI |
+| [OakInk2](https://arxiv.org/abs/2403.03328) | 2024 | NeurIPS | [[Code](https://github.com/oakink/OakInk2)] [[Page](https://oakink.net/v2/)] | Ego+Exo | Shanghai Jiao Tong University |
+| [CaptainCook4D](https://arxiv.org/abs/2312.14556) | 2024 | NeurIPS | [[Code](https://github.com/CaptainCook4D/)] [[Page](https://captaincook4d.github.io/captain-cook/)] | Ego | University of Texas at Dallas |
+| [Panda-70M](https://arxiv.org/abs/2402.19479) | 2024 | CVPR | [[Code](https://github.com/snap-research/Panda-70M)] [[Page](https://snap-research.github.io/Panda-70M/)] | Ego+Exo | Snap Inc. |
+| [TACO](https://arxiv.org/abs/2401.08399) | 2024 | CVPR | [[Code](https://github.com/leolyliu/TACO-Instructions)] [[Page](https://taco2024.github.io/)] | Ego+Exo | Tsinghua University |
+| [Ego-Exo4D](https://arxiv.org/abs/2311.18259) | 2024 | CVPR | [[Code](https://ego-exo4d-data.org/)] [[Page](https://ego-exo4d-data.org/)] | Ego+Exo | Meta |
+| [Nymeria](https://arxiv.org/abs/2406.09326) | 2024 | ECCV | [[Code](https://github.com/facebookresearch/nymeria_dataset)] [[Page](https://www.projectaria.com/datasets/nymeria/)] | Ego+Exo | Meta |
+| [ARCTIC](https://arxiv.org/abs/2204.13662) | 2023 | CVPR | [[Code](https://github.com/zc-alexfan/arctic)] [[Page](https://arctic.is.tue.mpg.de/)] | Ego+Exo | ETH Zürich |
+| [HoloAssist](https://arxiv.org/abs/2309.17519) | 2023 | ICCV | [[Code](https://github.com/Ember-HoloAssist/holoassist-release)] [[Page](https://holoassist.github.io/)] | Ego | Microsoft |
+| [RH20T-Human](https://arxiv.org/abs/2307.00595) | 2023 | ICRA | [[Code](https://github.com/rh20t/rh20t_api)] [[Page](https://rh20t.github.io/#download)] | Ego+Exo | Shanghai Jiao Tong University |
+| [EPIC-KITCHENS-100](https://arxiv.org/abs/2006.13256) | 2022 | IJCV | [[Code](https://github.com/epic-kitchens/epic-kitchens-100-annotations)] [[Page](https://epic-kitchens.github.io/)] | Ego | University of Bristol |
+| [Assembly101](https://arxiv.org/abs/2203.14712) | 2022 | CVPR | [[Code](https://github.com/assembly-101?tab=repositories)] [[Page](https://assembly-101.github.io/)] | Ego+Exo | Meta |
+| [Ego4D](https://arxiv.org/abs/2110.07058) | 2022 | CVPR | [[Code](https://github.com/facebookresearch/Ego4d)] [[Page](https://ego4d-data.org/)] | Ego | Meta |
+| [OakInk](https://arxiv.org/abs/2203.15709) | 2022 | CVPR | [[Code](https://github.com/oakink/OakInk)] [[Page](https://oakink.net/)] | Exo | Shanghai Jiao Tong University |
+| [HOI4D](https://arxiv.org/abs/2203.01577) | 2022 | CVPR | [[Code](https://github.com/hoi4d/HOI4D_ActionSeg)] [[Page](https://hoi4d.github.io/)] | Ego | Tsinghua University |
+| [EgoPAT3D](https://arxiv.org/abs/2203.13116) | 2022 | CVPR | [[Code](https://github.com/ai4ce/EgoPAT3D)] [[Page](https://ai4ce.github.io/EgoPAT3D/)] | Ego | New York University |
+| [AGD20K](https://arxiv.org/abs/2203.09905) | 2022 | CVPR | [[Code](https://github.com/lhc1224/Cross-View-AG)] [[Page](https://opendatalab.com/OpenDataLab/AGD20K)] | Ego+Exo | University of Science and Technology of China |
+| [EgoHOS](https://arxiv.org/abs/2208.03826) | 2022 | ECCV | [[Code](https://github.com/owenzlz/EgoHOS)] [[Page](https://www.seas.upenn.edu/~shzhou2/projects/eos_dataset/)] | Ego | University of Pennsylvania |
+| [DexYCB](https://arxiv.org/abs/2104.04631) | 2021 | CVPR | [[Code](https://github.com/NVlabs/dex-ycb-toolkit)] [[Page](https://dex-ycb.github.io/)] | Exo | NVIDIA |
+| [H2O](https://arxiv.org/abs/2104.11181) | 2021 | ICCV | [[Code](https://github.com/taeinkwon/h2odataset)] [[Page](https://taeinkwon.com/projects/h2o/)] | Ego | ETH Zurich |
+| [MOW](https://arxiv.org/abs/2012.09856) | 2021 | ICCV | [[Code](https://github.com/ZheC/MOW)] [[Page](https://zhec.github.io/rhoi/)] | Exo | UC Berkeley |
+| [100DOH](https://arxiv.org/abs/2006.06669) | 2020 | CVPR | [[Code](https://github.com/ddshan/hand_object_detector)] [[Page](https://fouheylab.eecs.umich.edu/~dandans/projects/100DOH/)] | Ego+Exo | University of Michigan |
+| [Kinetics-700](https://arxiv.org/abs/2010.10864) | 2020 | arXiv 2020.10 | [[Code](https://github.com/cvdfoundation/kinetics-dataset)] [[Page](https://huggingface.co/datasets/bitmind/Kinetics-700)] | Exo | Google |
+| [HowTo100M](https://arxiv.org/abs/1906.03327) | 2019 | ICCV | [[Code](https://github.com/antoine77340/howto100m)] [[Page](https://www.di.ens.fr/willow/research/howto100m/)] | Ego+Exo | ENS |
+| [FreiHAND](https://arxiv.org/abs/1909.04349) | 2019 | ICCV | [[Code](https://github.com/lmb-freiburg/freihand)] [[Page](https://lmb.informatik.uni-freiburg.de/projects/freihand/)] | Exo | University of Freiburg |
+| [FPHA](https://arxiv.org/abs/1704.02463) | 2018 | CVPR | [[Code](https://github.com/guiggh/hand_pose_action)] [[Page](https://kcvl-kaist.github.io/FPHA/)] | Ego | Imperial College London |
+| [VLOG](https://arxiv.org/abs/1712.02310) | 2018 | CVPR | [[Code](https://github.com/dfouhey/VLOGToolkit)] [[Page](https://cs.nyu.edu/~fouhey/2017/VLOG/index.html)] | Exo | University of Michigan |
+| [EPIC-KITCHENS](https://arxiv.org/abs/1804.02748) | 2018 | ECCV | [[Code](https://github.com/epic-kitchens/epic-kitchens-55-annotations)] [[Page](https://epic-kitchens.github.io/)] | Ego | University of Bristol |
+| [EGTEA Gaze+](https://openaccess.thecvf.com/content_ECCV_2018/papers/Yin_Li_In_the_Eye_ECCV_2018_paper.pdf) | 2018 | ECCV | [[Code](https://github.com/amitsou/EGTEA_Gaze_Plus_Downloader)] [[Page](http://cbi.gatech.edu/fpv)] | Ego | University of Wisconsin-Madison |
+| [YouCook2](https://arxiv.org/abs/1703.09788) | 2018 | AAAI | [[Code](https://github.com/LuoweiZhou/ProcNets-YouCook2)] [[Page](http://youcook2.eecs.umich.edu/)] | Exo | University of Michigan |
+| [Something-Something](https://arxiv.org/abs/1706.04320) | 2017 | ICCV | [[Code](https://huggingface.co/datasets/HuggingFaceM4/something_something_v2)] [[Page](https://twentybn.com/datasets/something-something)] | Exo | TwentyBN |
+| [Charades](https://arxiv.org/abs/1604.01753) | 2016 | ECCV | [[Code](https://github.com/xiaolonw/CharadesDet)] [[Page](https://leooo-huang.github.io/awesome-human-activity-recognition/datasets/multimodal/charades/)] | Exo | Carnegie Mellon University |
+| [ActivityNet](https://openaccess.thecvf.com/content_cvpr_2015/papers/Heilbron_ActivityNet_A_Large-Scale_2015_CVPR_paper.pdf) | 2015 | CVPR | [[Code](https://github.com/activitynet/ActivityNet)] [[Page](http://activity-net.org/)] | Exo | Universidad del Norte |
+| [EgoHands](https://ieeexplore.ieee.org/document/7410583) | 2015 | ICCV | [[Code](https://github.com/victordibia/handtracking)] [Page] | Ego | Indiana University |
+| [Breakfast](https://openaccess.thecvf.com/content_cvpr_2014/papers/Kuehne_The_Language_of_2014_CVPR_paper.pdf) | 2014 | CVPR | [Code] [[Page](https://durandtibo.github.io/aroma/datasets/breakfast/)] | Exo | Fraunhofer FKIE |
 
 
 ### Human Video Generation
