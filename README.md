@@ -447,7 +447,7 @@ This section gathers HOI analysis techniques, including hand/object detection an
 
 #### 2022
 - 🌟 [[CVPR](https://arxiv.org/abs/2112.09120)] Human Hands as Probes for Interactive Object Understanding [[Code](https://github.com/uiuc-robovision/hands-as-probes)] [[Page](https://s-gupta.github.io/hands-as-probes/)]
-- [[CoRL](https://arxiv.org/abs/2212.06870)] MegaPose: 6D Pose Estimation of Novel Objects via Render & Compare [Code[https://github.com/megapose6d/megapose6d]] [Page[https://megapose6d.github.io/]]
+- [[CoRL](https://arxiv.org/abs/2212.06870)] MegaPose: 6D Pose Estimation of Novel Objects via Render & Compare [[Code](https://github.com/megapose6d/megapose6d)] [Page](https://megapose6d.github.io/)]
 - 🌟 [[ICCVW](https://arxiv.org/abs/2008.08324)] FrankMocap: Fast Monocular 3D Hand and Body Motion Capture by Regression and Integration [[Code](https://github.com/facebookresearch/frankmocap)] [[Page](https://github.com/facebookresearch/frankmocap)]
 
 
