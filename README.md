@@ -1,4 +1,5 @@
-# Awesome-Robot-Learning-from-Human-Videos [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome) [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity) [![PR's Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
+# Awesome-Robot-Learning-from-Human-Videos [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome) [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity) [![PR's Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com) [![arXiv](https://img.shields.io/badge/arXiv-2604.27621-b31b1b.svg)](https://arxiv.org/abs/2604.27621)
+
 
 **Overview.** This repository provides a curated reading list for **robot learning from human videos (LfHV)**, with an emphasis on human-robot skill transfer techniques **in task, observation, and action levels**. 
 
@@ -6,7 +7,7 @@ This repository also includes works on **human-object interaction analysis** and
 
 Papers with **publicly released code** are marked with a star 🌟. Papers with **real-world robot experiments** are marked with a robot 🤖.
 
-The relevant survey paper is coming soon. Your patience is appreciated.
+The related survey paper can be found at [this link](https://arxiv.org/abs/2604.27621).
 
 > Contributions are welcome. If you find missing papers or inaccurate classifications, feel free to open a pull request or contact me via [email](mailto:junyi.ma@sjtu.edu.cn).
 
