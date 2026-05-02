@@ -7,7 +7,7 @@ This repository also includes works on **human-object interaction analysis** and
 
 Papers with **publicly released code** are marked with a star 🌟. Papers with **real-world robot experiments** are marked with a robot 🤖.
 
-The related survey paper can be found at [this link](https://arxiv.org/abs/2604.27621).
+The related survey paper __Robot Learning from Human Videos: A Survey__ can be found at [this link](https://arxiv.org/abs/2604.27621). Authors: Junyi Ma, Erhang Zhang, Haoran Yang, Ditao Li, Chenyang Xu, Guangming Wang, Hesheng Wang*
 
 > Contributions are welcome. If you find missing papers or inaccurate classifications, feel free to open a pull request or contact me via [email](mailto:junyi.ma@sjtu.edu.cn).
 
