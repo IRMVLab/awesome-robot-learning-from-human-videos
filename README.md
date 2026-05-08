@@ -129,6 +129,7 @@ This section focuses on bridging the observation gap between humans and robots v
 - 🌟🤖 [[ICRA](https://arxiv.org/abs/2508.09976)] Masquerade: Learning from In-the-Wild Human Videos Using Data-Editing [[Code](https://github.com/MarionLepert/phantom)] [[Page](https://masquerade-robot.github.io/)] [`Transformed videos`]
 - 🌟🤖 [[ICRA](https://arxiv.org/abs/2509.09769)] MimicDroid: In-Context Learning for Humanoid Robot Manipulation from Human Play Videos [[Code](https://github.com/UT-Austin-RPL/mimicdroid-robocasa)] [[Page](https://ut-austin-rpl.github.io/MimicDroid)] [`Visual embeddings`]
 - 🤖 [[arXiv 2026.04](https://arxiv.org/abs/2604.10809)] WARPED: Wrist-Aligned Rendering for Robot Policy Learning from Egocentric Human Demonstrations [Code] [Page] [`Transformed videos`]
+- 🌟🤖 [[arXiv 2026.02](https://arxiv.org/abs/2602.17259)] FRAPPE: Infusing World Modeling into Generalist Policies via Multiple Future Representation Alignment[[Code](https://github.com/OpenHelix-Team/frappe)] [[Page](https://h-zhao1997.github.io/frappe/)] [`Visual embeddings`, `VLA`]
 
 #### 2025
 
