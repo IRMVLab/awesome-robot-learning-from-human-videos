@@ -10,10 +10,26 @@ Papers with **publicly released code** are marked with a star 🌟. Papers with 
 
 > Contributions are welcome. If you find missing papers or inaccurate classifications, feel free to open a pull request or contact me via [email](mailto:junyi.ma@sjtu.edu.cn).
 
+The related survey paper __Robot Learning from Human Videos: A Survey__ can be found at [this link](https://arxiv.org/abs/2604.27621). In this survey, you can find answers to the following interesting questions:
+
+ 🔍 *How much more efficient is human video collection compared to robot teleoperation?*
+
+ 🔍 *What types of information can be transferred from human videos to robot manipulation?*
+
+ 🔍 *Which is more widely adopted in LfHV, egocentric or exocentric video data?*
+
+ 🔍 *How do imitation learning and reinforcement learning incorporate information from human videos?*
+
+ 🔍 *How can you design your own LfHV framework for specific application needs?*
+
+ 🔍 *How have open-source human video datasets evolved over time?*
+
+ 🔍 *What are the most promising future research directions in LfHV?*
+ 
+ 🔍 *...*
 
 ## Citation
-
-The related survey paper __Robot Learning from Human Videos: A Survey__ can be found at [this link](https://arxiv.org/abs/2604.27621). If you find this work helpful for your research, please kindly consider citing our paper:
+ If you find this work helpful for your research, please kindly consider citing our paper:
 
 ```bib
 @article{ma2026robot,
