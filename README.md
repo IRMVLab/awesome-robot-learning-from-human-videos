@@ -1,17 +1,29 @@
-# Awesome-Robot-Learning-from-Human-Videos [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome) [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity) [![PR's Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com) [![arXiv](https://img.shields.io/badge/arXiv-2604.27621-b31b1b.svg)](https://arxiv.org/abs/2604.27621)
+# Awesome-Robot-Learning-from-Human-Videos 
+[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome) [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity) [![PR's Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com) [![arXiv](https://img.shields.io/badge/arXiv-2604.27621-b31b1b.svg)](https://arxiv.org/abs/2604.27621)
+
+![teaser](teaser.png)
 
 
-**Overview.** This repository provides a curated reading list for **robot learning from human videos (LfHV)**, with an emphasis on human-robot skill transfer techniques **in task, observation, and action levels**. 
-
-This repository also includes works on **human-object interaction analysis** and **human video sources** that are widely used in the literature.
+**Overview.** This repository provides a curated reading list for **robot learning from human videos (LfHV)**, with an emphasis on human-robot skill transfer techniques **in task, observation, and action levels**. It also covers representative works on **human-object interaction analysis** and **human video sources** that are widely used in the literature.
 
 Papers with **publicly released code** are marked with a star 🌟. Papers with **real-world robot experiments** are marked with a robot 🤖.
 
-The related survey paper __Robot Learning from Human Videos: A Survey__ can be found at [this link](https://arxiv.org/abs/2604.27621). Authors: Junyi Ma, Erhang Zhang, Haoran Yang, Ditao Li, Chenyang Xu, Guangming Wang, Hesheng Wang*
-
 > Contributions are welcome. If you find missing papers or inaccurate classifications, feel free to open a pull request or contact me via [email](mailto:junyi.ma@sjtu.edu.cn).
 
-![teaser](teaser.png)
+
+## Citation
+
+The related survey paper __Robot Learning from Human Videos: A Survey__ can be found at [this link](https://arxiv.org/abs/2604.27621). If you find this work helpful for your research, please kindly consider citing our paper:
+
+```bib
+@article{ma2026robot,
+  title={Robot Learning from Human Videos: A Survey},
+  author={Ma, Junyi and Zhang, Erhang and Yang, Haoran and Li, Ditao and Xu, Chenyang and Wang, Guangming and Wang, Hesheng},
+  journal={arXiv preprint arXiv:2604.27621},
+  year={2026}
+}
+```
+
 
 ## Table of Contents
 
