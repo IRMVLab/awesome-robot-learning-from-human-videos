@@ -32,7 +32,7 @@ The related survey paper __Robot Learning from Human Videos: A Survey__ can be f
 We hope that the answers presented in this survey can inspire future research and contribute to the development of generalist robotic systems.
 
 ## 📌 Citation
- If you find this work helpful for your research, please kindly consider citing our paper:
+ If you find this work helpful for your research, please kindly consider citing [our paper](https://arxiv.org/abs/2604.27621):
 
 ```bib
 @article{ma2026robot,
