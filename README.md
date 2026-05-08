@@ -25,8 +25,10 @@ The related survey paper __Robot Learning from Human Videos: A Survey__ can be f
  🔍 *How have open-source human video datasets evolved over time?*
 
  🔍 *What are the most promising future research directions in LfHV?*
- 
+
  🔍 *...*
+
+We hope that the answers presented in this survey can inspire future research and contribute to the development of generalist robotic systems.
 
 ## Citation
  If you find this work helpful for your research, please kindly consider citing our paper:
