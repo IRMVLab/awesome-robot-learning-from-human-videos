@@ -58,7 +58,7 @@ We hope that the answers presented in this survey can inspire future research an
 ![taxonomy](taxonomy.png)
 
 
-## Human-Robot Skill Transfer
+## 🔄 Human-Robot Skill Transfer
 
 ### Task-Oriented Transfer
 This section covers methods that infer task structures and intents from human videos to guide robot decision-making at the task level.
