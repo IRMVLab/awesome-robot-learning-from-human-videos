@@ -3,8 +3,9 @@
 
 ![teaser](teaser.png)
 
+## 📖 Overview
 
-**Overview.** This repository provides a curated reading list for **robot learning from human videos (LfHV)**, with an emphasis on human-robot skill transfer techniques **in task, observation, and action levels**. It also covers representative works on **human-object interaction analysis** and **human video sources** that are widely used in the literature.
+This repository provides a curated reading list for **robot learning from human videos (LfHV)**, with an emphasis on human-robot skill transfer techniques **in task, observation, and action levels**. It also covers representative works on **human-object interaction analysis** and **human video sources** that are widely used in the literature.
 
 Papers with **publicly released code** are marked with a star 🌟. Papers with **real-world robot experiments** are marked with a robot 🤖.
 
@@ -30,7 +31,7 @@ The related survey paper __Robot Learning from Human Videos: A Survey__ can be f
 
 We hope that the answers presented in this survey can inspire future research and contribute to the development of generalist robotic systems.
 
-## Citation
+## 📌 Citation
  If you find this work helpful for your research, please kindly consider citing our paper:
 
 ```bib
@@ -43,7 +44,7 @@ We hope that the answers presented in this survey can inspire future research an
 ```
 
 
-## Table of Contents
+## 🗂️ Table of Contents
 
 - [Human-Robot Skill Transfer](#human-robot-skill-transfer)
   - [Task-Oriented Transfer](#task-oriented-transfer)
@@ -357,7 +358,7 @@ This section includes methods that transfer actionable motion knowledge from hum
 - 🤖 [[CVPR](https://arxiv.org/pdf/1703.01040)] Learning Robot Activities from First-Person Human Videos Using Convolutional Future Regression [Code] [Page] [`Affordances`]
 
 
-## Data Foundations
+## 🧩 Data Foundations
 
 ### Open-Source Datasets
 This section collects open-source human video datasets.
@@ -491,11 +492,9 @@ This section gathers HOI analysis techniques, including hand/object detection an
 
 > Other vision foundation models like Grounding DINO, YOLO series, SAM series are also widely used in the LfHV literature.
 
-## LICENSE
+## 📄 LICENSE
 This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
 
 
-
-
-## Contact
+## 📬 Contact
 If you have any questions or suggestions, please feel free to contact [Junyi Ma](mailto:junyi.ma@sjtu.edu.cn).
