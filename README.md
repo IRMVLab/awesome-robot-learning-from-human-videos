@@ -36,6 +36,8 @@ The related survey paper __Robot Learning from Human Videos: A Survey__ can be f
   - [Human Video Generation](#human-video-generation)
   - [HOI Analysis Techniques](#hoi-analysis-techniques)
 
+![taxonomy](taxonomy.png)
+
 
 ## Human-Robot Skill Transfer
 
