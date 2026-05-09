@@ -11,7 +11,7 @@ Papers with **publicly released code** are marked with a star 🌟. Papers with 
 
 > Contributions are welcome. If you find missing papers or inaccurate classifications, feel free to open a pull request or contact me via [email](mailto:junyi.ma@sjtu.edu.cn).
 
-The related survey paper __Robot Learning from Human Videos: A Survey__ can be found at [this link](https://arxiv.org/abs/2604.27621). In this survey, you can find answers to the following interesting questions:
+The related survey paper can be found at [this link](https://arxiv.org/abs/2604.27621). In this survey, you can find answers to the following interesting questions:
 
  🔍 *How much more efficient is human video collection compared to robot teleoperation?*
 
@@ -29,7 +29,7 @@ The related survey paper __Robot Learning from Human Videos: A Survey__ can be f
 
  🔍 *...*
 
-We hope that the answers presented in this survey can inspire future research and contribute to the development of generalist robotic systems.
+We hope that the answers presented in this survey can inspire future research and contribute to the development of generalist robotic systems. **A more concise version of this survey is coming soon.**
 
 ## 📌 Citation
  If you find this work helpful for your research, please kindly consider citing [our paper](https://arxiv.org/abs/2604.27621):
