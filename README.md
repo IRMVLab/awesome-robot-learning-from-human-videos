@@ -37,7 +37,8 @@ We sincerely appreciate several blogs for helping _distill_ and _promote_ our wo
 ](https://mp.weixin.qq.com/s/Ex22oqADerkbojvtAkgPpg)
 * human five: [机器人如何从人类视频中学会操作?](https://mp.weixin.qq.com/s/PSgXWXKJj_asJYRl34DFug)
 * 具身智能之心: [如何从人类视频中学习机器人操作？近400篇工作一览数据配置、学习方式、核心挑战！](https://mp.weixin.qq.com/s/ENdnnFRC_faTOX3h9FHJmg)
-* 智驾具身数据挖掘: [上交王贺升团队LfHV Survey：从人类视频学习机器人操作全景综述！](https://mp.weixin.qq.com/s/ayT-WVKWz72Av9598LatLQ)
+* 智驾具身数据挖掘: [上交王贺升团队LfHV Survey：从人类视频学习机器人操作全景综述！](https://mp.weixin.qq.com/s/Q16BJPCMlmHpnJqbrcAhhg)
+* 大语言模型和具身智体及自动驾驶: [机器人从人类视频中学习：综述](https://mp.weixin.qq.com/s/ayT-WVKWz72Av9598LatLQ)
 
 ## 📌 Citation
  If you find this work helpful for your research, please kindly consider citing [our paper](https://arxiv.org/abs/2604.27621):
