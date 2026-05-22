@@ -31,7 +31,7 @@ The related survey paper can be found at [this link](https://arxiv.org/abs/2604.
 
 We hope that the answers presented in this survey can inspire future research and contribute to the development of generalist robotic systems. **A more concise version of this survey is coming soon.**
 
-We sincerely appreciate several blogs for helping _distill_ and _promote_ our work:
+We sincerely appreciate these blogs for helping _distill_ and _promote_ our work:
 
 * 无限演化INFINITY: [机器人从人类世界学习：Robot Learning from Human Videos
 ](https://mp.weixin.qq.com/s/Ex22oqADerkbojvtAkgPpg)
