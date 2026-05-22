@@ -137,6 +137,7 @@ This section focuses on bridging the observation gap between humans and robots v
 - 🤖 [[Science Robotics](https://www.science.org/doi/10.1126/scirobotics.ady2869)] Visual-Tactile Pretraining and Online Multitask Learning for Humanlike Manipulation Dexterity [Code] [Page] [`Visual embeddings`]
 - 🌟🤖 [[ICRA](https://arxiv.org/abs/2508.09976)] Masquerade: Learning from In-the-Wild Human Videos Using Data-Editing [[Code](https://github.com/MarionLepert/phantom)] [[Page](https://masquerade-robot.github.io/)] [`Transformed videos`]
 - 🌟🤖 [[ICRA](https://arxiv.org/abs/2509.09769)] MimicDroid: In-Context Learning for Humanoid Robot Manipulation from Human Play Videos [[Code](https://github.com/UT-Austin-RPL/mimicdroid-robocasa)] [[Page](https://ut-austin-rpl.github.io/MimicDroid)] [`Visual embeddings`]
+- 🤖 [[AAAI](https://arxiv.org/abs/2502.16587)] Human2Robot: Learning Robot Actions from Paired Human-Robot Videos [Code] [[Page](https://huggingface.co/datasets/dannyXSC/HumanAndRobot)] [`Transformed videos`]
 - 🤖 [[arXiv 2026.04](https://arxiv.org/abs/2604.10809)] WARPED: Wrist-Aligned Rendering for Robot Policy Learning from Egocentric Human Demonstrations [Code] [Page] [`Transformed videos`]
 - 🌟🤖 [[arXiv 2026.02](https://arxiv.org/abs/2602.17259)] FRAPPE: Infusing World Modeling into Generalist Policies via Multiple Future Representation Alignment[[Code](https://github.com/OpenHelix-Team/frappe)] [[Page](https://h-zhao1997.github.io/frappe/)] [`Visual embeddings`, `VLA`]
 
@@ -144,6 +145,7 @@ This section focuses on bridging the observation gap between humans and robots v
 
 - 🤖 [[NeurIPS](https://arxiv.org/abs/2509.19626)] EgoBridge: Domain Adaptation for Generalizable Imitation from Egocentric Human Data [Code] [[Page](https://ego-bridge.github.io/)] [`Visual embeddings`]
 - 🌟🤖 [[CVPR](https://arxiv.org/abs/2406.14235)] Mitigating the Human-Robot Domain Discrepancy in Visual Pre-Training for Robotic Manipulation [[Code](https://github.com/jiaming-zhou/HumanRobotAlign)] [[Page](https://jiaming-zhou.github.io/projects/HumanRobotAlign/)] [`Visual embeddings`]
+- 🌟🤖 [[RA-L](https://arxiv.org/abs/2408.14368)] GR-MG: Leveraging Partially-Annotated Data via Multi-Modal Goal-Conditioned Policy [[Code](https://github.com/bytedance/GR-MG)] [[Page](https://gr-mg.github.io/)] [`Visual embeddings`]
 - 🌟🤖 [[ICRA](https://arxiv.org/abs/2409.06615)] One-Shot Imitation Under Mismatched Execution [[Code](https://github.com/portal-cornell/rhyme)] [[Page]](https://portal-cornell.github.io/rhyme/) [`Visual embeddings`]
 - 🌟 [[IROS](https://arxiv.org/abs/2507.19817)] Ag2x2: Robust Agent-Agnostic Visual Representations for Zero-Shot Bimanual Manipulation [[Code](https://github.com/ziyin-xiong/Ag2x2)] [[Page](https://ziyin-xiong.github.io/ag2x2.github.io/)] [`Transformed videos`]
 - 🤖 [[IROS](https://arxiv.org/abs/2501.03606)] VTAO-BiManip: Masked Visual-Tactile-Action Pre-Training with Object Understanding for Bimanual Dexterous Manipulation [Code] [Page] [`Visual embeddings`]
@@ -159,6 +161,7 @@ This section focuses on bridging the observation gap between humans and robots v
 - 🤖 [[arXiv 2025.10](https://arxiv.org/abs/2510.07773)] Trajectory-Conditioned Cross-Embodiment Skill Transfer [Code] [Page] [`Transformed videos`]
 - 🌟🤖 [[arXiv 2025.09](https://arxiv.org/abs/2509.22199)] MimicDreamer: Aligning Human and Robot Demonstrations for Scalable VLA Training [[Code](https://github.com/GigaAI-research/MimicDreamer)] [[Page](https://mimicdreamer.github.io/)] [`Transformed videos`]
 - 🌟🤖 [[arXiv 2025.09](https://arxiv.org/abs/2509.15212)] RynnVLA-001: Using Human Demonstrations to Improve Robot Manipulation [[Code](https://github.com/alibaba-damo-academy/RynnVLA-001)] [[Page](https://huggingface.co/blog/Alibaba-DAMO-Academy/rynnvla-001)] [`Visual embeddings`]
+- 🤖 [[CoRL](https://arxiv.org/abs/2505.15659)] FLARE: Robot Learning with Implicit World Modeling [Code] [[Page](https://research.nvidia.com/labs/gear/flare/)] [`Visual embeddings`, `VLA`]
 - 🤖 [[arXiv 2025.05](https://arxiv.org/abs/2505.11920)] H2R: A Human-to-Robot Data Augmentation for Robot Pre-Training from Videos [Code] [Page] [`Transformed videos`]
 
 #### 2024
@@ -234,11 +237,13 @@ This section includes methods that transfer actionable motion knowledge from hum
 - 🌟🤖 [[ICRA](https://arxiv.org/abs/2510.08568)] NovaFlow: Zero-Shot Manipulation via Actionable Flow from Generated Videos [[Code](https://github.com/rai-opensource/NovaFlow/)] [[Page](https://novaflow.lhy.xyz/)] [`Affordances`]
 - 🌟🤖 [[ICRA](https://arxiv.org/abs/2510.12971)] Actron3D: Learning Actionable Neural Functions from Videos for Transferable Robotic Manipulation [[Code](https://github.com/ethz-mrl/Actron3D)] [[Page](https://dipan-zhang.github.io/Actron3D-project/)] [`Affordances`]
 - 🤖 [[arXiv 2026.04](https://arxiv.org/abs/2604.08534)] ActiveGlasses: Learning Manipulation with Active Vision from Ego-centric Human Demonstration [Code] [[Page](https://yanwen-zou.github.io/activeglasses/)] [`Affordances`]
+- 🤖 [[arXiv 2026.04](https://arxiv.org/abs/2604.24681)] Learning Human-Intention Priors from Large-Scale Human Demonstrations for Robotic Manipulation [Code] [Page] [`Affordances`]
 - 🌟🤖 [[arXiv 2026.04](https://arxiv.org/abs/2604.16391)] Disentangled Robot Learning via Separate Forward and Inverse Dynamics Pretraining [[Code](https://github.com/LogosRoboticsGroup/DeFi)] [[Page](https://huggingface.co/zbzzbz/DeFI)] [`Latent actions`]
 - 🌟🤖 [[arXiv 2026.03](https://arxiv.org/abs/2603.25539)] PAWS: Perception of Articulation in the Wild at Scale from Egocentric Videos [[Code](https://github.com/AaltoML/PAWS)] [[Page](https://aaltoml.github.io/PAWS/)] [`Affordances`]
 - 🤖 [[arXiv 2026.02](https://arxiv.org/abs/2602.16710)] EgoScale: Scaling Dexterous Manipulation with Diverse Egocentric Human Data [Code] [[Page](https://research.nvidia.com/labs/gear/egoscale/)] [`Affordances`]
 - [[arXiv 2026.02](https://arxiv.org/abs/2602.03668)] MVP-LAM: Learning Action-Centric Latent Action via Cross-Viewpoint Reconstruction [Code] [Page] [`Latent actions`]
 - 🌟🤖 [[arXiv 2026.02](https://arxiv.org/abs/2602.06949)] DreamDojo: A Generalist Robot World Model from Large-Scale Human Videos [[Code](https://github.com/NVIDIA/DreamDojo)] [[Page](https://dreamdojo-world.github.io/)] [`Latent actions`]
+- 🌟 [[CVPR](https://arxiv.org/abs/2602.10102)] VideoWorld 2: Learning Transferable Knowledge from Real-world Videos [[Code](https://github.com/ByteDance-Seed/VideoWorld/tree/main/VideoWorld2)] [[Page](https://maverickren.github.io/VideoWorld2.github.io/)] [`Latent actions`]
 - 🌟🤖 [[arXiv 2026.02](https://arxiv.org/abs/2602.20231)] UniLACT: Depth-Aware RGB Latent Action Learning for Vision-Language-Action Models [[Code](https://github.com/ManishGovind/UniLACT)] [[Page](https://manishgovind.github.io/unilact-vla/)] [`Latent actions`]
 - 🌟🤖 [[arXiv 2026.02](https://arxiv.org/abs/2602.10098)] VLA-JEPA: Enhancing Vision-Language-Action Model with Latent World Model [[Code](https://github.com/ginwind/VLA-JEPA)] [[Page](https://ginwind.github.io/VLA-JEPA/)] [`Latent actions`]
 - 🤖 [[arXiv 2026.02](https://arxiv.org/abs/2602.09013)] Dexterous Manipulation Policies from RGB Human Videos via 3D Hand-Object Trajectory Reconstruction [Code] [[Page](https://videomanip.github.io/)] [`Affordances`]
