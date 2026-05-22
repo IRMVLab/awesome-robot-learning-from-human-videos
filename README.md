@@ -97,9 +97,9 @@ This section covers methods that infer task structures and intents from human vi
 
 #### 2023
 
+- 🤖 [[T-SMC](https://doi.org/10.1109/TSMC.2023.3248324)] Watch and Act: Learning Robotic Manipulation From Visual Demonstration [Code] [[Page](https://vsislab.github.io/watch-and-act/)] [`Task structures`]
 - 🌟🤖 [[CoRL](https://openreview.net/forum?id=8L6pHd9aS6w)] XSkill: Cross Embodiment Skill Discovery [[Code](https://github.com/real-stanford/xskill)] [[Page](https://xskill.cs.columbia.edu/)] [`Task intents`]
 - 🤖 [[arXiv 2023.12](https://arxiv.org/abs/2312.15346)] Learning Multi-Step Manipulation Tasks from A Single Human Demonstration [Code] [[Page]] [`Task structures`]
-- 🤖 [[T-SMC](https://doi.org/10.1109/TSMC.2023.3248324)] Watch and Act: Learning Robotic Manipulation From Visual Demonstration [Code] [[Page](https://vsislab.github.io/watch-and-act/)] [`Task structures`]
 
 #### 2022
 
