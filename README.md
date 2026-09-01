@@ -384,6 +384,7 @@ This section collects open-source human video datasets.
 
 | Dataset | Year | Venue | Website | Viewpoint | Organization (first author) |
 |---|---:|---|---|---|---|
+| [Ego-Home](https://huggingface.co/datasets/ActTrace/Ego-Home) | 2026 | - | [[Page](https://huggingface.co/datasets/ActTrace/Ego-Home)] | Ego | ActTrace |
 | [HumanNet](https://arxiv.org/pdf/2605.06747) | 2026 | arXiv 2026.05 | [[Code](https://github.com/DAGroup-PKU/HumanNet/)] [[Page](https://dagroup-pku.github.io/HumanNet)] | Ego+Exo | Peking University |
 | [EgoLive](https://arxiv.org/pdf/2604.23570v1) | 2026 | arXiv 2026.04 | [Code] [[Page](https://robotdata-market.jdcloud.com/console/market)] | Ego | JD |
 | [DreamDojo-HV](https://arxiv.org/abs/2602.06949) | 2026 | arXiv 2026.02 | [[Code](https://github.com/NVIDIA/DreamDojo)] [[Page](https://dreamdojo-world.github.io/)] | Ego | NVIDIA |
