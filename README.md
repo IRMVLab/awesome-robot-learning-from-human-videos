@@ -56,9 +56,14 @@ We sincerely appreciate these blogs for helping _distill_ and _promote_ our work
 ## 🗂️ Table of Contents
 
 - [Human-Robot Skill Transfer](#human-robot-skill-transfer)
-  - [Task-Oriented Transfer](#task-oriented-transfer)
-  - [Observation-Oriented Transfer](#observation-oriented-transfer)
-  - [Action-Oriented Transfer](#action-oriented-transfer)
+  - [Learning Paradigms](#learning-paradigms)
+    - [WAM](#wam)
+    - [VLA](#vla)
+    - [In-Context & Video-Conditioned Learning](#in-context--video-conditioned-learning)
+  - [Information Transfer Taxonomy](#information-transfer-taxonomy)
+    - [Task-Oriented Transfer](#task-oriented-transfer)
+    - [Observation-Oriented Transfer](#observation-oriented-transfer)
+    - [Action-Oriented Transfer](#action-oriented-transfer)
 - [Data Foundations](#data-foundations)
   - [Open-Source Datasets](#open-source-datasets)
   - [Human Video Generation](#human-video-generation)
@@ -69,7 +74,67 @@ We sincerely appreciate these blogs for helping _distill_ and _promote_ our work
 
 ## 🔄 Human-Robot Skill Transfer
 
-### Task-Oriented Transfer
+### Learning Paradigms
+
+> Papers are organized by learning formulation; categories may overlap.
+
+#### WAM
+
+#### 2026
+
+- 🌟🤖 [[arXiv 2026.09](https://arxiv.org/abs/2609.00188)] ZimaBlue: Evolving Generalizable World Action Models through Scalable Video Pre-training [[Code](https://github.com/ZimaBlue-WAM/ZimaBlue)] [[Page](https://zimablue-wam.github.io/)]
+- 🌟🤖 [[arXiv 2026.08](https://arxiv.org/abs/2608.27406)] CLAP: Cross-Embodiment Video World Models are Zero-Shot Physical Simulators [[Code](https://github.com/omni-CLAP/clap)] [[Page](https://omni-clap.github.io/)]
+- 🌟🤖 [[arXiv 2026.08](https://arxiv.org/abs/2608.26103)] Zero-WAM: In-Context World-Action Modeling from Human Videos for Open-Ended Task Generalization [[Code](https://github.com/robbyant-research/Zero-WAM)] [[Page](https://robbyant-research.github.io/Zero-WAM/)]
+- 🤖 [[arXiv 2026.08](https://arxiv.org/abs/2608.24882)] Latent Action as Intention Enables Efficient Future Imagination for World Action Models [Code] [[Page](https://getterupper.github.io/LAWA)]
+- 🤖 [[arXiv 2026.08](https://arxiv.org/abs/2608.22403)] LD4WAM: Learning Latent Dynamics from Human Videos for World Action Models [Code] [Page]
+- 🤖 [[Dyna Robotics 2026.08](https://www.dyna.co/dyna-2)] Dyna-2: A 1-Million-Hour Scaling Law for World-Action Models [Code] [[Page](https://www.dyna.co/dyna-2)]
+- 🤖 [[arXiv 2026.08](https://arxiv.org/abs/2608.05706)] LAWM-3D: Learning 3D-Aware Latent Actions from Human Videos for Generalizable Robot World Models [Code] [Page]
+- 🤖 [[arXiv 2026.08](https://arxiv.org/abs/2608.05674)] JoyAI-RA 0.5: Scaling Robot Manipulation Learning via Dual Action Alignment [Code] [[Page](https://joyai-ra-05.github.io/)]
+- 🤖 [[BeingBeyond 2026.07](https://research.beingbeyond.com/being-h08)] Being-H0.8: A Latent Tactile World-Action Model at Scale [Code] [[Page](https://research.beingbeyond.com/being-h08)]
+- 🤖 [[BeingBeyond Technical Report 2026.07](https://research.beingbeyond.com/being-m07/being-m07.pdf)] Being-M0.7: A Latent World-Action Model for Humanoid Robots [Code] [[Page](https://research.beingbeyond.com/being-m07)]
+- 🤖 [[arXiv 2026.07](https://arxiv.org/abs/2607.06559)] RynnWorld-4D: 4D Embodied World Models for Robotic Manipulation [[Code](https://github.com/alibaba-damo-academy/RynnWorld-4D)] [[Page](https://alibaba-damo-academy.github.io/RynnWorld-4D.github.io/)]
+- [[arXiv 2026.07](https://arxiv.org/abs/2607.06988)] WAM-TTT: Steering World-Action Models by Watching Human Play at Test Time [Code] [Page]
+- 🤖 [[arXiv 2026.07](https://arxiv.org/abs/2607.08436)] EgoWAM: World Action Models Beyond Pixels with In-the-Wild Egocentric Human Data [Code] [[Page](https://gatech-rl2.github.io/egowam.github.io/)]
+- 🌟🤖 [[arXiv 2026.06](https://arxiv.org/abs/2606.20521)] HumanScale: Egocentric Human Video Can Outperform Real-Robot Data for Embodied Pretraining [[Code](https://github.com/DAGroup-PKU/HumanNet/)] [Page]
+- 🤖 [[arXiv 2026.06](https://arxiv.org/abs/2606.13769)] μ0: A Scalable 3D Interaction-Trace World Model [Code] [[Page](https://mu0-wm.github.io/)]
+
+#### VLA
+
+#### 2026
+
+- 🤖 [[arXiv 2026.08](https://arxiv.org/abs/2608.05215)] VLAff: Vision-Language-Affordance Model for Unified Actionable Affordances [Code] [[Page](https://ojh6404.github.io/vlaff/)]
+- 🤖 [[arXiv 2026.07](https://arxiv.org/abs/2607.09701)] EgoSteer: A Full-Stack System Towards Steerable Dexterous Manipulation from Egocentric Videos [Code] [[Page](https://egosteer.github.io/)]
+- [[arXiv 2026.06](https://arxiv.org/abs/2606.32009)] Human-as-Humanoid: Enabling Zero-Shot Humanoid Learning from Ego-Exo Human Videos with Human-Aligned Embodiments [Code] [[Page](https://zgc-embodyai.github.io/Human-as-Humanoid/)]
+- 🌟🤖 [[arXiv 2026.06](https://arxiv.org/abs/2606.17846)] Qwen-RobotManip Technical Report: Alignment Unlocks Scale for Robotic Manipulation Foundation Models [[Code](https://github.com/QwenLM/Qwen-RobotManip)] [[Page](https://qwen.ai/blog?id=qwen-robotmanip)]
+- 🤖 [[arXiv 2026.06](https://arxiv.org/abs/2606.18955)] Motion-Focused Latent Action Enables Cross-Embodiment VLA Training from Human EgoVideos [Code] [Page]
+- 🤖 [[arXiv 2026.06](https://arxiv.org/abs/2606.17200)] ACE-Ego-0: Unifying Egocentric Human and Robotic Data for VLA Pretraining [Code] [Page]
+- 🌟🤖 [[arXiv 2026.06](https://arxiv.org/abs/2606.14409)] Hy-Embodied-0.5-VLA: From Vision-Language-Action Models to a Real-World Robot Learning Stack [[Code](https://github.com/Tencent-Hunyuan/Hy-Embodied-0.5-VLA)] [Page]
+- 🤖 [[arXiv 2026.06](https://arxiv.org/abs/2606.07100)] LARA: Latent Action Representation Alignment for Vision-Language-Action Models [Code] [Page]
+- 🤖 [[arXiv 2026.07](https://arxiv.org/abs/2607.01067)] Human-Centric Transferable Tactile Pre-Training for Dexterous Robotic Manipulation [Code] [Page]
+
+#### In-Context & Video-Conditioned Learning
+
+#### 2026
+
+- 🌟🤖 [[arXiv 2026.08](https://arxiv.org/abs/2608.26103)] Zero-WAM: In-Context World-Action Modeling from Human Videos for Open-Ended Task Generalization [[Code](https://github.com/robbyant-research/Zero-WAM)] [[Page](https://robbyant-research.github.io/Zero-WAM/)]
+- 🤖 [[Skild AI 2026.08](https://skild.ai/blogs/s1)] Introducing S1: In-Context Learning for Robotics [Code] [[Page](https://skild.ai/blogs/s1)]
+- 🤖 [[Generalist AI 2026.08](https://generalistai.com/blog/gen-1.5)] GEN-1.5: Embodied Foundation Models are One-Shot Learners [Code] [[Page](https://generalistai.com/blog/gen-1.5)]
+- 🤖 [[arXiv 2026.07](https://arxiv.org/abs/2607.15275)] RoboTTT: Context Scaling for Robot Policies [Code] [[Page](https://research.nvidia.com/labs/gear/robottt/)]
+- [[arXiv 2026.07](https://arxiv.org/abs/2607.06988)] WAM-TTT: Steering World-Action Models by Watching Human Play at Test Time [Code] [Page]
+- [[arXiv 2026.07](https://arxiv.org/abs/2607.20033)] HOST:Robots Acquire Manipulation Skills in Seconds from a Single Human Video [Code] [Page]
+- 🤖 [[arXiv 2026.06](https://arxiv.org/abs/2606.30457)] Behavior Prompting Policy: Demonstrations as Prompts for Manipulation [Code] [[Page](https://behavior-prompting.github.io/)]
+- [[arXiv 2026.06](https://arxiv.org/abs/2606.16917)] Unified Motion-Action Modeling for Heterogeneous Robot Learning [Code] [[Page](https://uma-manipulation.github.io/)]
+- 🌟🤖 [[arXiv 2026.06](https://arxiv.org/abs/2606.08828)] Video2Sim2Real: Full-Stack Autonomous Dexterous Skill Acquisition from a Single Human Video [[Code](https://github.com/video2sim2real/video2sim2real)] [[Page](https://video2sim2real.github.io/)]
+- 🌟🤖 [[arXiv 2026.06](https://arxiv.org/abs/2606.29517)] CORE: Common Outcome Regularities from Action-Free Visual Demonstrations for Robot Manipulation [[Code](https://github.com/LogSSim/CORE)] [[Page](https://logssim.github.io/CORE.github.io/)]
+- [[arXiv 2026.06](https://arxiv.org/abs/2606.10025)] GHOST: Hierarchical Sub-Goal Policies for Generalizing Robot Manipulation [Code] [Page]
+- 🤖 [[arXiv 2026.06](https://arxiv.org/abs/2606.28813)] Human2Any: Human-to-Robot Transfer via Constraint-Aware Compositional Planning [Code] [[Page](https://human2any.github.io/)]
+- [[arXiv 2026.06](https://arxiv.org/abs/2606.10743)] Hand-centric Human-to-Robot Trajectory Transfer from Video Demonstrations via Open-World Contact Localization [Code] [Page]
+
+---
+
+### Information Transfer Taxonomy
+
+#### Task-Oriented Transfer
 This section covers methods that infer task structures and intents from human videos to guide robot decision-making at the task level.
 
 #### 2026
@@ -129,12 +194,13 @@ This section covers methods that infer task structures and intents from human vi
 - [[AAAI](https://ojs.aaai.org/index.php/AAAI/article/view/9671)] Robot Learning Manipulation Action Plans by "Watching" Unconstrained Videos from the World Wide Web [Code] [[Page]] [`Task structures`]
 
 
-### Observation-Oriented Transfer
+#### Observation-Oriented Transfer
 This section focuses on bridging the observation gap between humans and robots via transformed videos and visual embeddings.
 
 
 #### 2026
 
+- 🤖 [[arXiv 2026.08](https://arxiv.org/abs/2608.02580)] Ego2Robot: Scalable Robot Data Synthesis from Egocentric Human Data [Code] [[Page](https://www-ye.github.io/ego2robot_blog/)] [`Transformed videos`]
 - 🤖 [[Science Robotics](https://www.science.org/doi/10.1126/scirobotics.ady2869)] Visual-Tactile Pretraining and Online Multitask Learning for Humanlike Manipulation Dexterity [Code] [Page] [`Visual embeddings`]
 - 🌟🤖 [[ICRA](https://arxiv.org/abs/2508.09976)] Masquerade: Learning from In-the-Wild Human Videos Using Data-Editing [[Code](https://github.com/MarionLepert/phantom)] [[Page](https://masquerade-robot.github.io/)] [`Transformed videos`]
 - 🌟🤖 [[ICRA](https://arxiv.org/abs/2509.09769)] MimicDroid: In-Context Learning for Humanoid Robot Manipulation from Human Play Videos [[Code](https://github.com/UT-Austin-RPL/mimicdroid-robocasa)] [[Page](https://ut-austin-rpl.github.io/MimicDroid)] [`Visual embeddings`]
@@ -218,12 +284,13 @@ This section focuses on bridging the observation gap between humans and robots v
 #### 2017
 - 🌟🤖 [[CVPRW](https://ieeexplore.ieee.org/document/8014803)] Time-Contrastive Networks: Self-Supervised Learning from Multi-view Observation [[Code](https://github.com/kekeblom/tcn)] [[Page](https://sermanet.github.io/imitate/)] [`Visual embeddings`]
 
-### Action-Oriented Transfer
+#### Action-Oriented Transfer
 This section includes methods that transfer actionable motion knowledge from human videos to robot control, including affordances (explicit interaction info) and latent actions.
 
 
 #### 2026
 
+- 🌟🤖 [[arXiv 2026.07](https://arxiv.org/abs/2607.19745)] EgoRecovery: Acquiring Failure Recovery Ability Through Human Recovery Demonstration [[Code](https://github.com/EgoRecovery/EgoRecovery)] [Page] [`Latent actions`]
 - 🌟🤖 [[TRO&IROS](https://arxiv.org/abs/2503.06669)] AgiBot World Colosseo: A Large-Scale Manipulation Platform for Scalable and Intelligent Embodied Systems [[Code](https://github.com/OpenDriveLab/AgiBot-World)] [[Page](https://agibot-world.com/)] [`Latent actions`]
 - 🌟🤖 [[ICLR&NeurIPS Workshop](https://arxiv.org/abs/2511.07732)] ViPRA: Video Prediction for Robot Actions [[Code](https://github.com/sroutray/vipra)] [[Page](https://vipra-project.github.io/)] [`Latent actions`]
 - 🌟🤖 [[CVPR](https://arxiv.org/abs/2602.21736)] Joint-Aligned Latent Action: Towards Scalable VLA Pretraining in the Wild [[Code](https://github.com/BeingBeyond/JALA)] [[Page](https://research.beingbeyond.com/jala)] [`Latent actions`]
@@ -237,7 +304,9 @@ This section includes methods that transfer actionable motion knowledge from hum
 - 🌟🤖 [[ICRA](https://arxiv.org/abs/2506.20668)] DemoDiffusion: One-Shot Human Imitation Using Pre-Trained Diffusion Policy [[Code](https://github.com/demodiffusion/demodiffusion)] [[Page](https://demodiffusion.github.io/)] [`Affordances`]
 - 🌟🤖 [[ICRA](https://arxiv.org/abs/2510.08568)] NovaFlow: Zero-Shot Manipulation via Actionable Flow from Generated Videos [[Code](https://github.com/rai-opensource/NovaFlow/)] [[Page](https://novaflow.lhy.xyz/)] [`Affordances`]
 - 🌟🤖 [[ICRA](https://arxiv.org/abs/2510.12971)] Actron3D: Learning Actionable Neural Functions from Videos for Transferable Robotic Manipulation [[Code](https://github.com/ethz-mrl/Actron3D)] [[Page](https://dipan-zhang.github.io/Actron3D-project/)] [`Affordances`]
+- 🤖 [[arXiv 2026.06](https://arxiv.org/abs/2606.17385)] EgoInfinity: A Web-Scale 4D Hand-Object Interaction Data Engine for Any-View Robot Retargeting and Video-to-Action Robot Learning [Code] [[Page](https://huggingface.co/spaces/Rice-RobotPI-Lab/EgoInfinity)] [`Affordances`]
 - 🌟🤖 [[arXiv 2026.06](https://arxiv.org/pdf/2606.17200)] Unifying Egocentric Human and Robotic Data for VLA Pretraining [[Code](https://github.com/ACERobotics-VLA/ACE-Ego-0)] [[Page](https://acerobotics-vla.github.io/ACE-Ego/)] [`VLA`]
+- 🤖 [[arXiv 2026.06](https://arxiv.org/abs/2606.17054)] Human Universal Grasping [Code] [[Page](https://grasping.io/)] [`Affordances`]
 - 🤖 [[arXiv 2026.06](https://arxiv.org/pdf/2606.08107v1)] Ego-Pi: VLA Fine-Tuning for Ego-Centric Human and Robot Data [Code] [[Page](https://egopipaper.github.io/)] [`VLA`]
 - 🌟🤖 [[arXiv 2026.05](https://arxiv.org/abs/2605.24934)] HumanEgo: Zero-Shot Robot Learning from Minutes of Human Egocentric Videos [[Code](https://github.com/TX-Leo/HumanEgo)] [[Page](https://humanego-ai.github.io/)] [`Affordances`]
 - 🤖 [[arXiv 2026.04](https://arxiv.org/abs/2604.08534)] ActiveGlasses: Learning Manipulation with Active Vision from Ego-centric Human Demonstration [Code] [[Page](https://yanwen-zou.github.io/activeglasses/)] [`Affordances`]
@@ -384,6 +453,11 @@ This section collects open-source human video datasets.
 
 | Dataset | Year | Venue | Website | Viewpoint | Organization (first author) |
 |---|---:|---|---|---|---|
+| [EgoSuite-Open100K](https://huggingface.co/collections/LightwheelAI/egosuite-open100k) | 2026 | - | [Code] [[Page](https://huggingface.co/collections/LightwheelAI/egosuite-open100k)] | Ego | Lightwheel AI |
+| [HumanTouch](https://xsparkai.com/sparklab/humantouch/) | 2026 | - | [Code] [[Page](https://xsparkai.com/sparklab/humantouch/)] | Ego | Xspark AI |
+| [RekaDaily-10k](https://huggingface.co/datasets/RekaAI/RekaDaily-10k-raw) | 2026 | - | [Code] [[Page](https://huggingface.co/datasets/RekaAI/RekaDaily-10k-raw)] | Ego | Reka AI |
+| [EgoWorld-100W](https://stellarnexrobotics.com/blog) | 2026 | - | [Code] [[Page](https://stellarnexrobotics.com/blog)] | Ego | StellarNex Robotics |
+| [Open-AoE](https://arxiv.org/abs/2607.14183) | 2026 | arXiv 2026.07 | [[Code](https://github.com/ant-research/Open-AoE)] [[Page](https://huggingface.co/datasets/inclusionAI/OpenAoE-2000h)] | Ego | Ant Group |
 | [Ego-Home](https://huggingface.co/datasets/ActTrace/Ego-Home) | 2026 | - | [[Page](https://huggingface.co/datasets/ActTrace/Ego-Home)] | Ego | ActTrace |
 | [HumanNet](https://arxiv.org/pdf/2605.06747) | 2026 | arXiv 2026.05 | [[Code](https://github.com/DAGroup-PKU/HumanNet/)] [[Page](https://dagroup-pku.github.io/HumanNet)] | Ego+Exo | Peking University |
 | [EgoLive](https://arxiv.org/pdf/2604.23570v1) | 2026 | arXiv 2026.04 | [Code] [[Page](https://robotdata-market.jdcloud.com/console/market)] | Ego | JD |
