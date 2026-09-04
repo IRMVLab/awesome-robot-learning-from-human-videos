@@ -465,6 +465,7 @@ This section collects open-source human video datasets.
 | [UniHand-Mix](https://arxiv.org/abs/2602.21736) | 2026 | arXiv 2026.02 | [[Code](https://github.com/BeingBeyond/JALA)] [[Page](https://research.beingbeyond.com/jala)] | Ego | BeingBeyond |
 | [UniHand-2.0](https://arxiv.org/abs/2601.12993) | 2026 | arXiv 2026.01 | [[Code](https://github.com/BeingBeyond/Being-H)] [[Page](https://research.beingbeyond.com/being-h05)] | Ego | BeingBeyond |
 | [Action100M](https://arxiv.org/abs/2601.10592) | 2026 | arXiv 2026.01 | [[Code](https://github.com/facebookresearch/Action100M)] [[Page](https://huggingface.co/datasets/facebook/action100m-preview)] | Ego+Exo | Meta |
+| [World In Your Hands (WiYH)](https://wiyh.tars-ai.com/) | 2025 | - | [[Code](https://github.com/tars-robotics/World-In-Your-Hands)] [[Page](https://wiyh.tars-ai.com/)] | Ego | TARS Robotics |
 | [EgoVid-5M](https://arxiv.org/abs/2411.08380) | 2025 | NeurIPS | [[Code](https://github.com/JeffWang987/EgoVid)] [[Page](https://egovid.github.io/)] | Ego | Alibaba Group |
 | [HO-Cap](https://arxiv.org/abs/2406.06843) | 2025 | NeurIPS | [[Code](https://github.com/IRVLUTD/HO-Cap)] [[Page](https://irvlutd.github.io/HOCap/)] | Ego+Exo | University of Texas at Dallas |
 | [IndEgo](https://arxiv.org/abs/2511.19684) | 2025 | NeurIPS | [[Code](https://github.com/Vivek9Chavan/IndEgo)] [[Page](https://huggingface.co/datasets/FraunhoferIPK/IndEgo)] | Ego+Exo | Fraunhofer IPK |
