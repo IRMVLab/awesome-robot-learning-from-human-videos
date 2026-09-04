@@ -57,9 +57,9 @@ We sincerely appreciate these blogs for helping _distill_ and _promote_ our work
 
 - [Human-Robot Skill Transfer](#human-robot-skill-transfer)
   - [Learning Paradigms](#learning-paradigms)
-    - [WAM](#wam)
-    - [VLA](#vla)
-    - [In-Context & Video-Conditioned Learning](#in-context--video-conditioned-learning)
+    - [World Action Model (WAM)](#world-action-model-wam)
+    - [Vision-Language-Action Model (VLA)](#vision-language-action-model-vla)
+    - [In-Context & Video-Conditioned Learning (ICL & VCL)](#in-context--video-conditioned-learning-icl--vcl)
   - [Information Transfer Taxonomy](#information-transfer-taxonomy)
     - [Task-Oriented Transfer](#task-oriented-transfer)
     - [Observation-Oriented Transfer](#observation-oriented-transfer)
@@ -78,7 +78,7 @@ We sincerely appreciate these blogs for helping _distill_ and _promote_ our work
 
 > Papers are organized by learning formulation; categories may overlap.
 
-#### WAM
+#### World Action Model (WAM)
 
 #### 2026
 
@@ -98,7 +98,7 @@ We sincerely appreciate these blogs for helping _distill_ and _promote_ our work
 - 🌟🤖 [[arXiv 2026.06](https://arxiv.org/abs/2606.20521)] HumanScale: Egocentric Human Video Can Outperform Real-Robot Data for Embodied Pretraining [[Code](https://github.com/DAGroup-PKU/HumanNet/)] [Page]
 - 🤖 [[arXiv 2026.06](https://arxiv.org/abs/2606.13769)] μ0: A Scalable 3D Interaction-Trace World Model [Code] [[Page](https://mu0-wm.github.io/)]
 
-#### VLA
+#### Vision-Language-Action Model (VLA)
 
 #### 2026
 
@@ -112,7 +112,7 @@ We sincerely appreciate these blogs for helping _distill_ and _promote_ our work
 - 🤖 [[arXiv 2026.06](https://arxiv.org/abs/2606.07100)] LARA: Latent Action Representation Alignment for Vision-Language-Action Models [Code] [Page]
 - 🤖 [[arXiv 2026.07](https://arxiv.org/abs/2607.01067)] Human-Centric Transferable Tactile Pre-Training for Dexterous Robotic Manipulation [Code] [Page]
 
-#### In-Context & Video-Conditioned Learning
+#### In-Context & Video-Conditioned Learning (ICL & VCL)
 
 #### 2026
 
@@ -465,7 +465,7 @@ This section collects open-source human video datasets.
 | [UniHand-Mix](https://arxiv.org/abs/2602.21736) | 2026 | arXiv 2026.02 | [[Code](https://github.com/BeingBeyond/JALA)] [[Page](https://research.beingbeyond.com/jala)] | Ego | BeingBeyond |
 | [UniHand-2.0](https://arxiv.org/abs/2601.12993) | 2026 | arXiv 2026.01 | [[Code](https://github.com/BeingBeyond/Being-H)] [[Page](https://research.beingbeyond.com/being-h05)] | Ego | BeingBeyond |
 | [Action100M](https://arxiv.org/abs/2601.10592) | 2026 | arXiv 2026.01 | [[Code](https://github.com/facebookresearch/Action100M)] [[Page](https://huggingface.co/datasets/facebook/action100m-preview)] | Ego+Exo | Meta |
-| [World In Your Hands (WiYH)](https://wiyh.tars-ai.com/) | 2025 | - | [[Code](https://github.com/tars-robotics/World-In-Your-Hands)] [[Page](https://wiyh.tars-ai.com/)] | Ego | TARS Robotics |
+| [World In Your Hands (WiYH)](https://wiyh.tars-ai.com/) | 2025 | arXiv 2025.12 | [[Code](https://github.com/tars-robotics/World-In-Your-Hands)] [[Page](https://wiyh.tars-ai.com/)] | Ego | TARS Robotics |
 | [EgoVid-5M](https://arxiv.org/abs/2411.08380) | 2025 | NeurIPS | [[Code](https://github.com/JeffWang987/EgoVid)] [[Page](https://egovid.github.io/)] | Ego | Alibaba Group |
 | [HO-Cap](https://arxiv.org/abs/2406.06843) | 2025 | NeurIPS | [[Code](https://github.com/IRVLUTD/HO-Cap)] [[Page](https://irvlutd.github.io/HOCap/)] | Ego+Exo | University of Texas at Dallas |
 | [IndEgo](https://arxiv.org/abs/2511.19684) | 2025 | NeurIPS | [[Code](https://github.com/Vivek9Chavan/IndEgo)] [[Page](https://huggingface.co/datasets/FraunhoferIPK/IndEgo)] | Ego+Exo | Fraunhofer IPK |
