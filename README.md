@@ -39,6 +39,7 @@ We sincerely appreciate these blogs for helping _distill_ and _promote_ our work
 * 具身智能之心: [如何从人类视频中学习机器人操作？近400篇工作一览数据配置、学习方式、核心挑战！](https://mp.weixin.qq.com/s/ENdnnFRC_faTOX3h9FHJmg)
 * 智驾具身数据挖掘: [上交王贺升团队LfHV Survey：从人类视频学习机器人操作全景综述！](https://mp.weixin.qq.com/s/Q16BJPCMlmHpnJqbrcAhhg)
 * 大语言模型和具身智体及自动驾驶: [机器人从人类视频中学习：综述](https://mp.weixin.qq.com/s/ayT-WVKWz72Av9598LatLQ)
+* IRMV Lab: [IRMV学术 | 人类视频驱动的机器人学习](https://mp.weixin.qq.com/s/Ulog8LIiC4tAvx78V3hHnQ)
 
 ## 📌 Citation
  If you find this work helpful for your research, please kindly consider citing [our paper](https://arxiv.org/abs/2604.27621):
