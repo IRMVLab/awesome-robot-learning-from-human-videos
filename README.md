@@ -13,19 +13,19 @@ Papers with **publicly released code** are marked with a star 🌟. Papers with 
 
 The related survey paper can be found at [this link](https://arxiv.org/abs/2604.27621). In this survey, you can find answers to the following interesting questions:
 
- 🔍 *How much more efficient is human video collection compared to robot teleoperation?*
+ 🔍 *How much more efficient is **human video collection** compared to **robot teleoperation**?*
 
- 🔍 *What types of information can be transferred from human videos to robot manipulation?*
+ 🔍 *What **types of information** can be **transferred** from human videos to robot manipulation?*
 
- 🔍 *Which is more widely adopted in LfHV, egocentric or exocentric video data?*
+ 🔍 *Which is more widely adopted in LfHV, **egocentric** or **exocentric** video data?*
 
- 🔍 *How do imitation learning and reinforcement learning incorporate information from human videos?*
+ 🔍 *How do **imitation learning** and **reinforcement learning** incorporate information from human videos?*
 
- 🔍 *How can you design your own LfHV framework for specific application needs?*
+ 🔍 *How can you design your own **LfHV framework** for specific **application needs**?*
 
- 🔍 *How have open-source human video datasets evolved over time?*
+ 🔍 *How have **open-source human video datasets** evolved over time?*
 
- 🔍 *What are the most promising future research directions in LfHV?*
+ 🔍 *What are the most promising **future research directions** in LfHV?*
 
  🔍 *...*
 
