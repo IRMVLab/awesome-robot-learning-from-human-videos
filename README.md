@@ -58,6 +58,7 @@ We sincerely appreciate these blogs for helping _distill_ and _promote_ our work
 
 - [Human-Robot Skill Transfer](#human-robot-skill-transfer)
   - [Learning Paradigms](#learning-paradigms)
+    - [Agent+Human Data+Robot](#agenthuman-datarobot)
     - [World Action Model (WAM)](#world-action-model-wam)
     - [Vision-Language-Action Model (VLA)](#vision-language-action-model-vla)
     - [In-Context & Video-Conditioned Learning (ICL & VCL)](#in-context--video-conditioned-learning-icl--vcl)
@@ -78,6 +79,10 @@ We sincerely appreciate these blogs for helping _distill_ and _promote_ our work
 ### Learning Paradigms
 
 > Papers are organized by learning formulation; categories may overlap.
+
+#### Agent+Human Data+Robot
+
+> Agent-based methods that use human videos or visual demonstrations for robot planning, skill composition, or execution.
 
 #### World Action Model (WAM)
 

@@ -1,0 +1,6 @@
+__pycache__/
+*.py[cod]
+.env
+.venv/
+auto-update-report.md
+auto-update-result.json

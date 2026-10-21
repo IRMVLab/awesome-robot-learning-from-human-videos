@@ -1,0 +1,34 @@
+{
+  "lookback_days": 7,
+  "max_catchup_days": 90,
+  "max_candidates_per_run": 12,
+  "max_results_per_query": 300,
+  "max_source_chars": 60000,
+  "min_confidence": 0.85,
+  "huggingface_daily_days": 3,
+  "seed_arxiv_ids": [],
+  "excluded_arxiv_ids": [],
+  "queries": [
+    "(cat:cs.RO OR cat:cs.AI OR cat:cs.CV OR cat:cs.LG) AND (all:robot OR all:robotic OR all:manipulation OR all:humanoid) AND (all:\"human video\" OR all:\"human videos\" OR all:\"human demonstration\" OR all:\"human demonstrations\" OR all:\"human data\")",
+    "(cat:cs.RO OR cat:cs.AI OR cat:cs.CV OR cat:cs.LG) AND (all:robot OR all:robotic OR all:manipulation OR all:humanoid) AND (all:egocentric OR all:\"human play\" OR all:\"video demonstration\" OR all:\"ego-exo\")"
+  ],
+  "scope": "Include research that actually uses human videos or human visual demonstrations to learn, adapt, plan, or execute robot skills. Require explicit evidence of BOTH human visual data use and its connection to robot learning or control. Exclude robot-only demonstrations/teleoperation, purely human activity recognition, generic video generation, surveys, and datasets without a qualifying robot-learning method. Mentioning human videos in related work is insufficient. Human text, motion capture, or tactile data alone is insufficient unless the method also uses human visual demonstrations. Categories may overlap; never force a paper into a category.",
+  "categories": {
+    "agent": {
+      "heading": "Agent+Human Data+Robot",
+      "criteria": "An agent (for example an LLM/VLM planner or a multi-agent system) explicitly uses human videos or visual demonstrations for robot task reasoning, planning, skill composition, or execution. A policy network described loosely as an agent is insufficient."
+    },
+    "wam": {
+      "heading": "World Action Model (WAM)",
+      "criteria": "Human visual data contributes to a world/action model that predicts action-conditioned dynamics, jointly models actions and future states, or uses learned world dynamics for robot planning/control. Generic video generation without a demonstrated robot control connection is insufficient."
+    },
+    "vla": {
+      "heading": "Vision-Language-Action Model (VLA)",
+      "criteria": "Human visual data trains, aligns, or adapts a vision-language-action model that produces robot actions. A vision-language model used only for perception or high-level planning is insufficient without a VLA action policy."
+    },
+    "icl_vcl": {
+      "heading": "In-Context & Video-Conditioned Learning (ICL & VCL)",
+      "criteria": "Human demonstrations provide task-specific context, video conditioning, visual goals, or rapid test-time adaptation for robot skills. Generic pretraining alone is insufficient. In the reason distinguish strict ICL (no weight update), video conditioning, and test-time training/few-shot adaptation; do not call all three strict ICL."
+    }
+  }
+}
