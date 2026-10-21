@@ -1,0 +1,139 @@
+name: Maintain Learning Paradigms
+
+on:
+  schedule:
+    # UTC 00:00 = Asia/Shanghai 08:00. GitHub may delay scheduled jobs.
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Preview only: produce a report without commits or a PR'
+        type: boolean
+        default: true
+      lookback_days:
+        description: 'Search recent N days (blank uses config and missed-run recovery)'
+        type: string
+        default: ''
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: maintain-learning-paradigms
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+      DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || false }}
+      LOOKBACK_DAYS: ${{ inputs.lookback_days }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Prepare update branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git fetch origin
+          if [ "$(git branch --show-current)" != 'auto-update' ]; then
+            if git show-ref --verify --quiet refs/heads/auto-update; then
+              git switch auto-update
+            elif git show-ref --verify --quiet refs/remotes/origin/auto-update; then
+              git switch -c auto-update --track origin/auto-update
+            else
+              git switch -c auto-update "origin/$DEFAULT_BRANCH"
+            fi
+          fi
+          # Preserve pending additions; never force-push or reset the branch.
+          # A merge conflict stops the run for manual resolution.
+          git merge --no-edit "origin/$DEFAULT_BRANCH"
+
+      - name: Test update boundaries and evidence validation
+        run: python -m unittest discover -s tests -v
+
+      - name: Install PDF text extractor
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y poppler-utils
+
+      - name: Discover, verify and render papers
+        env:
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+          LLM_BASE_URL: ${{ vars.LLM_BASE_URL }}
+          LLM_MODEL: ${{ vars.LLM_MODEL }}
+          LLM_JSON_MODE: ${{ vars.LLM_JSON_MODE || 'false' }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          args=(--report "$RUNNER_TEMP/auto-update/report.md" --result "$RUNNER_TEMP/auto-update/result.json")
+          if [ "$DRY_RUN" = 'true' ]; then
+            args+=(--dry-run)
+          fi
+          if [ -n "$LOOKBACK_DAYS" ]; then
+            args+=(--lookback-days "$LOOKBACK_DAYS")
+          fi
+          python scripts/auto_update.py "${args[@]}"
+
+      - name: Save run report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: auto-update-report-${{ github.run_id }}
+          path: ${{ runner.temp }}/auto-update/
+          if-no-files-found: ignore
+          retention-days: 30
+
+      - name: Show report in job summary
+        if: always()
+        shell: bash
+        run: |
+          if [ -f "$RUNNER_TEMP/auto-update/report.md" ]; then
+            cat "$RUNNER_TEMP/auto-update/report.md" >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Commit and push only maintained files
+        if: env.DRY_RUN != 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git branch --show-current)" = 'auto-update'
+          git add -- README.md data/auto-update/state.json
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: update learning paradigms ($(date -u +%F))"
+          fi
+          # A non-fast-forward push fails safely if a human changed the branch.
+          git push origin HEAD:refs/heads/auto-update
+
+      - name: Create or refresh review PR
+        if: env.DRY_RUN != 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          # Persist queue/rejection state without opening a state-only PR.
+          if git diff --quiet "origin/$DEFAULT_BRANCH" HEAD -- README.md; then
+            exit 0
+          fi
+          pr_number=$(gh pr list --state open --base "$DEFAULT_BRANCH" --head auto-update --json number --jq '.[0].number // empty')
+          if [ -n "$pr_number" ]; then
+            gh pr edit "$pr_number" --body-file "$RUNNER_TEMP/auto-update/report.md"
+          else
+            gh pr create --base "$DEFAULT_BRANCH" --head auto-update \
+              --title 'chore: update Learning Paradigms from verified human-video research' \
+              --body-file "$RUNNER_TEMP/auto-update/report.md"
+          fi
