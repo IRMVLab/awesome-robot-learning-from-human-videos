@@ -88,6 +88,8 @@ We sincerely appreciate these blogs for helping _distill_ and _promote_ our work
 
 - 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.20998)] MoCaP: Mobile Code-as-Policies for Zero-Shot Mobile Manipulation from Passive Human Videos [Code] [[Page](<https://mocap-7.github.io/MoCAP-page/>)]
 
+- 🌟🤖 [[arXiv 2026.09](https://arxiv.org/abs/2609.35318)] DexAgent: An Agentic Human2Sim2Robot Framework for Dexterous Manipulation with Self-Evolving Tool Library [[Code](https://github.com/dexagent1/DexAgent)] [[Page](https://dexagent1.github.io/)]
+
 #### World Action Model (WAM)
 
 #### 2026
