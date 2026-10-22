@@ -1,6 +1,8 @@
 # Awesome-Robot-Learning-from-Human-Videos 
 [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome) [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity) [![PR's Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com) [![arXiv](https://img.shields.io/badge/arXiv-2604.27621-b31b1b.svg)](https://arxiv.org/abs/2604.27621)
 
+> 📢 To keep pace with the rapidly growing number of papers on robot learning from human videos, we have created the [`auto-update`](https://github.com/IRMVLab/awesome-robot-learning-from-human-videos/tree/auto-update) branch for automated updates, scheduled to run daily at **08:00 Beijing Time (UTC+8)**. Follow this branch for the latest additions!
+
 ![teaser](teaser.png)
 
 ## 📖 Overview
