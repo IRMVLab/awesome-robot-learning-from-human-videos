@@ -47,11 +47,13 @@ GitHub 的 `schedule` 只使用默认分支上的工作流，所以仅推送 `au
 
 | 名称 | 内容 |
 | --- | --- |
-| `LLM_BASE_URL` | 支持 Chat Completions 格式的 HTTPS API 基础地址，包含服务商要求的版本路径，例如 `https://你的服务商域名/v1`；不要写到 `/chat/completions` |
+| `LLM_BASE_URL` | 支持 Chat Completions 格式的 API 基础地址，包含服务商要求的版本路径，例如 `https://你的服务商域名/v1`；支持明确配置的 HTTP 地址和自定义端口；不要写到 `/chat/completions` |
 | `LLM_MODEL` | 账号有权限调用的模型 ID；填写服务商给出的实际名称 |
 | `LLM_JSON_MODE` | 可选；服务商支持 `response_format: {"type":"json_object"}` 时设为 `true`，否则留空或 `false` |
 
 脚本请求 `${LLM_BASE_URL}/chat/completions`，使用 Bearer API Key、`messages` 和 `max_tokens` 参数。服务商必须兼容这些字段。模型需要可靠的论文阅读、分类和 JSON 输出能力，建议至少 64k token 上下文窗口。正文最多输入 60,000 字符，具体 token 数依语言和公式而变化。
+
+模型接口地址由仓库维护者明确配置，可以使用 HTTP 和自定义端口；从论文中提取的外部链接仍单独校验。HTTP 会明文传输 API 密钥和请求内容，服务商提供 HTTPS 时应优先使用 HTTPS。
 
 只有这个 Secret 是必需的凭据。推送和创建 PR 使用 GitHub 自带的 `GITHUB_TOKEN`，通常不需要额外 PAT。Actions 运行额度和模型 API 费用遵循各自服务商的计费规则。
 
@@ -90,7 +92,7 @@ GitHub 的 `schedule` 只使用默认分支上的工作流，所以仅推送 `au
 7. 使用 arXiv 标题和首次提交年月，按现有格式插入对应分类和年份。同一分类不重复添加 arXiv ID/同名论文；允许在多个分类出现。已有条目原样保留。
 8. 只提交 README 和候选状态到 `auto-update`。有 README 差异时创建或更新一个待审阅 PR；只有队列/排除记录变化时不新建 PR。不会自动合并。
 
-正式运行的状态文件保留判断、分类、原文引文、来源地址和模型/规则指纹，便于检查，也避免对没有变化的论文反复调用模型。修改分类规则或模型后会重新排队判断；不回删 README 已有内容。全文或模型输出解析失败最多尝试三次，之后进入 `review`。
+正式运行的状态文件保留判断、分类、原文引文、来源地址和模型/规则指纹，便于检查，也避免对没有变化的论文反复调用模型。修改分类规则、模型或模型接口设置后会重新排队判断；不回删 README 已有内容。单篇全文或模型输出解析失败最多尝试三次，之后进入 `review`。如果本轮所有模型检查都失败，任务返回失败状态、生成包含具体错误的报告，并跳过 README 和状态写入及推送。
 
 PR 正文与 Actions Summary 展示**最近一次运行**，PR 的 Files changed 则显示尚未合并的累计更新。历史逐篇证据保存在状态文件；运行报告 artifact 保留 30 天。
 
@@ -123,6 +125,7 @@ PR 正文与 Actions Summary 展示**最近一次运行**，PR 的 Files changed
 - 这是新增流程，不自动修订历史标题、移动分类或删除条目。错误分类应通过 PR 修正，必要时排除对应 ID。
 - 主题召回依赖关键词，不承诺穷尽论文。过多低相关候选占用额度时可收紧查询或提高每轮处理数量。
 - 本地验证和离线测试不能代替实际服务商联调。HTTP 401/403 通常检查密钥和模型权限；404 检查基础地址和模型名；429 检查额度；上下文超限可降低 `max_source_chars`。
+- 报告中 `Model check failed` 后会显示具体错误，例如 `finish_reason=length` 表示模型输出达到长度上限，`Missing decision or reason` 表示返回 JSON 缺少必需字段。所有检查失败时 Actions 会显示失败，不会再只更新状态文件却显示成功。
 - `auto-update` 与默认分支冲突时任务停止，不做强制覆盖。你可以本地 `git fetch origin`、`git switch auto-update`、合并 `origin/main`，解决冲突后提交推送，再手动重跑。若默认分支不是 main，请替换该名字。
 - 如果机器人推送与人工推送发生竞争，普通 push 会失败而不会覆盖对方；同步分支后重新运行。
 
