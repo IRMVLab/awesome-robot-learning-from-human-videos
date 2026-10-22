@@ -96,6 +96,8 @@ We sincerely appreciate these blogs for helping _distill_ and _promote_ our work
 
 #### 2026
 
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.22363)] Perceive, Predict, and Plan: a Unified World Action Model for Egocentric Dexterous Manipulation [Code] [[Page](<https://p3-wam.pages.dev/>)]
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.21922)] TS-WAM: Temporal Latent Actions and World-Action Coupling for Vision-Language Robot Control [Code] [Page]
 - 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.21798)] Cross-Embodiment Causal Transfer from Human Videos to Robot Manipulation [Code] [Page]
 - 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.20904)] EgoJEPA: Beyond Retargeting for Dexterous Manipulation from Egocentric Videos [Code] [[Page](<https://mengcaopku.github.io/EgoJEPA>)]
 - 🌟🤖 [[arXiv 2026.09](https://arxiv.org/abs/2609.00188)] ZimaBlue: Evolving Generalizable World Action Models through Scalable Video Pre-training [[Code](https://github.com/ZimaBlue-WAM/ZimaBlue)] [[Page](https://zimablue-wam.github.io/)]
@@ -118,6 +120,10 @@ We sincerely appreciate these blogs for helping _distill_ and _promote_ our work
 
 #### 2026
 
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.22932)] Ego2Contact: Predicting Touch from Egocentric Human Video for Contact-Rich Robot Manipulation [Code] [Page]
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.22342)] Spark-0: Scaling Spatially Aligned Tactile Pretraining for Robot Dexterous Manipulation [[Code](<https://github.com/XsparkAI/Spark-0>)] [[Page](<https://xsparkai.com/Spark-0>)]
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.22178)] REKI: Registering Knowledge in VLAs [[Code](<https://github.com/kyutai-labs/reki>)] [Page]
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.21922)] TS-WAM: Temporal Latent Actions and World-Action Coupling for Vision-Language Robot Control [Code] [Page]
 - [[arXiv 2026.10](https://arxiv.org/abs/2610.21152)] KODA: Kinematics--Observation Data Alignment for Humanoid Learning from Human Egocentric Demonstration [Code] [[Page](<https://koda-humanoid.github.io/koda/>)]
 - 🌟🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.20320)] TacClaw-Infinity: A Large-Scale Vision-Tactile-Language-Action Dataset for Dexterous Manipulation [[Code](<https://github.com/daimon-robotics/TacClaw-Infinity>)] [[Page](<https://daimon-robotics.github.io/tacclaw-infinity-page/>)]
 - 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.19839)] FOMI: A Force-Feedback Manipulation Interface for Teaching Contact-Rich Manipulation [Code] [[Page](<https://robbyant-research.github.io/FOMI/>)]
@@ -136,6 +142,7 @@ We sincerely appreciate these blogs for helping _distill_ and _promote_ our work
 
 #### 2026
 
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.23551)] Embodiment-Aware Planning for Heterogeneous Bimanual Manipulation [Code] [[Page](<https://sukhvansh2004.github.io/Bimanual-Manipulation/>)]
 - 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.21792)] Trajectory-based Diffusion from One-shot Human Video for Generalizable Manipulation [Code] [Page]
 - 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.20998)] MoCaP: Mobile Code-as-Policies for Zero-Shot Mobile Manipulation from Passive Human Videos [Code] [[Page](<https://mocap-7.github.io/MoCAP-page/>)]
 - 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.19746)] One-shot Human Video-Guided Adaptation for Vision-Language-Action Models [Code] [[Page](<https://chenqi20020226.github.io/cappro-project/>)]

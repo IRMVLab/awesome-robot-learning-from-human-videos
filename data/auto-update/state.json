@@ -597,7 +597,33 @@
       "truncated": true
     },
     "2610.21922": {
-      "attempts": 0,
+      "assessment": {
+        "categories": [
+          {
+            "confidence": 0.99,
+            "id": "wam",
+            "quote": "Its vlm-jepa framework learns from heterogeneous data, including robot demonstrations and action-free human videos, using an EMA target branch without requiring a separately trained external teacher. By coupling vlm-jepa with delta-lwm, TS-WAM learns to predict latent actions from the current observation and instruction and uses them to predict future visual features that guide action generation at inference.",
+            "reason": "人类视频参与潜在动作与视觉动态学习；模型根据潜在动作预测未来视觉特征，并以该预测指导机器人动作生成，满足世界模型与控制相连接的要求。"
+          },
+          {
+            "confidence": 0.98,
+            "id": "vla",
+            "quote": "We propose TS-WAM (Teacher-Student World-Action Model), a task-adaptation architecture that makes temporal prediction the central interface of a VLA policy without requiring a separately pretrained latent-action model.",
+            "reason": "本文明确构建VLA策略；结合人类数据与机器人学习引文可见，人类视频更新该策略共享的VLM、潜在动作预测器和世界解码器，而非仅用于独立感知或高层规划。"
+          }
+        ],
+        "code_quote": "",
+        "code_url": null,
+        "decision": "include",
+        "human_data_quote": "We train this graph with mixed robot and ego (action-free human) clips. A sample-level validity mask determines which terminal heads contribute, while the shared online VLM, latent predictor, and world decoder are executed for both data sources.",
+        "project_quote": "",
+        "project_url": null,
+        "public_code": false,
+        "real_robot_quote": "Real-world Setup. We evaluate TS-WAM on two robotic platforms. • Franka Research 3. We use a 7-DoF Franka Research 3 single-arm robot with two RGB observation cameras. We evaluate bowl stacking and a long-horizon drawer task that requires opening a drawer, placing an object inside, and closing the drawer. • RevoTron. We use the RevoTron bimanual humanoid robot equipped with Revo3 dexterous hands and three RGB observation cameras. The VLA policy jointly controls both arms and the dexterous hands. We evaluate object sorting and the long-horizon task of opening a drawer, placing an object inside, and closing the drawer.",
+        "reason": "论文明确使用无动作标注的人类视频，与机器人示范联合训练时序表征和世界模型，并将预测的未来视觉特征用于机器人动作生成，符合WAM与VLA范围。",
+        "robot_learning_quote": "Robot and ego samples can be interleaved in one batch or in successive micro-batches. Their masked losses are summed into one update of the shared modules, so ego videos continually shape the representation used by robot control instead of forming a discarded pretraining stage."
+      },
+      "attempts": 1,
       "first_seen": "2026-10-21",
       "paper": {
         "abstract": "Many vision-language-action policies rely on action-labeled robot demonstrations and lack an explicit mechanism for predicting future visual states. These limitations hinder learning from action-free videos and can encourage overfitting to demonstration conditions, weakening generalization and robustness. We present TS-WAM, a lightweight Teacher-Student World-Action Model that addresses these challenges through self-supervised temporal learning and explicit future prediction. Its vlm-jepa framework learns from heterogeneous data, including robot demonstrations and action-free human videos, using an EMA target branch without requiring a separately trained external teacher. By coupling vlm-jepa with delta-lwm, TS-WAM learns to predict latent actions from the current observation and instruction and uses them to predict future visual features that guide action generation at inference. A unified end-to-end training architecture jointly optimizes temporal representation learning, visual dynamics, and robot control without a separate latent-action or world-model pretraining stage. The EMA target branch is removed at inference, keeping the deployed policy lightweight. Experiments on LIBERO, LIBERO-Plus, and SimplerEnv, together with real-world manipulation experiments on Franka Research 3 and RevoTron, demonstrate that TS-WAM achieves strong manipulation performance, generalization, and robustness.",
@@ -622,10 +648,18 @@
         "url": "https://arxiv.org/abs/2610.21922",
         "version": 1
       },
-      "status": "pending"
+      "rules": "e66506b30f22bcdecc6908b76c3bcd2fca5464fa5a41550ce260f6cb13e0a0bb",
+      "source_url": "https://arxiv.org/html/2610.21922v1",
+      "status": "accepted",
+      "truncated": false
     },
     "2610.21999": {
-      "attempts": 0,
+      "assessment": {
+        "categories": [],
+        "decision": "exclude",
+        "reason": "未提供利用人类视觉示范学习机器人技能的证据。文中的行人是跟踪目标或遮挡物，而非技能示范者；机器人视觉历史用于状态估计和避遮挡控制，不能据此视为人类示范视频。专家控制序列训练也未建立与人类视觉示范的联系，因此不满足收录范围，不分配类别。"
+      },
+      "attempts": 1,
       "first_seen": "2026-10-21",
       "paper": {
         "abstract": "Embodied Visual Tracking (EVT) is an essential capability for intelligent robots in human-robot collaboration, requiring an agent to follow a designated target person in dynamic environments relying solely on egocentric visual perception. However, persistent pedestrian occlusions in dynamic scenes pose critical challenges to existing EVT methods. Lacking proactive visibility preservation, reactive tracking methods frequently experience prolonged target loss under severe occlusions. Therefore, we propose VP-EVT, a framework that treats target visibility as an explicit objective of motion control rather than a by-product of following. Acting on this objective requires understanding both what obstructs the target and how robot motion can change that obstruction. VP-EVT therefore uses language-guided perception to extract separate target and pedestrian observations. When occlusion makes current observations incomplete, VP-EVT combines visual history with ego-motion to maintain estimates of their relative positions and motion. Using these estimates and the current following waypoints, VP-EVT predicts whether continued following will sustain the obstruction. When the predicted risk is low, the original following motion is retained; otherwise, a recurrent controller combines updated estimates with maneuver context from preceding decisions to coordinate viewpoint adjustment and the return to stable following. Moreover, we introduce OccEVT-Bench for closed-loop evaluation of persistent occlusion and collect expert demonstrations for training. On its Risk split, VP-EVT improves success rate by 121.4% relative to a competitive baseline and reduces visibility deficit and longest target-loss duration by 78.8% and 74.4%, respectively.",
@@ -648,10 +682,33 @@
         "url": "https://arxiv.org/abs/2610.21999",
         "version": 1
       },
-      "status": "pending"
+      "rules": "e66506b30f22bcdecc6908b76c3bcd2fca5464fa5a41550ce260f6cb13e0a0bb",
+      "source_url": "https://arxiv.org/html/2610.21999v1",
+      "status": "rejected",
+      "truncated": false
     },
     "2610.22178": {
-      "attempts": 0,
+      "assessment": {
+        "categories": [
+          {
+            "confidence": 0.99,
+            "id": "vla",
+            "quote": "REKI consists of a vision-language model (VLM) followed by a flow-matching action expert, and is pretrained on a curated mixture of public robot, egocentric human and vision-language data.",
+            "reason": "人类第一视角视觉数据实际参与由视觉语言模型和流匹配动作专家构成的VLA预训练，而非仅用于感知或高层规划。"
+          }
+        ],
+        "code_quote": "We release the full code across data curation, training, inference and evaluation, deployment, and all pretrained and finetuned model weights: https://github.com/kyutai-labs/reki.",
+        "code_url": "https://github.com/kyutai-labs/reki",
+        "decision": "include",
+        "human_data_quote": "Egocentric human manipulation. We add three egocentric human manipulation datasets, EgoDex ( Hoque et al., 2026 ) , EgoVerse ( Punamiya et al., 2026 ) and Xperience ( Ropedia, 2026 ) , recorded from head-mounted or hand-held cameras.",
+        "project_quote": "",
+        "project_url": null,
+        "public_code": false,
+        "real_robot_quote": "Figure 8: Real-robot experiments. Left: the UR5 arm with a WSG50 gripper, observed by a fixed Orbbec Femto Mega RGB camera, with the task objects and distractors. Right: task score of REKI with and without memory and of π 0.5 \\pi_{0.5} ( Physical Intelligence et al., 2025 ) on two shorter- and three longer-horizon tasks, over 10 episodes each. Solid bars give full successes, hatched bars partial credit.",
+        "reason": "明确将头戴或手持相机采集的人类第一视角操作数据用于REKI动作策略预训练，与机器人遥操作数据分开说明，符合人类视觉示范参与机器人学习的范围，归入VLA。",
+        "robot_learning_quote": "REKI follows a standard VLA recipe: a VLM’s last hidden states are read by a flow-matching action expert, pretrained in a single stage on public robot, egocentric human and vision–language data, and then finetuned on each benchmark."
+      },
+      "attempts": 1,
       "first_seen": "2026-10-21",
       "paper": {
         "abstract": "We introduce REKI, a 2.4B vision-language-action model (VLA) pretrained exclusively on public data that sets a new Pareto frontier between performance and model size: on LIBERO-Plus, RoboTwin Clean2Rand and RoboCasa365, it is outperformed only by models about twice its size. REKI consists of a vision-language model (VLM) followed by a flow-matching action expert, and is pretrained on a curated mixture of public robot, egocentric human and vision-language data. Additionally, we endow it with a memory that gives the policy access to its recent past at negligible cost: a few register tokens in the action expert summarise the output of the VLM at each frame and persist in the expert's cache. This memory improves success in simulation and on real robots, and makes oscillations between poses about four times rarer. REKI uses a simple model design and training paradigm, and is optimised to be efficient at training and inference. We release the full code across data curation, training, inference and evaluation, deployment, and all pretrained and finetuned model weights: https://github.com/kyutai-labs/reki.",
@@ -673,10 +730,18 @@
         "url": "https://arxiv.org/abs/2610.22178",
         "version": 1
       },
-      "status": "pending"
+      "rules": "e66506b30f22bcdecc6908b76c3bcd2fca5464fa5a41550ce260f6cb13e0a0bb",
+      "source_url": "https://arxiv.org/html/2610.22178v1",
+      "status": "accepted",
+      "truncated": true
     },
     "2610.22340": {
-      "attempts": 0,
+      "assessment": {
+        "categories": [],
+        "decision": "exclude",
+        "reason": "本文以人类遥操作机器人数据训练玩耍策略，再用机器人自主交互数据学习世界模型；并非从人类视频或人类视觉示范学习。RGB输入也不等于人类视觉示范，因此不满足收录范围。"
+      },
+      "attempts": 1,
       "first_seen": "2026-10-21",
       "paper": {
         "abstract": "How can robots autonomously collect the contact-rich experience needed to learn dexterous manipulation? We present DSP: Dexterity from supervised play, a framework in which a robot learns a play policy from minutes of human play through behavior cloning, then deploys it autonomously to collect hours of interaction data to train a world model. During inference, the same play policy then guides model-predictive control (MPC) by proposing candidate action sequences for evaluation under the learned world model. To accelerate inference, we also introduce a method for distilling a closed-loop, goal-conditioned policy through self-play within the learned world model. We evaluate this framework on underactuated pushing and any-to-any in-hand pose reorientation with a multifingered hand, in simulation and real world. In real world experiment, our method outperforms hindsight behavior cloning by 69.6% in success rate and achieves comparable success to reinforcement learning with 490 times less interaction data. These results demonstrate that supervised play can autonomously collect interaction data, guide model-based planning, and enable policy learning without any task-specific demonstrations or sim-to-real transfer.",
@@ -699,10 +764,33 @@
         "url": "https://arxiv.org/abs/2610.22340",
         "version": 1
       },
-      "status": "pending"
+      "rules": "e66506b30f22bcdecc6908b76c3bcd2fca5464fa5a41550ce260f6cb13e0a0bb",
+      "source_url": "https://arxiv.org/html/2610.22340v1",
+      "status": "rejected",
+      "truncated": false
     },
     "2610.22342": {
-      "attempts": 0,
+      "assessment": {
+        "categories": [
+          {
+            "confidence": 0.99,
+            "id": "vla",
+            "quote": "Spark-0 builds on StarVLA [3] and the XPolicyLab codebase [49]. It pairs Qwen3-VL-4B with a layerwise flow-matching action expert so that action generation can draw on the full visual hierarchy, from low-level spatial features to high-level semantics. Given images I, instruction w, and robot state s, the VLM produces hidden states {h(l) }L l=1 .",
+            "reason": "人类视觉操作数据参与预训练；模型将图像、语言指令及机器人状态接入视觉语言骨干与动作专家以生成动作，属于带触觉扩展的VLA策略，而非仅用于感知或高层规划的VLM。"
+          }
+        ],
+        "code_quote": "Project page: https://xsparkai.com/Spark-0, Code: https://github.com/XsparkAI/Spark-0",
+        "code_url": "https://github.com/XsparkAI/Spark-0",
+        "decision": "include",
+        "human_data_quote": "Robot teleoperation is costly and covers a narrow range of contacts, so we turn to human demonstrations and build HumanTouch: 1,000 hours of manipulation across more than 100 tasks and 32 operators, recorded with bilateral full-hand tactile gloves, hand and wrist tracking, and head and wrist cameras synchronized at 60 Hz.",
+        "project_quote": "Project page: https://xsparkai.com/Spark-0, Code: https://github.com/XsparkAI/Spark-0",
+        "project_url": "https://xsparkai.com/Spark-0",
+        "public_code": false,
+        "real_robot_quote": "Contact-rich real-robot control On SparkArena-Real (Table 3), Spark-0 reaches 52.00% success and a 62.80 completion score, exceeding the strongest baseline, the tactile foundation policy FTP1 (36.00% and 47.80), by 16.00 and 15.00 points, with the highest completion score on four of five tasks.",
+        "reason": "本文实际使用同步摄像头记录的人类操作示范及第一视角视频预训练机器人动作策略，而非仅使用触觉或遥操作机器人数据；其视觉—触觉—语言—动作模型符合VLA类别，并有实体机器人控制实验。",
+        "robot_learning_quote": "Spark-0 is pretrained on a heterogeneous mixture in which each source serves a distinct purpose. HumanTouch provides full-hand contact supervision from human demonstrations; EgoDex egocentric video [29] broadens scene, object, and motion coverage; real-robot data align the model with the target embodiment and add robot-task diversity, with a subset recorded through the same gloves; and domain-randomized simulation adds visual variation."
+      },
+      "attempts": 1,
       "first_seen": "2026-10-21",
       "paper": {
         "abstract": "Generalist robot policies benefit from large-scale visual pretraining but often struggle with contact-rich dexterous manipulation, where force, compliance, and incipient slip are hard to observe from images. We present Spark-0, a spatially aligned vision-tactile-language-action (VTLA) model that uses touch in two complementary ways. During pretraining, image-space contact maps derived from tactile gloves, together with features from a frozen 3D geometry teacher, supervise the visual tokens; these objectives are removed at inference. In parallel, a tactile pathway encodes regional force histories and 3D taxel states to condition the action expert. A single checkpoint therefore supports both vision-only and tactile-conditioned deployment. To scale this supervision, we build HumanTouch, a 1,000-hour dataset of full-hand tactile human manipulation, and pretrain Spark-0 on it together with egocentric video, robot data, and simulation. We also release SparkArena, which pairs vision-only simulated tasks with tactile-conditioned real-robot tasks on one dexterous embodiment. Spark-0 achieves the highest mean success rate on both SparkArena tracks and ranks first on all eight aggregate metrics of the Ego Humanoid Manipulation Benchmark. Compared with vision-only pretraining on the same data and compute with touch discarded, retaining the touch of 1,000 hours of HumanTouch raises vision-only success on Ego Humanoid from 52.5% to 71.7%, and success on SparkArena-Real, where touch is also used at deployment, from 44.0% to 52.0%, indicating that touch serves not only as a policy input but also as scalable supervision for dexterous visuomotor pretraining. The Website is available at: https://xsparkai.com/Spark-0.",
@@ -741,10 +829,33 @@
         "url": "https://arxiv.org/abs/2610.22342",
         "version": 1
       },
-      "status": "pending"
+      "rules": "e66506b30f22bcdecc6908b76c3bcd2fca5464fa5a41550ce260f6cb13e0a0bb",
+      "source_url": "https://arxiv.org/pdf/2610.22342v1",
+      "status": "accepted",
+      "truncated": true
     },
     "2610.22363": {
-      "attempts": 0,
+      "assessment": {
+        "categories": [
+          {
+            "confidence": 0.98,
+            "id": "wam",
+            "quote": "Reconstruction develops the model’s capacity for 3D perception by recovering 3D motion from observed interactions. Prediction teaches the model to anticipate the visual consequences of prescribed actions. Together, these capabilities provide the foundation for world–action planning, in which the model learns to jointly generate goal-directed hand action trajectories and their anticipated visual futures. We learn all three modes through unified training.",
+            "reason": "联合学习动作条件视觉动力学以及目标导向的动作轨迹与未来视觉状态；结合实体机器人重定向执行证据，不只是通用视频生成。"
+          }
+        ],
+        "code_quote": "",
+        "code_url": null,
+        "decision": "include",
+        "human_data_quote": "We train reconstruction jointly with future prediction and planning, allowing the model to learn from how hand interactions unfold as well as from observed video. This joint training improves 3D hand reconstruction in our single-mode comparison (Sec. 4.1 ).",
+        "project_quote": "Project Page: https://p3-wam.pages.dev/",
+        "project_url": "https://p3-wam.pages.dev/",
+        "public_code": false,
+        "real_robot_quote": "We retarget Plan -generated human-hand motion to dexterous robot commands following Do as I Do ( Paliwal et al., 2026 ) and execute them on the physical robot.",
+        "reason": "方法从第一人称手部交互视频联合学习重建、动作条件预测和动作—未来规划，并将生成的人手动作重定向到实体灵巧机器人执行，符合人类视觉数据用于机器人控制的范围，归入 WAM。",
+        "robot_learning_quote": "We retarget Plan -generated human-hand motion to dexterous robot commands following Do as I Do ( Paliwal et al., 2026 ) and execute them on the physical robot."
+      },
+      "attempts": 1,
       "first_seen": "2026-10-21",
       "paper": {
         "abstract": "We introduce P$^{3}$-WAM, a unified world action model for egocentric dexterous manipulation that learns 3D perception, action-conditioned prediction, and goal-directed planning through three complementary modes: Perceive, which reconstructs articulated hand motion and camera trajectories from video; Predict, which generates visual futures under prescribed actions; and Plan, which jointly generates action trajectories and their anticipated visual consequences conditioned on an initial image, a language instruction, and an optional visual goal. Our model integrates a compact, structured 3D action representation into a pretrained video diffusion transformer through a mixture-of-transformers architecture with shared base weights, modality-specific adaptation, and bidirectional visual-action attention. Randomized modality visibility lets video and 3D actions serve as either conditioning context or prediction targets across the three modes. Experiments show that unified training improves all three capabilities over single-mode training, including gains in planning quality under a vision-language model evaluation. Through unified training, our model outperforms specialized baselines on 3D hand reconstruction and action-conditioned video prediction across four datasets, while producing goal-directed manipulation videos with stronger instruction adherence and action progression than video-generation baselines. Project Page: https://p3-wam.pages.dev/",
@@ -775,10 +886,18 @@
         "url": "https://arxiv.org/abs/2610.22363",
         "version": 1
       },
-      "status": "pending"
+      "rules": "e66506b30f22bcdecc6908b76c3bcd2fca5464fa5a41550ce260f6cb13e0a0bb",
+      "source_url": "https://arxiv.org/html/2610.22363v1",
+      "status": "accepted",
+      "truncated": true
     },
     "2610.22471": {
-      "attempts": 0,
+      "assessment": {
+        "categories": [],
+        "decision": "exclude",
+        "reason": "已提供的方法说明将 ICL 数据限定为测试机器人上的任务示范，真实部署则不使用示范、仅使用人类编写的上下文；人类示范被明确列为尚未评估的来源。因此不构成实际利用人类视觉示范学习或控制机器人的贡献，不因使用 ICL、视觉参考或 VLA 协作而纳入。"
+      },
+      "attempts": 1,
       "first_seen": "2026-10-21",
       "paper": {
         "abstract": "GPT-6-Astra demonstrates a level of competence in robotic manipulation and navigation that challenges the conventional paradigm of building specialized models for individual tasks and embodiments. In this report, we ask not only how capable GPT-6-Astra is, but what its capabilities imply for the field. First, we probe the limits of standalone GPT-6-Astra. We conduct a large-scale evaluation across 12 representative benchmarks spanning tabletop manipulation, humanoids, mobile platforms, and dexterous hands. Under a unified protocol that allows in-context learning (ICL) from training-set demonstrations and substantially increases the number of execution steps, GPT-6-Astra achieves unprecedented performance (Fig. 1). Future research may focus on improving 1) the generality of ICL 2) cost and execution time, 3) physical-state verification, 4) recovery from irreversible failures, and 5) long-horizon preservation of progress. Second, we study the agentic harness for embodied control. We identify that close-loop coordination between a high-level \"System 2\" reasoner (i.e., GPT-6-Astra) and a low-level \"System 1\" controller (e.g., π0.5) is costly but effective. Third, we examine GPT-6-Astra on real-world deployment. Our experiments on 8 robot configurations reveal substantial gaps: 1) robot demonstrations required for ICL are expensive to collect, and 2) it is implausible to trade longer execution for higher success rates with physical constraints. Fourth, we envision the next generation of embodied benchmarks. We develop a prototype that 1) derives tasks from real-world needs, 2) provides no in-domain demonstrations, and 3) judges agents on a world clock that keeps running while they deliberate. Taken together, our results suggest that GPT-6-Astra has largely crossed the threshold of embodied competence, but not yet that of practical embodied intelligence.",
@@ -857,10 +976,18 @@
         "url": "https://arxiv.org/abs/2610.22471",
         "version": 2
       },
-      "status": "pending"
+      "rules": "e66506b30f22bcdecc6908b76c3bcd2fca5464fa5a41550ce260f6cb13e0a0bb",
+      "source_url": "https://arxiv.org/html/2610.22471v2",
+      "status": "rejected",
+      "truncated": true
     },
     "2610.22496": {
-      "attempts": 0,
+      "assessment": {
+        "categories": [],
+        "decision": "review",
+        "reason": "现有证据未明确证明使用人类视觉示范：HumanoidArena 的示范明确为遥操作示范，去掉动作也不能视为人类视频；其他视觉目标或示范帧未明确来自人类动作。正文已截断，且未提供“Demonstrations Without Actions”章节的完整内容，需核查其数据来源后再决定是否纳入，暂不分类。"
+      },
+      "attempts": 1,
       "first_seen": "2026-10-21",
       "paper": {
         "abstract": "Robot learning has advanced by scaling demonstration datasets and model capacity; however, deploying a new robot embodiment or task typically necessitates a dedicated teleoperation corpus. The resulting policies remain bounded by their imitation distributions, limiting generalization and continual self-improvement. We introduce RAX (Robot Agent eXploration), an open-source framework for robot agents centered on scaling exploration: enabling agents to improve by acquiring online experience and synthesizing executable programs. In RAX, a general-purpose coding agent generates robot control code, operating without action demonstration data, hand-engineered action primitives, or value-function guidance. Through online exploration, the agent identifies decision sequences that achieve task goals and compiles them into modular programs encapsulating the full perception-planning-control loop. Using RAX, we present a systematic multi-embodiment study on scaling online exploration across precision and long-horizon manipulation tasks using single-arm, bimanual, dexterous, mobile, and humanoid systems in simulation and on real robots. Generalization performance on unseen environments improves consistently as exploration scales. In simulation, RAX outperforms top baseline models by +37.4% on average. On real robots, RAX autonomously learns memory-dependent, articulated, high-precision, deformable, and long-horizon mobile manipulation tasks without human demonstrations, continually improving performance by composing verified skills from prior exploration sessions. As exploration scales, we observe emergent capabilities including active perception, error recovery, safety guardrails, and human-robot collaboration. We open-source RAX as a generalist robot-agent platform in which new robot embodiments are integrated through their APIs alone, without teleoperated data collection or policy training.",
@@ -897,10 +1024,33 @@
         "url": "https://arxiv.org/abs/2610.22496",
         "version": 1
       },
-      "status": "pending"
+      "rules": "e66506b30f22bcdecc6908b76c3bcd2fca5464fa5a41550ce260f6cb13e0a0bb",
+      "source_url": "https://arxiv.org/html/2610.22496v1",
+      "status": "review",
+      "truncated": true
     },
     "2610.22932": {
-      "attempts": 0,
+      "assessment": {
+        "categories": [
+          {
+            "confidence": 0.97,
+            "id": "vla",
+            "quote": "We collect demonstrations through VR teleoperation and adapt the human-trained predictor on paired robot video and glove measurements from five tasks, totaling about 123k frames. Using the adapted predictor, we generate tactile annotations for the demonstration videos and post-train N 0 N_{0} -VTLA on Test Tube Transfer and Bottle Cap Removal, each with roughly 50 demonstrations under a 20,000-step schedule. During real-robot rollouts, the policy receives tactile measurements from the glove. It predicts 50-step chunks of 32-dimensional actions encoding end-effector deltas and hand targets, and executes the first 15 steps.",
+            "reason": "人类视频学习的触觉预测器通过机器人域适配，为VLA后训练提供触觉标注；该策略实际输出末端位姿增量和手部目标动作。属于间接利用人类视觉先验训练VLA，而非直接用人类视频监督机器人动作。"
+          }
+        ],
+        "code_quote": "",
+        "code_url": null,
+        "decision": "include",
+        "human_data_quote": "Fig. 1: From human touch to robot manipulation. We learn a visual-tactile predictor from paired human egocentric video and tactile measurements, fine-tune it to a dexterous robot hand through anatomical region correspondences, and use the adapted predictor to supply touch for downstream policy learning across four simulated and two real-world contact-rich tasks.",
+        "project_quote": "",
+        "project_url": null,
+        "public_code": false,
+        "real_robot_quote": "Our real-robot platform consists of an xArm6 arm and a BrainCo Revo 2 hand wearing the 880-taxel glove, with a head RGB-D camera and a wrist camera. We collect demonstrations through VR teleoperation and adapt the human-trained predictor on paired robot video and glove measurements from five tasks, totaling about 123k frames. Using the adapted predictor, we generate tactile annotations for the demonstration videos and post-train N 0 N_{0} -VTLA on Test Tube Transfer and Bottle Cap Removal, each with roughly 50 demonstrations under a 20,000-step schedule. During real-robot rollouts, the policy receives tactile measurements from the glove. It predicts 50-step chunks of 32-dimensional actions encoding end-effector deltas and hand targets, and executes the first 15 steps. Recorded rollouts ran at approximately 24.5 Hz against a requested 30 Hz, with a 60-second trial limit.",
+        "reason": "方法从人类第一视角视频学习视觉—触觉先验，经机器人域适配后生成触觉标注，用于输出机器人动作的VLA策略后训练，符合人类视觉数据间接支持VLA学习的范围。人类预训练视频与后续遥操作机器人视频有明确区分；实机执行时使用手套测得的触觉，不能视为纯视觉触觉预测驱动的实机部署。",
+        "robot_learning_quote": "More importantly, the adapted predictor functions as a virtual tactile sensor that provides link-level contact features for reinforcement learning in simulation, and it generates dense tactile images from demonstration videos to post-train a VLA policy on a real dexterous hand."
+      },
+      "attempts": 1,
       "first_seen": "2026-10-21",
       "paper": {
         "abstract": "Contact locations and interaction forces are critical for contact-rich robot manipulation but are often ambiguous from vision alone. Measuring them on robots requires specialized tactile hardware and platform-specific data collection, which keeps robot tactile data scarce. Human egocentric video is far easier to scale but lacks touch. Recent predictors trained on egocentric recordings paired with tactile-glove measurements can predict this missing signal from video alone. These predictors, however, remain confined to human hands, which differ from robot hands in appearance and tactile layout. We present Ego2Contact, which learns a visual-tactile prior from human interactions and transfers it to robot hands. Its predictor fuses temporal scene context with hand-local visual features to infer bimanual tactile fields from the RGB video. Anatomical region correspondences align varying robot tactile layouts with the predictor's canonical grid, turning robot measurements into fine-tuning targets and predictions into policy inputs. Ego2Contact outperforms prior tactile predictors on human data, including unseen objects, and on robot data after adaptation. The adapted predictor provides tactile inputs for both simulated reinforcement learning and real-robot policy post-training. In simulation, policies using predicted touch outperform non-tactile baselines and recover part of the benefit of ground-truth tactile sensing. These results show that human-learned tactile priors can supply touch when direct tactile sensing is limited.",
@@ -931,10 +1081,33 @@
         "url": "https://arxiv.org/abs/2610.22932",
         "version": 1
       },
-      "status": "pending"
+      "rules": "e66506b30f22bcdecc6908b76c3bcd2fca5464fa5a41550ce260f6cb13e0a0bb",
+      "source_url": "https://arxiv.org/html/2610.22932v1",
+      "status": "accepted",
+      "truncated": false
     },
     "2610.23551": {
-      "attempts": 0,
+      "assessment": {
+        "categories": [
+          {
+            "confidence": 0.88,
+            "id": "icl_vcl",
+            "quote": "A single human demonstration provides the desired object motion as a task-level specification. Rather than learning a policy, our objective is to determine how the demonstrated task can be executed under the constraints of heterogeneous robotic hardware. Given a discretized object trajectory, we determine at each segment which arm should manipulate the object and when coordinated handovers are necessary to maintain feasibility under grasp, kinematic, and collision constraints.",
+            "reason": "属于视觉演示／视频条件化：演示提取的物体运动轨迹为当前任务提供执行条件，通过规划实现机器人技能。不是严格ICL，也不是带权重更新的测试时适应；文中明确不学习策略。"
+          }
+        ],
+        "code_quote": "",
+        "code_url": null,
+        "decision": "include",
+        "human_data_quote": "IV-A Trajectory Extraction from Human Demonstration We extract the object trajectory via model-based 6D pose tracking using FoundationPose [ 25 ] , leveraging the known CAD mesh to enforce geometric consistency during manipulation (See Figure 2 ). While the mesh is required for planning, recent work enables reliable mesh reconstruction of novel objects from multiple RGB-D images [ 26 ] . The pipeline initializes an S ​ E ​ ( 3 ) SE(3) pose from RGB-D observations and then tracks the object by conditioning each estimate on the previous pose to maintain temporal coherence.",
+        "project_quote": "Author comments: Please find the project website here: https://sukhvansh2004.github.io/Bimanual-Manipulation/",
+        "project_url": "https://sukhvansh2004.github.io/Bimanual-Manipulation/",
+        "public_code": false,
+        "real_robot_quote": "To validate our simulated results, we deployed the framework on a physical dual Franka FR3 setup using Task B: YCB Plate from Shelf to Table and Task C: Mug Inversion.",
+        "reason": "方法从人类视觉演示中提取物体轨迹，将其作为任务特定条件来规划异构双臂执行与交接，符合视觉演示条件化范畴；并非策略训练或严格ICL，且有物理机器人部署验证。",
+        "robot_learning_quote": "A single human demonstration provides the desired object motion as a task-level specification. Rather than learning a policy, our objective is to determine how the demonstrated task can be executed under the constraints of heterogeneous robotic hardware. Given a discretized object trajectory, we determine at each segment which arm should manipulate the object and when coordinated handovers are necessary to maintain feasibility under grasp, kinematic, and collision constraints."
+      },
+      "attempts": 1,
       "first_seen": "2026-10-21",
       "paper": {
         "abstract": "Many manipulation tasks that are effortless for dexterous human hands remain challenging for robotic systems equipped with simple, task-specialized grippers. Industrial platforms commonly rely on end-effectors such as suction cups or parallel-jaw grippers, yet no single mode can reliably satisfy the diverse constraints encountered across different phases of complex manipulation tasks, including pickup, reorientation, insertion, and constrained placement. In this work, we investigate whether complementary simple grippers within a heterogeneous bimanual setup can collectively realize tasks that exceed the capability of any individual gripper alone. Given a single human demonstration specifying the desired object motion, we formulate embodiment-aware execution as a finite-horizon optimization over arm-trajectory assignments. At each segment, the planner determines whether single-arm manipulation or a coordinated dual arm handover is required, jointly reasoning over heterogeneous grasp feasibility, motion constraints, manipulability, and cross-gripper compatibility. Exploiting this formulation, we compute globally consistent assignments with explicit switching regularization. Experiments on a dual Franka FR3 platform equipped with suction and parallel-jaw grippers demonstrate improved feasibility and reliability in tasks that are infeasible under single-gripper execution.",
@@ -956,10 +1129,18 @@
         "url": "https://arxiv.org/abs/2610.23551",
         "version": 1
       },
-      "status": "pending"
+      "rules": "e66506b30f22bcdecc6908b76c3bcd2fca5464fa5a41550ce260f6cb13e0a0bb",
+      "source_url": "https://arxiv.org/html/2610.23551v1",
+      "status": "accepted",
+      "truncated": false
     },
     "2610.24241": {
-      "attempts": 0,
+      "assessment": {
+        "categories": [],
+        "decision": "exclude",
+        "reason": "本文不使用人类视频或人类视觉示范；原文明示“The walking policies in this paper are trained without any visual inputs.” 方法是在仿真中学习机器人控制策略并迁移至实机，不满足人类视觉数据参与机器人学习或控制的范围要求，也没有符合所列类别的贡献。"
+      },
+      "attempts": 1,
       "first_seen": "2026-10-21",
       "paper": {
         "abstract": "This work demonstrates the use of a fast simulation-based training framework to learn control policies using reinforcement learning. The hardware requirements are minimal and the simulation-learned policies transfer reliably to the real world. With this setup, we show that a quadruped robot can learn to traverse diverse real-world terrains reliably---including in a lunar-analog facility---after less than 20 minutes of training on a single consumer-grade GPU. These results provide a glimpse of a future where reinforcement learning is a crucial tool in developing more capable and robust space robotic systems. Video demonstrations are available at https://youtu.be/vUFJiZdJaQ0.",
@@ -981,10 +1162,18 @@
         "url": "https://arxiv.org/abs/2610.24241",
         "version": 1
       },
-      "status": "pending"
+      "rules": "e66506b30f22bcdecc6908b76c3bcd2fca5464fa5a41550ce260f6cb13e0a0bb",
+      "source_url": "https://arxiv.org/html/2610.24241v1",
+      "status": "rejected",
+      "truncated": false
     },
     "2610.24285": {
-      "attempts": 0,
+      "assessment": {
+        "categories": [],
+        "decision": "exclude",
+        "reason": "确实使用人类交互视频训练动作条件世界模型，但机器人部分仅在留出的遥操作录像上评估未来观测预测，未展示利用该模型学习、规划或执行机器人技能；机器人规划被明确列为未来工作，因此不满足本次范围要求。"
+      },
+      "attempts": 1,
       "first_seen": "2026-10-21",
       "paper": {
         "abstract": "Abstract Action-conditioned world models for contact-rich manipulation require data that captures how contact forms, slides, and releases under varying force. Such data are slow to collect through robot teleoperation, which often lacks force feedback and is constrained by gripper geometry. We ask whether these dynamics can instead be learned from human physical interaction and transferred to a robot. We present ACTS, a visuo-tactile world model trained only on human interaction data. Operators manipulate handheld GelSight sensors while we record third-person and wrist video, tactile images, 6-DoF sensor motion, and tactile-derived normal force, yielding React, a 4.9-hour bimanual dataset across three objects. We represent actions at the tactile sensor as motion augmented by force change, providing a shared action space for human collection and robot execution. ACTS jointly predicts future scene, wrist, and tactile observations. On held-out human data, ACTS improves scene-view prediction by 0.7-2.0 dB PSNR over the stronger of two visuo-tactile world models trained from scratch on React. Without fine-tuning, in the robot teleoperation rollouts we inspected, predicted tactile imprints still appear and disappear with recorded contact. Visual transfer is less robust: camera predictions exceed frame copying on PushT, are mixed on Rope, and fall below it on Motherboard, while wrist views can blur or hallucinate structure. These results suggest that contact dynamics transfer more reliably than visual appearance from human to robot.",
@@ -1009,7 +1198,10 @@
         "url": "https://arxiv.org/abs/2610.24285",
         "version": 1
       },
-      "status": "pending"
+      "rules": "e66506b30f22bcdecc6908b76c3bcd2fca5464fa5a41550ce260f6cb13e0a0bb",
+      "source_url": "https://arxiv.org/html/2610.24285v1",
+      "status": "rejected",
+      "truncated": true
     },
     "2610.24312": {
       "attempts": 0,
@@ -1601,6 +1793,129 @@
         "title": "Joints, Camera, Action! Co-Generating 3D Motion and Video for Arbitrary Rigs",
         "updated": "2026-10-20T17:59:56Z",
         "url": "https://arxiv.org/abs/2610.28632",
+        "version": 1
+      },
+      "status": "pending"
+    },
+    "2610.28880": {
+      "attempts": 0,
+      "first_seen": "2026-10-22",
+      "paper": {
+        "abstract": "Human video scales easily and does not need robot hardware, but existing methods require depth sensing, overlay the robot onto 2D video, or generate data only for the demonstrated objects. We present Real2Sem2Real (R2Sem2R), a real-to-semantic-to-real pipeline that turns one monocular RGB video of a human demonstration into thousands of robot demonstrations across the semantic object instances of a category. R2Sem2R tracks the SE(3) pose of each object with DINOv3-distilled Gaussian splats, outperforming existing methods and FoundationPose with estimated metric depth. R2Sem2R then aligns digital cousins, each generated from one or a few photographs, to the demonstrated objects with a semantic alignment. This alignment matches whole objects and the functional regions of target objects, such as a coffee machine's tray. R2Sem2R maps the human hand to a feasible robot grasp that extends to the cousins. Robot demonstrations are generated either in IsaacSim, for photorealistic rendering, or MuJoCo, for contact physics, and R2Sem2R can generate over 2,000 episodes in about two hours. On two real robots and four tasks, we train a vision-language-action policy on data from one human video per task, and policies trained on our data match or exceed policies trained on teleoperation across diverse object instances. The project page is available at https://real2sem2real.github.io/.",
+        "authors": [
+          "Matthew Strong",
+          "Ankush K. Dhawan",
+          "Julien Poffet",
+          "Giuse Pham",
+          "Jinho So",
+          "Monroe Kennedy"
+        ],
+        "comments": "Matthew Strong and Ankush K. Dhawan contributed equally. Project page: https://real2sem2real.github.io/",
+        "id": "2610.28880",
+        "published": "2026-10-20",
+        "sources": [
+          "arxiv_search"
+        ],
+        "title": "Real2Sem2Real: 3D Semantic Augmentations for Robot Learning from a Single Human RGB Demonstration",
+        "updated": "2026-10-20T19:59:24Z",
+        "url": "https://arxiv.org/abs/2610.28880",
+        "version": 1
+      },
+      "status": "pending"
+    },
+    "2610.29716": {
+      "attempts": 0,
+      "first_seen": "2026-10-22",
+      "paper": {
+        "abstract": "We present SpatialDex, a framework that learns 3D-grounded bimanual dexterity from RGB-only human videos through reconstruction-augmented visuomotor pre-training. The central idea is to learn human behavior together with its spatial context. From each video, we reconstruct the scene geometry and estimate the hand motion, align them at a shared video-level scale using the hand-size prior of 3D hand estimates. We retain the reconstructed geometry as both a policy input and a prediction target. The policy grounds the token grid of a pre-trained vision-language model in this geometry through gated residual fusion, is trained to predict future scene geometry alongside wrist and finger actions, and generates finger motion conditioned on the predicted trajectories of both wrists. Pre-trained on 1M human-video clips and fine-tuned with a small number of robot demonstrations, SpatialDex outperforms the state-of-the-art methods by 16.5 points on nine simulated dexterous tasks across two embodiments and by 38.3 points on six real-world bimanual dexterous tasks. Under a matched comparison, pre-training with reconstructed geometry improves success by 14.2 points over pre-training on hand motion alone.",
+        "authors": [
+          "Xingyi He",
+          "Zhiwen Qiu",
+          "Adhitya Polavaram",
+          "Yunhao Cao",
+          "Cory Fan",
+          "Julius Samwer",
+          "Saleh Kalantari",
+          "Kuan Fang"
+        ],
+        "comments": "Project page: https://spatial-dex.github.io/",
+        "id": "2610.29716",
+        "published": "2026-10-21",
+        "sources": [
+          "arxiv_search"
+        ],
+        "title": "Reconstruction-Augmented Visuomotor Pre-Training of 3D-Grounded Bimanual Dexterity from RGB-Only Human Videos",
+        "updated": "2026-10-21T13:28:19Z",
+        "url": "https://arxiv.org/abs/2610.29716",
+        "version": 1
+      },
+      "status": "pending"
+    },
+    "2610.29997": {
+      "attempts": 0,
+      "first_seen": "2026-10-22",
+      "paper": {
+        "abstract": "Despite recent progress in dexterous reference tracking, existing models focus primarily on single-hand manipulation and a limited range of interactions, leaving the bimanual dexterous behaviors common in real life unaddressed. The scarcity of contact-rich bimanual manipulation data and the increased complexity of coordinating contacts make developing a generalist bimanual tracker particularly challenging. Therefore, we present 1) DONIC, the first generalist bimanual tracker jointly trained across operation categories and human-motion sources, together with 2) BiHOI, a multi-view dataset of 1,575 sequences spanning 229 objects and emphasizing sustained bimanual interaction, where reconstructed interactions are retargeted into robot references. DONIC combines proximal policy optimization with behavioral cloning in a feedback loop that recycles verified successful executions into training demonstrations. An object-centered per-hand reward maintains object-motion feedback while supervising each hand according to its reference contact role. Clip-Centered Advantages remove reference-dependent advantage offsets while preserving within-trajectory differences. Together, these designs enable one single policy to learn coordinated manipulation across heterogeneous references. Without finetuning, a single checkpoint achieves 86.79% success on unseen trajectories of training objects and 57.32% on held-out objects, surpassing the state-of-the-art bimanual tracking baselines by 77.36 and 45.73 percentage points.",
+        "authors": [
+          "Mingze Sun",
+          "Ziang Cao",
+          "Yuan Fei",
+          "Qiankuan Tao",
+          "Zihan Wang",
+          "Tianqi Liu",
+          "Junhao Chen",
+          "Haiwen Diao",
+          "Fangzhou Hong",
+          "Zhaoxi Chen",
+          "Ziwei Liu"
+        ],
+        "comments": "",
+        "id": "2610.29997",
+        "published": "2026-10-21",
+        "sources": [
+          "arxiv_search"
+        ],
+        "title": "DONIC: Generalist Dexterous Bimanual Tracking Control from Human Demonstrations",
+        "updated": "2026-10-21T16:36:02Z",
+        "url": "https://arxiv.org/abs/2610.29997",
+        "version": 1
+      },
+      "status": "pending"
+    },
+    "2610.30136": {
+      "attempts": 0,
+      "first_seen": "2026-10-22",
+      "paper": {
+        "abstract": "Recent world action models provide visual foresight and future prediction for robot manipulation, but lack explicit mechanisms for compositional skill reuse. Agentic robotics combines code-based planning and reasoning with reusable skills, but often lacks predictive grounding in physical dynamics. We introduce AW-0, an agentic world action model framework that integrates code-based planning with joint video and action prediction. We jointly model code, future video, and robot actions as three coupled generative streams within a unified mixture-of-transformers architecture. Within this architecture a code expert generates parameterized skill routines and control logic while video and action experts generate future visual states and low-level motor commands. Code serves two complementary roles: it structures multi-step prediction and control within the world model and represents skills as reusable programs for subsequent agentic execution. We further introduce an automated curation pipeline that labels robot and human video trajectories with aligned programs and consolidates recurring routines into reusable skill libraries. Evaluations on RoboTwin 2.0 and physical bimanual manipulation tasks show improved task performance over VLA and WAM baselines, alongside gains in language following, semantic reasoning and robustness, demonstrating that agentic code enables connection between planning, prediction and execution within WAMs.",
+        "authors": [
+          "Zhuoyang Liu",
+          "Dantong Niu",
+          "Botong Zhang",
+          "Boning Shao",
+          "Jing Wang",
+          "Ruijie Zheng",
+          "Yuvan Sharma",
+          "Runyu Lu",
+          "Jiaming Liu",
+          "Renrui Zhang",
+          "Roei Herzig",
+          "Yutong Bai",
+          "Ken Goldberg",
+          "Danfei Xu",
+          "Yuke Zhu",
+          "Guanzhi Wang",
+          "Linxi \"Jim\" Fan",
+          "Trevor Darrell"
+        ],
+        "comments": "Project page: https://agentic-wam.github.io/",
+        "id": "2610.30136",
+        "published": "2026-10-21",
+        "sources": [
+          "arxiv_search"
+        ],
+        "title": "Agentic World Action Models",
+        "updated": "2026-10-21T17:59:56Z",
+        "url": "https://arxiv.org/abs/2610.30136",
         "version": 1
       },
       "status": "pending"
