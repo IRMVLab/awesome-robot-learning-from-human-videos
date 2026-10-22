@@ -1,13 +1,13 @@
 {
-  "last_search_date": "2026-10-21",
+  "last_search_date": "2026-10-22",
   "papers": {
     "2610.19330": {
       "assessment": {
         "categories": [],
-        "decision": "review",
-        "reason": "Invalid model response: ValueError"
+        "decision": "exclude",
+        "reason": "未见使用人类视频或人类视觉示范学习、规划或执行机器人技能的证据。文中明确限定为感知模型训练：“in this work, we focus on its impact on training perception models.” 机器人视角的分割评估不构成人类示范驱动的技能学习，亦无证据满足所列四类方法。"
       },
-      "attempts": 1,
+      "attempts": 2,
       "first_seen": "2026-10-21",
       "paper": {
         "abstract": "Reliable recognition of accessibility-critical objects (e.g., audible pedestrian signals, door-activation buttons, and handrails) is essential for assistive navigation technologies that support safe, independent mobility for blind and low-vision (BLV) users. Yet these categories are underrepresented in existing large-scale vision datasets, and the few datasets that include them suffer from limited class coverage, inconsistent annotations, and poor diversity. We introduce NavAble, a large-scale dataset spanning 11 accessibility-critical object classes, combining 41K curated open-source images with 8K newly collected, densely annotated real-world images. To extend scale and diversity, we develop a synthetic data generation pipeline that renders high-fidelity 3D assets across 37 environments under diverse styles and viewpoints, yielding 452K frames with rich ground-truth annotations from 565 assets. The pipeline minimizes manual effort by combining automated web image crawling, VLM-based filtering, SAM 3D-based asset generation, and convenient camera trajectory configuration, enabling large-scale data generation at a diversity unattainable through manual collection. Experiments show that fine-tuning existing segmentation models on the NavAble Dataset achieves reliable accessibility-object segmentation (>80% mIoU on our held-out test set). We also demonstrate the effectiveness of synthetic data augmentation, which yields up to +3.5 mIoU over real-world-only fine-tuning. Beyond benchmark evaluation, validation on egocentric data from two mobility-assistive robots demonstrates improved perception reliability in real-world navigation scenarios. Together, NavAble establishes a scalable foundation for BLV navigation perception, directly addressing the data scarcity and embodiment gaps. The dataset and pipeline are publicly available at https://huggingface.co/datasets/NavAble/NeurIPS_2026_BLV.",
@@ -36,18 +36,18 @@
         "url": "https://arxiv.org/abs/2610.19330",
         "version": 1
       },
-      "rules": "606efc0dbc422a4b98d48dacb88d8c653b8b4ef3207d4dca19e720d28624d12e",
+      "rules": "e66506b30f22bcdecc6908b76c3bcd2fca5464fa5a41550ce260f6cb13e0a0bb",
       "source_url": "https://arxiv.org/html/2610.19330v1",
-      "status": "retry",
+      "status": "rejected",
       "truncated": true
     },
     "2610.19726": {
       "assessment": {
         "categories": [],
-        "decision": "review",
-        "reason": "Invalid model response: ValueError"
+        "decision": "exclude",
+        "reason": "未提供人类视觉示范用于机器人学习或控制的明确证据。机器人相关展示仅为生成的观察画面，原文明示：“These generated scenarios illustrate a potential observation interface for embodied agents; they do not measure physical robot task success.” 因此不满足机器人技能学习或控制的范围要求，也不能仅凭世界模型名称归入 WAM。"
       },
-      "attempts": 1,
+      "attempts": 2,
       "first_seen": "2026-10-21",
       "paper": {
         "abstract": "We present a Generative World Simulation framework that couples persistent shared world state with continuous first-person audiovisual generation. The framework integrates DAO, a computable world engine, and JING, an Egocentric Interactive Experience Model, to support sustained interaction for humans and agents. DAO maintains the states of characters, objects, and spaces and their relationships, advancing the world according to interaction rules and world time while preserving the consequences of past actions. From this evolving state, DAO derives observer-specific conditions for JING, which combines these conditions with character, object, and scene references, observation history, and current actions to generate each observer's audiovisual experience. Users can explore environments, manipulate objects, and communicate with characters through viewpoint control and text instructions, with their actions shaping both the shared state and subsequent experiences. By connecting world-state evolution with experience generation in a continuous interaction loop, the framework offers an approach to building interactive worlds that retain their history, evolve through action, and persist beyond any individual observer.",
@@ -83,18 +83,39 @@
         "url": "https://arxiv.org/abs/2610.19726",
         "version": 1
       },
-      "rules": "606efc0dbc422a4b98d48dacb88d8c653b8b4ef3207d4dca19e720d28624d12e",
+      "rules": "e66506b30f22bcdecc6908b76c3bcd2fca5464fa5a41550ce260f6cb13e0a0bb",
       "source_url": "https://arxiv.org/html/2610.19726v1",
-      "status": "retry",
+      "status": "rejected",
       "truncated": false
     },
     "2610.19746": {
       "assessment": {
-        "categories": [],
-        "decision": "review",
-        "reason": "Invalid model response: ValueError"
+        "categories": [
+          {
+            "confidence": 0.99,
+            "id": "vla",
+            "quote": "As summarized in Sec. III-B, CapPro is jointly optimized with the action-generation objective and the auxiliary phase-caption objective. The former trains robot action generation under human-video conditioning, while the latter provides phase-level supervision for learning execution-aware query representations.",
+            "reason": "人类视频条件直接参与VLA机器人动作生成训练，而非仅供视觉感知或高层规划。"
+          },
+          {
+            "confidence": 0.99,
+            "id": "icl_vcl",
+            "quote": "For each target task, the policy receives a single egocentric human demonstration video during inference. The human video provides task-level guidance for adapting the pretrained VLA policy, rather than serving as a direct robot demonstration. No target-task robot demonstrations or target-task fine-tuning are used.",
+            "reason": "属于视频条件学习（video conditioning）：推理时以单个人类视频提供目标任务上下文，不进行目标任务权重微调；不将其笼统称为严格ICL或测试时训练。"
+          }
+        ],
+        "code_quote": "",
+        "code_url": null,
+        "decision": "include",
+        "human_data_quote": "For each target task, the policy receives a single egocentric human demonstration video during inference. The human video provides task-level guidance for adapting the pretrained VLA policy, rather than serving as a direct robot demonstration. No target-task robot demonstrations or target-task fine-tuning are used.",
+        "project_quote": "Project homepage: https://chenqi20020226.github.io/cappro-project/",
+        "project_url": "https://chenqi20020226.github.io/cappro-project/",
+        "public_code": false,
+        "real_robot_quote": "Real-World Evaluation. We further conduct real-world manipulation experiments to evaluate one-shot human-video-guided adaptation beyond simulation. We construct seven manipulation tasks, including three Source tasks, two Target-A tasks, and two Target-B tasks.",
+        "reason": "CapPro实际使用单个人类示范视频为预训练VLA提供任务特定指导，并将视频表示接入机器人动作生成；符合VLA及视频条件学习类别，目标任务无需微调。",
+        "robot_learning_quote": "Second, a video-conditioned adaptation module incorporates these representations into the conditioning context of the pretrained VLA policy, enabling task-specific information from the human demonstration to guide robot action generation without requiring direct human-to-robot behavior transfer."
       },
-      "attempts": 1,
+      "attempts": 2,
       "first_seen": "2026-10-21",
       "paper": {
         "abstract": "Vision-language-action (VLA) models have recently achieved remarkable progress by leveraging large-scale robot datasets and foundation models for general-purpose robot manipulation. However, their ability to rapidly adapt to novel manipulation tasks beyond the training distribution remains limited. Existing approaches often require task-specific robot demonstrations and additional training, which are labor- and compute-intensive, limiting the scalability of VLA adaptation to open-world scenarios. To reduce this dependence on target-task robot data, we propose CapPro, a framework that enables a VLA policy to adapt to previously unseen manipulation tasks using only a single human demonstration video. CapPro consists of two components. First, a phase-aware human video representation module constructs a compact video representation through learned visual token selection and learns task-relevant query representations under phase-caption supervision. Second, a video-conditioned adaptation module jointly incorporates the compact video and query-derived representations into the action-conditioning context of the pretrained VLA policy. % This design introduces task-specific guidance while largely preserving the original VLA action-generation backbone. In this way, the human demonstration provides task-specific execution guidance rather than an embodiment-aligned trajectory to imitate, without requiring target-task robot demonstrations or target-task fine-tuning. Experiments across source and unseen target tasks show that CapPro improves average performance across unseen target groups while maintaining comparable performance on the source tasks. These results demonstrate the effectiveness of human-video guidance for cross-task VLA adaptation.",
@@ -119,18 +140,33 @@
         "url": "https://arxiv.org/abs/2610.19746",
         "version": 1
       },
-      "rules": "606efc0dbc422a4b98d48dacb88d8c653b8b4ef3207d4dca19e720d28624d12e",
+      "rules": "e66506b30f22bcdecc6908b76c3bcd2fca5464fa5a41550ce260f6cb13e0a0bb",
       "source_url": "https://arxiv.org/html/2610.19746v1",
-      "status": "retry",
+      "status": "accepted",
       "truncated": false
     },
     "2610.19839": {
       "assessment": {
-        "categories": [],
-        "decision": "review",
-        "reason": "Invalid model response: ValueError"
+        "categories": [
+          {
+            "confidence": 0.99,
+            "id": "vla",
+            "quote": "For policy learning, we fine-tune the π 0.5 \\pi_{0.5} vision-language-action (VLA) model Intelligence et al. (2025) separately on robot-free and teleoperated demonstrations.",
+            "reason": "人类无机器人视觉示范实际用于微调VLA动作策略，而非仅用于视觉感知或高层规划。此处是训练阶段的策略微调，没有必要归入严格ICL或测试时视频条件学习。"
+          }
+        ],
+        "code_quote": "",
+        "code_url": null,
+        "decision": "include",
+        "human_data_quote": "During robot-free collection, the human operator uses the handheld FOMI interfaces, one in each hand, to manipulate objects, relying on intuitive force feedback to perceive contact and adjust actions in real time. For each interface, each demonstration records images from its fisheye camera, the calibrated end-effector pose",
+        "project_quote": "Project page: https://robbyant-research.github.io/FOMI/",
+        "project_url": "https://robbyant-research.github.io/FOMI/",
+        "public_code": false,
+        "real_robot_quote": "We deploy the Open Pouch policy trained on 25 robot-free demonstrations directly on a dual-arm Flexiv platform, achieving success and progress rates of 68.2% and 80.3%, respectively (Fig. 9 ).",
+        "reason": "论文实际采集人类手持接口操作物体时的视觉示范，并用无机器人示范微调输出机器人动作的VLA策略，符合范围及vla类别；纳入依据不是其另行采集的机器人遥操作数据。论文还报告了该策略在实体机器人上的部署实验。",
+        "robot_learning_quote": "For policy learning, we fine-tune the π 0.5 \\pi_{0.5} vision-language-action (VLA) model Intelligence et al. (2025) separately on robot-free and teleoperated demonstrations."
       },
-      "attempts": 1,
+      "attempts": 2,
       "first_seen": "2026-10-21",
       "paper": {
         "abstract": "Robot-free collection with handheld interfaces enables scalable acquisition of human demonstrations for policy learning. However, existing handheld interfaces often provide limited intuitive force feedback, making contact-rich demonstration collection challenging for human operators. To address this, we present FOMI, a force-feedback manipulation interface with a scissor-shaped mechanism, which transmits object interaction forces directly to the operator's hands through actuation links without force sensors. This intuitive force feedback supports real-time action adjustment during robot-free collection of contact-rich demonstrations. Around FOMI, we build a demonstration collection system that integrates sensor calibration, data acquisition, and synchronization for robot-free collection. By further mapping pose changes and gripper opening of FOMI to robot end-effector poses and gripper commands, the system also supports teleoperation. Across four contact-rich tasks, FOMI improves collection efficiency by approximately 29% and 18% over the best baselines in robot-free collection and teleoperation, respectively. Demonstrations collected with FOMI in both modes enable policies to perform challenging contact-rich manipulation tasks with high success rates.",
@@ -157,18 +193,33 @@
         "url": "https://arxiv.org/abs/2610.19839",
         "version": 1
       },
-      "rules": "606efc0dbc422a4b98d48dacb88d8c653b8b4ef3207d4dca19e720d28624d12e",
+      "rules": "e66506b30f22bcdecc6908b76c3bcd2fca5464fa5a41550ce260f6cb13e0a0bb",
       "source_url": "https://arxiv.org/html/2610.19839v1",
-      "status": "retry",
+      "status": "accepted",
       "truncated": false
     },
     "2610.20320": {
       "assessment": {
-        "categories": [],
-        "decision": "review",
-        "reason": "Invalid model response: ValueError"
+        "categories": [
+          {
+            "confidence": 0.99,
+            "id": "vla",
+            "quote": "Two representative policy families including π 0.5 \\pi_{0.5} and StarVLA are considered. Using both policy families allows us to evaluate whether the collected data generalize across different VLA architectures rather than being specialized to a single policy design.",
+            "reason": "本文实际以所采集的人类视觉操作示范训练并评估两类VLA动作策略，支持归入VLA，而非仅以视觉语言模型做标注或高层规划。"
+          }
+        ],
+        "code_quote": "Project • GitHub • ModelScope • Hugging Face",
+        "code_url": "https://github.com/daimon-robotics/TacClaw-Infinity",
+        "decision": "include",
+        "human_data_quote": "Operators can directly perform manipulation demonstrations without requiring a target robot during data collection, while accurately recording end-effector motion, gripper state, visual observations, and tactile feedback.",
+        "project_quote": "Project • GitHub • ModelScope • Hugging Face",
+        "project_url": "https://daimon-robotics.github.io/tacclaw-infinity-page/",
+        "public_code": true,
+        "real_robot_quote": "As shown in Table IV , policies trained solely on TacClaw demonstrations can be directly deployed across three heterogeneous robot embodiments without collecting embodiment-specific robot demonstrations, while still achieving strong manipulation performance. The same policy formulation transfers across Tianji Marvin M6S Lite, RealMan RM75-b, and DM-Sparky One despite substantial differences in kinematics and hardware configurations.",
+        "reason": "使用人类操作手持接口采集的同步视觉示范训练VLA策略，并验证跨三种机器人本体的操作迁移；不是机器人遥操作数据，也不只是发布数据集。",
+        "robot_learning_quote": "As shown in Table IV , policies trained solely on TacClaw demonstrations can be directly deployed across three heterogeneous robot embodiments without collecting embodiment-specific robot demonstrations, while still achieving strong manipulation performance."
       },
-      "attempts": 1,
+      "attempts": 2,
       "first_seen": "2026-10-21",
       "paper": {
         "abstract": "Large-scale robot learning increasingly relies on diverse human demonstrations, yet tactile manipulation data remain difficult to scale, and existing multimodal datasets often lack consistent quality control and structured supervision. We present TacClaw-Infinity, a large-scale structured Vision-Tactile-Language-Action (VTLA) dataset for contact-rich manipulation, collected with TacClaw, a tactile-enabled UMI-style handheld interface that records synchronized visual observations, fingertip tactile signals, and end-effector trajectories without requiring a target robot during data collection. TacClaw-Infinity is built through a distributed worldwide collection across homes, laboratories, industrial workplaces, retail stores, and outdoor environments including tasks contributed by academic and industrial collaborators. Together, these efforts yield over 10,000 hours, 1 million episodes, and 1 billion frames spanning more than 1,000 task types. We develop a scalable pipeline for trajectory reconstruction, multimodal quality control, embodiment-aware filtering, and structured annotation, covering contact-centric segmentation, subtask description, and spatial grounding. We validate TacClaw-Infinity at both the data and model levels: At the data level, we assess the collection interface, the action-space compatibility of the curated demonstrations, and the structured annotations, while for the model level, we demonstrate cross-embodiment transfer across three heterogeneous robots without robot-specific demonstrations.",
@@ -211,18 +262,18 @@
         "url": "https://arxiv.org/abs/2610.20320",
         "version": 1
       },
-      "rules": "606efc0dbc422a4b98d48dacb88d8c653b8b4ef3207d4dca19e720d28624d12e",
+      "rules": "e66506b30f22bcdecc6908b76c3bcd2fca5464fa5a41550ce260f6cb13e0a0bb",
       "source_url": "https://arxiv.org/html/2610.20320v1",
-      "status": "retry",
+      "status": "accepted",
       "truncated": false
     },
     "2610.20351": {
       "assessment": {
         "categories": [],
-        "decision": "review",
-        "reason": "Invalid model response: ValueError"
+        "decision": "exclude",
+        "reason": "实际使用手机拍摄的人类视觉示范，但贡献是物体轨迹重定向、运动学可行性筛选及后训练数据记录，尚未训练策略。示范轨迹用于几何求解与评估，不足以证明视频条件技能学习；也未提供符合要求的规划智能体、WAM或VLA贡献，因此不强行归类。硬件仅有无物体的开环通路检查，不能视为机器人任务成功实验。"
       },
-      "attempts": 1,
+      "attempts": 2,
       "first_seen": "2026-10-21",
       "paper": {
         "abstract": "Human demonstrations are today used largely for pretraining vision-language-action models, with little ability to use the same data for target-embodiment or task-oriented training, which scalable deployment of robots in industrial and general environments depends on. A human demonstration recorded on a simple and scalable device such as a mobile phone can serve as post-training data for a robot whose body differs in structure and capability from the human who recorded it. This is made possible not by retargeting the hand's motion but the object's. A capture yields a body-free record: the object's pose over time, its contact intervals, and a reconstructed 3D object with provenance. Any robot, given as a URDF and a short descriptor, is solved against that record and scored in simulation against the demonstrated object motion as ground truth: the human-to-simulation leg of human-to-simulation-to-robot transfer, measured per robot. Each (robot, episode) pair gets one outcome: pass, failure with a named mode, or refusal, with its reason, before any motion. The method runs as a working system over a growing collection; the set analysed here is a sample of it: 42 captures solved on 8 robots, 157 pairs, of which 31.2% pass, 52.2% fail, 14.0% are refused and 2.5% are unauditable (kinematic feasibility, +/-50 mm / +/-15 deg, in simulation). Refusals held up: every pair the checks refuse on stored evidence yet ran anyway failed (13 of 13; 5 on a body whose public model welds its hand). A description file could not be shown to screen a robot: its outcomes were barely more predictable than guessing. No policy has yet been trained on the record. The record decides what a robot may post-train on; whether the policy then works on the real robot is the simulation-to-robot question, answered downstream.",
@@ -240,18 +291,33 @@
         "url": "https://arxiv.org/abs/2610.20351",
         "version": 1
       },
-      "rules": "606efc0dbc422a4b98d48dacb88d8c653b8b4ef3207d4dca19e720d28624d12e",
+      "rules": "e66506b30f22bcdecc6908b76c3bcd2fca5464fa5a41550ce260f6cb13e0a0bb",
       "source_url": "https://arxiv.org/html/2610.20351v1",
-      "status": "retry",
+      "status": "rejected",
       "truncated": true
     },
     "2610.20904": {
       "assessment": {
-        "categories": [],
-        "decision": "review",
-        "reason": "Invalid model response: ValueError"
+        "categories": [
+          {
+            "confidence": 0.99,
+            "id": "wam",
+            "quote": "As shown in Figure 1 , EgoJEPA comprises three stages: 1) Human-action pre-training learns generic effect-aware latent actions through human-motion-conditioned visual prediction; 2) Latent-action-based world modeling jointly predicts future visual dynamics and the latent actions learned in Stage 1 via joint flow matching, rather than embodiment-specific robot commands; and 3) Embodiment-specific tuning adapts the pre-trained world model to robot action spaces through lightweight adapters.",
+            "reason": "人类视觉示范用于学习动作效果表示，世界模型联合预测未来视觉动态与潜在动作，并经动作适配器迁移到机器人动作空间，满足WAM标准。"
+          }
+        ],
+        "code_quote": "",
+        "code_url": null,
+        "decision": "include",
+        "human_data_quote": "We use a commercially acquired egocentric human dataset for stages 1 and 2. The dataset contains 1,111,943 episodes from 62,518 recording sessions, amounting to approximately 20,106.6 hours and 2.17 billion video frames.",
+        "project_quote": "Xiaodan Liang † † thanks: Corresponding author. Affiliation: Mohamed bin Zayed University of Artificial Intelligence Affiliation: Sun Yat-sen University https://mengcaopku.github.io/EgoJEPA Abstract Egocentric human videos offer a scalable alternative to costly robot demonstrations, yet transferring their manipulation priors to robot control remains challenging.",
+        "project_url": "https://mengcaopku.github.io/EgoJEPA",
+        "public_code": false,
+        "real_robot_quote": "We evaluate EgoJEPA on five real-world manipulation tasks spanning three robot embodiments including a Sharpa dexterous hand ( Sharpa, ) , a Wuji dexterous hand ( Wuji Technology, ) , and a Xense Tac UMI gripper ( Xense Robotics, ) .",
+        "reason": "论文实际使用第一人称人类视频预训练潜在动作与世界模型，再通过机器人数据及动作适配器连接机器人控制，符合WAM类别，并提供实体机器人实验。",
+        "robot_learning_quote": "Stages 1–2 use egocentric human data, while Stage 3 initializes from the Stage 2 checkpoint and jointly tunes the video and action Transformers with embodiment-specific adapters on robot data."
       },
-      "attempts": 1,
+      "attempts": 2,
       "first_seen": "2026-10-21",
       "paper": {
         "abstract": "Egocentric human videos offer a scalable alternative to costly robot demonstra- tions, yet transferring their manipulation priors to robot control remains chal- lenging. The commonly adopted retargeting-based approaches convert human wrist and finger poses into embodiment-specific action commands through hand- crafted geometric mappings. However, such mappings require meticulous recal- ibration across different embodiments and risk propagating hand-tracking errors into downstream robot control pipelines. To this end, we propose EgoJEPA, a three-stage framework that learns embodiment-agnostic representations from ego- centric human videos without rule-based human-to-robot retargeting: 1) Human- action pre-training learns effect-aware latent actions through JEPA-style visual prediction conditioned on hand-motion differences; 2) Latent-action-based world modeling jointly predicts future visual dynamics and latent actions, which decou- ples human prior pre-training from robot-specific control parameterizations; 3) Embodiment-specific tuning adapts the pretrained model to diverse robots through lightweight action adapters. Experiments on five real-world manipulation tasks across three robot embodiments demonstrate the effectiveness and efficiency of EgoJEPA. It achieves a 74% average success rate under the out-of-domain evalu- ation, compared with 65% for the retargeting baseline, while reducing cumulative cross-embodiment wall-clock cost by 47.2%, from 743.2 to 392.7 hours.",
@@ -283,18 +349,39 @@
         "url": "https://arxiv.org/abs/2610.20904",
         "version": 1
       },
-      "rules": "606efc0dbc422a4b98d48dacb88d8c653b8b4ef3207d4dca19e720d28624d12e",
+      "rules": "e66506b30f22bcdecc6908b76c3bcd2fca5464fa5a41550ce260f6cb13e0a0bb",
       "source_url": "https://arxiv.org/html/2610.20904v1",
-      "status": "retry",
+      "status": "accepted",
       "truncated": true
     },
     "2610.20998": {
       "assessment": {
-        "categories": [],
-        "decision": "review",
-        "reason": "Invalid model response: ValueError"
+        "categories": [
+          {
+            "confidence": 0.99,
+            "id": "agent",
+            "quote": "Fig. 1: MoCaP turns passive human video into guidance for real-world mobile manipulation. From videos recorded during daily life, MoCaP extracts a spatial memory and an approach direction. A coding agent uses them to find the target and reach a base pose with a feasible grasp.",
+            "reason": "代码智能体明确利用人类视频提取的空间记忆与接近方向进行目标搜索和可抓取底座位姿选择，属于人类视觉经验驱动的机器人规划与执行。"
+          },
+          {
+            "confidence": 0.96,
+            "id": "icl_vcl",
+            "quote": "All learned components remain frozen. Video processing produces reusable spatial memory and records of human interactions. At task startup, an advisor uses the memory, instruction, and initial robot view to provide guidance to a code agent. During execution, the code agent generates short Python programs that invoke robot-grounded primitives and revises subsequent programs using fresh observations and execution feedback. The human preparation prior guides docking, while the primitives resolve motions using live geometry and robot constraints (Fig. 2 ).",
+            "reason": "属于视频条件化：人类视频经记忆和交互先验为当前任务提供控制条件，所有学习组件保持冻结，不涉及测试时权重更新；不将这种间接视频条件化笼统称为严格 ICL。"
+          }
+        ],
+        "code_quote": "",
+        "code_url": null,
+        "decision": "include",
+        "human_data_quote": "Human activity videos are recorded using Aria Gen 2 glasses [ 32 ] . We use only the recorded egocentric RGB video; no other data provided by the glasses are used.",
+        "project_quote": "Videos and code are available on the project website: https://mocap-7.github.io/MoCAP-page/.",
+        "project_url": "https://mocap-7.github.io/MoCAP-page/",
+        "public_code": false,
+        "real_robot_quote": "We evaluate MoCaP on a real mobile manipulator in an indoor environment through an object-navigation task and two mobile manipulation tasks.",
+        "reason": "方法实际从被动人类第一视角视频提取空间记忆和交互前站位，用于代码智能体的机器人导航、接近与操作控制，并进行了实体移动操作机器人实验；符合 agent 和视频条件化类别。",
+        "robot_learning_quote": "During task execution, the spatial memory helps locate the requested object, and the human approach prior guides the robot to approach the object in the right way. A code agent uses this guidance together with current observations to coordinate navigation and manipulation primitives. The primitives solve and check motions for the robot’s embodiment, returning execution feedback that lets the agent revise subsequent actions."
       },
-      "attempts": 1,
+      "attempts": 2,
       "first_seen": "2026-10-21",
       "paper": {
         "abstract": "Passive human videos of everyday activity offer robots access to a massive amount of human experience without requiring a demonstration for each task. However, using this experience requires recovering knowledge from unstructured video recordings and adapting it to a different body (i.e., the robot). To overcome these challenges, we present mobile code-as-policy (MoCaP), an agentic framework that turns passive human video recordings into guidance for an end-to-end mobile manipulation policy. MoCaP extracts spatial memory and cues of how people prepare to interact with objects, which inform navigation and the search for a manipulation-ready configuration. Guided by passive human experience and current observations, MoCaP uses a closed-loop code-as-policy to coordinate planning and tool use primitives to solve motions under the robot's geometry and kinematic constraints. On a real mobile manipulator, MoCaP achieves 80% success on each of two mobile manipulation tasks in an indoor environment whereas existing approaches cannot succeed at the task. Video-derived spatial memory improves object-navigation success from 70% to 100%, and human approach prior raises the rate of finding a reachable base pose from 0% to 100% at an unfavorable start location. Videos and code are available on the project website: https://mocap-7.github.io/MoCAP-page/.",
@@ -316,18 +403,33 @@
         "url": "https://arxiv.org/abs/2610.20998",
         "version": 1
       },
-      "rules": "606efc0dbc422a4b98d48dacb88d8c653b8b4ef3207d4dca19e720d28624d12e",
+      "rules": "e66506b30f22bcdecc6908b76c3bcd2fca5464fa5a41550ce260f6cb13e0a0bb",
       "source_url": "https://arxiv.org/html/2610.20998v1",
-      "status": "retry",
+      "status": "accepted",
       "truncated": false
     },
     "2610.21152": {
       "assessment": {
-        "categories": [],
-        "decision": "review",
-        "reason": "Invalid model response: ValueError"
+        "categories": [
+          {
+            "confidence": 0.99,
+            "id": "vla",
+            "quote": "Middle: Human demonstrations become aligned whole-body motion and onboard observations, then controller-specific state–action data for VLA training (Control Command Generation).",
+            "reason": "人类视觉示范被转换为机器人全身运动、机载观测和控制器对应的状态—动作训练数据，用于VLA策略训练，而非仅用于感知或高层规划。"
+          }
+        ],
+        "code_quote": "",
+        "code_url": null,
+        "decision": "include",
+        "human_data_quote": "Whole-Body Motion Generation produces simulation-feasible whole-body motion from human egocentric demonstrations, and Robot Onboard View Generation synthesizes motion-aligned onboard views.",
+        "project_quote": "\\project https://koda-humanoid.github.io/koda/ KODA: Kinematics–Observation Data Alignment for Humanoid Learning from Human Egocentric Demonstration",
+        "project_url": "https://koda-humanoid.github.io/koda/",
+        "public_code": false,
+        "real_robot_quote": "",
+        "reason": "方法将人类第一视角RGB示范转换为对齐的机器人视角观测与全身状态—动作监督，并与机器人示范共同训练语言引导的VLA策略，符合人类视觉数据用于机器人学习及VLA类别要求。所给文本未明确证明评估是在实体机器人上进行，因此不填实体实验引文。",
+        "robot_learning_quote": "The resulting data are combined with matching real-robot demonstrations to co-train a controller-specific vision–language–action (VLA) policy for language-guided humanoid loco-manipulation."
       },
-      "attempts": 1,
+      "attempts": 2,
       "first_seen": "2026-10-21",
       "paper": {
         "abstract": "Training humanoid whole-body vision-language-action (VLA) policies requires costly robot demonstrations with aligned robot-view observations and controller-compatible whole-body state-action labels. Egocentric human demonstrations offer scalable supervision but have misaligned views and sparse motion cues. Existing approaches either pretrain policies that still require robot data for adaptation or generate controller-specific commands that limit reuse. Conversion also requires robot-view observations aligned with the generated whole-body motion. We present KODA (Kinematics-Observation Data Alignment), which converts egocentric RGB demonstrations into whole-body VLA training data using a reusable canonical trajectory to guide robot-view synthesis and generate controller-specific whole-body state-action supervision. KODA first generates a simulator-checked whole-body trajectory using a sparse tracker with sampling-based command optimization. This generated trajectory directly determines the onboard camera poses used to synthesize corresponding robot-view observations. The motion, observations, and task instruction form a canonical record. For each deployment controller, KODA optimizes commands to track the stored motion and records the corresponding action labels and proprioceptive states. When switching controllers, KODA retains this canonical record and regenerates whole-body state-action supervision for co-training with matching robot demonstrations. We evaluate KODA on four Unitree G1 loco-manipulation tasks using two whole-body controllers, SONIC and HEFT. With robot data held fixed, macro-average success on conditions covered by human demonstrations but absent from robot data improves by 45.0 and 46.25 percentage points, respectively. Under both controllers, this metric shows an upward trend across the evaluated human-data budgets, suggesting potential for further scaling.",
@@ -355,18 +457,18 @@
         "url": "https://arxiv.org/abs/2610.21152",
         "version": 1
       },
-      "rules": "606efc0dbc422a4b98d48dacb88d8c653b8b4ef3207d4dca19e720d28624d12e",
+      "rules": "e66506b30f22bcdecc6908b76c3bcd2fca5464fa5a41550ce260f6cb13e0a0bb",
       "source_url": "https://arxiv.org/html/2610.21152v1",
-      "status": "retry",
+      "status": "accepted",
       "truncated": false
     },
     "2610.21429": {
       "assessment": {
         "categories": [],
-        "decision": "review",
-        "reason": "Invalid model response: ValueError"
+        "decision": "exclude",
+        "reason": "全文未提供使用人类视频或人类视觉示范学习、规划或控制机器人技能的证据；机器人自身的视觉观测不能视为人类示范，不满足纳入范围，也无符合要求的类别。"
       },
-      "attempts": 1,
+      "attempts": 2,
       "first_seen": "2026-10-21",
       "paper": {
         "abstract": "Sound-Triggered Mobile Manipulation (STMM) requires robots to respond to sound events by navigating to the associated objects and performing appropriate physical interactions. Existing STMM evaluations primarily vary object layouts within limited architectural structures, leaving challenges to unseen scenes insufficiently explored. We introduce Multi-scene Sound-Triggered Mobile Manipulation (MuSTMM), a dataset that combines spatial audio rendering and physical interaction across 31 scenes with diverse architectures and object layouts. MuSTMM contains 14.36 million precomputed binaural Room Impulse Responses (RIRs) and a scene-disjoint split for evaluating single-event and multi-event settings in unseen scenes. We further augment the Navigation Policy Model with explicit spatial memory that complements acoustic cues with observed geometry. Specifically, we accumulate pose-aligned depth observations in a shared coordinate frame and project this memory into an egocentric Bird's-Eye View (BEV) occupancy map. Fusing map features with sound context produces a goal descriptor that provides both target-location and scene-structure priors, guiding navigation to the target region required for subsequent physical interaction. This policy achieves a 2.60% success rate boost over existing methods, while component ablations further support the effectiveness of spatial memory. MuSTMM and the navigation policy provide a testbed for the new challenge of studying sound-triggered mobile manipulation in unseen scenes. The code and dataset will be released upon acceptance.",
@@ -389,18 +491,33 @@
         "url": "https://arxiv.org/abs/2610.21429",
         "version": 1
       },
-      "rules": "606efc0dbc422a4b98d48dacb88d8c653b8b4ef3207d4dca19e720d28624d12e",
+      "rules": "e66506b30f22bcdecc6908b76c3bcd2fca5464fa5a41550ce260f6cb13e0a0bb",
       "source_url": "https://arxiv.org/html/2610.21429v1",
-      "status": "retry",
+      "status": "rejected",
       "truncated": false
     },
     "2610.21792": {
       "assessment": {
-        "categories": [],
-        "decision": "review",
-        "reason": "Invalid model response: ValueError"
+        "categories": [
+          {
+            "confidence": 0.9,
+            "id": "icl_vcl",
+            "quote": "In this evaluation, the single human demonstration is used to generate an initial trajectory set, and we study how the size of this generated training set affects spatial generalization.",
+            "reason": "属于涉及权重更新的单示范任务学习：将任务特定的人类示范转为轨迹训练集，再训练扩散策略；不是无权重更新的严格ICL，也不是直接在推理时输入视频的条件策略。证据未表明这是测试时快速训练。"
+          }
+        ],
+        "code_quote": "",
+        "code_url": null,
+        "decision": "include",
+        "human_data_quote": "TDV focuses on task-relevant objects by leveraging plug-and-play 6D pose estimation techniques to extract object trajectories from human videos, thereby mitigating the impact of irrelevant backgrounds and varying viewpoints.",
+        "project_quote": "",
+        "project_url": null,
+        "public_code": false,
+        "real_robot_quote": "For real-world experiments, we set up a tabletop robotic system consisting of a UR5 arm equipped with a Robotiq 2F-85 gripper. Perception is provided by an Intel RealSense D435 camera mounted on a 6-DoF articulating Magic Arm, allowing flexible adjustment of the camera viewpoint according to the experimental configuration. We evaluate our method on three object-centric and three hand-centric tasks: (1) placing the cup on a coaster (Cup-Coaster), (2) placing the Stitch toy on a card (Stitch-Card), (3) pouring water into the cup (Pour-Water), (4) pulling open the drawer (Pull-Drawer), (5) unplugging the charger from the socket (Unplug-Charger), and (6) pulling a tissue from the box (Pull-Tissue).",
+        "reason": "方法从单个人类视频示范提取轨迹并扩增训练数据，训练机器人操作策略，且进行了实体机器人实验。归入涉及权重更新的单示范学习，而非严格ICL。",
+        "robot_learning_quote": "To generate training data, we first extract trajectories from human videos based on task descriptions. Task segments are categorized into hand tasks and object tasks based on the type of moving entity involved. Specifically, we randomly sample valid initial poses of the moving entity within the workspace to construct a large and diverse set of training instances. All generated data are then used to train a trajectory-based diffusion transformer policy."
       },
-      "attempts": 1,
+      "attempts": 2,
       "first_seen": "2026-10-21",
       "paper": {
         "abstract": "Imitation learning enables robots to perform complex tasks by leveraging human-collected demonstrations. However, most existing approaches require labor-intensive data collection with additional teleoperation systems, which hinders scalability. Human videos represent a natural source of data that implicitly contain knowledge of manipulation behaviors. However, transferring them to robots remains challenging due to the visual domain gap and the absence of explicit action labels. In this work, we introduce TDV, a trajectory-based framework that leverages data generation to enable generalizable manipulation. TDV focuses on task-relevant objects by leveraging plug-and-play 6D pose estimation techniques to extract object trajectories from human videos, thereby mitigating the impact of irrelevant backgrounds and varying viewpoints. As a modality-agnostic intermediate representation, trajectories are inherently independent of the visual domains and different embodiments, enabling efficient data generation. Our method outperforms previous approaches on RLBench simulation tasks, achieving near 100\\% success rates across seven tasks. In real-world experiments, TDV enables cross-embodiment generalization manipulation from one-shot human demonstrations by leveraging efficient trajectory generation techniques.",
@@ -425,18 +542,33 @@
         "url": "https://arxiv.org/abs/2610.21792",
         "version": 1
       },
-      "rules": "606efc0dbc422a4b98d48dacb88d8c653b8b4ef3207d4dca19e720d28624d12e",
+      "rules": "e66506b30f22bcdecc6908b76c3bcd2fca5464fa5a41550ce260f6cb13e0a0bb",
       "source_url": "https://arxiv.org/html/2610.21792v1",
-      "status": "retry",
+      "status": "accepted",
       "truncated": false
     },
     "2610.21798": {
       "assessment": {
-        "categories": [],
-        "decision": "review",
-        "reason": "Invalid model response: ValueError"
+        "categories": [
+          {
+            "confidence": 0.99,
+            "id": "wam",
+            "quote": "Figure 3: Overview of Causal-Beam-Guided Subtask Transfer (CBST). Human-video pretraining and robot adaptation support state prediction and contextual beam selection. The resulting semantic conditions guide a frozen world–action model to predict actions and future states.",
+            "reason": "人类视频预训练得到的表征经机器人适配后支持状态预测和条件选择，并引导冻结的世界动作模型联合预测动作与未来状态，明确连接机器人控制，而非通用视频生成。"
+          }
+        ],
+        "code_quote": "",
+        "code_url": null,
+        "decision": "include",
+        "human_data_quote": "CBST learns manipulation-related representations from human videos and grounds them in task-level semantic variables using robot demonstrations.",
+        "project_quote": "",
+        "project_url": null,
+        "public_code": false,
+        "real_robot_quote": "5.4 Real-World Experiments We evaluate CBST on an AgileX dual-arm platform across ten object-placement tasks, with 20 trials per task and method. Each task specifies an object and a fixed target location. In cross-workspace configurations, no single arm can reach both the object’s initial position and its destination, requiring coordinated transport through a shared handover region.",
+        "reason": "CBST实际使用人类视频预训练视觉时序表征，再通过机器人示范进行适配；所选语义条件用于引导WAM生成机器人动作和未来观测，符合人类视觉数据用于机器人控制及WAM类别的要求。",
+        "robot_learning_quote": "Human-video pretraining initializes a visual–temporal module, which is then adapted with robot demonstrations to estimate task-level semantic variables from robot observations. Using these estimates, a learned selector chooses contextual parent assignments subject to causal-beam constraints within a predefined manipulation model. The selected assignments are rendered as language conditions for WAM, which combines them with the robot’s native observations to generate actions and future observation predictions."
       },
-      "attempts": 1,
+      "attempts": 2,
       "first_seen": "2026-10-21",
       "paper": {
         "abstract": "Scaling robot manipulation models requires large amounts of interaction data, yet collecting diverse real-robot experience remains costly. Human manipulation videos, in contrast, provide abundant and diverse task experience that could potentially benefit robot learning. However, differences in morphology, action spaces, and control mechanisms make human motions unsuitable as direct supervision for robot actions, raising a scientific question: what knowledge in human videos should be transferred across embodiments to robot manipulation? To address this question, we analyze subtask transfer through the lens of causal beams, focusing on which contextual conditions and interaction dependencies should be retained to support local task effects. Based on this perspective, we propose Causal-Beam-Guided Subtask Transfer (CBST). CBST learns manipulation-related representations from human videos and grounds them in task-level semantic variables using robot demonstrations. Within a predefined manipulation model, causal-beam constraints guide contextual information selection by requiring retained assignments to sustain local mechanism outputs while preserving nontrivial responsiveness to retained inputs. The selected semantic information conditions a world-action model, allowing the robot to generate actions from its own observations without requiring human-robot motion correspondence. Experiments on robot manipulation benchmarks show improvements in task success over the corresponding world-action model baselines.",
@@ -459,9 +591,9 @@
         "url": "https://arxiv.org/abs/2610.21798",
         "version": 1
       },
-      "rules": "606efc0dbc422a4b98d48dacb88d8c653b8b4ef3207d4dca19e720d28624d12e",
+      "rules": "e66506b30f22bcdecc6908b76c3bcd2fca5464fa5a41550ce260f6cb13e0a0bb",
       "source_url": "https://arxiv.org/html/2610.21798v1",
-      "status": "retry",
+      "status": "accepted",
       "truncated": true
     },
     "2610.21922": {
