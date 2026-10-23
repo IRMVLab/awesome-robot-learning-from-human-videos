@@ -96,6 +96,7 @@ We sincerely appreciate these blogs for helping _distill_ and _promote_ our work
 
 #### 2026
 
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.25690)] ScaleNav: Scalable Internet Video Pretraining for Language-Conditioned Local Navigation [Code] [[Page](<https://zju3dv.github.io/ScaleNav/>)]
 - 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.22363)] Perceive, Predict, and Plan: a Unified World Action Model for Egocentric Dexterous Manipulation [Code] [[Page](<https://p3-wam.pages.dev/>)]
 - 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.21922)] TS-WAM: Temporal Latent Actions and World-Action Coupling for Vision-Language Robot Control [Code] [Page]
 - 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.21798)] Cross-Embodiment Causal Transfer from Human Videos to Robot Manipulation [Code] [Page]
@@ -120,6 +121,7 @@ We sincerely appreciate these blogs for helping _distill_ and _promote_ our work
 
 #### 2026
 
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.25690)] ScaleNav: Scalable Internet Video Pretraining for Language-Conditioned Local Navigation [Code] [[Page](<https://zju3dv.github.io/ScaleNav/>)]
 - 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.22932)] Ego2Contact: Predicting Touch from Egocentric Human Video for Contact-Rich Robot Manipulation [Code] [Page]
 - 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.22342)] Spark-0: Scaling Spatially Aligned Tactile Pretraining for Robot Dexterous Manipulation [[Code](<https://github.com/XsparkAI/Spark-0>)] [[Page](<https://xsparkai.com/Spark-0>)]
 - 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.22178)] REKI: Registering Knowledge in VLAs [[Code](<https://github.com/kyutai-labs/reki>)] [Page]
@@ -142,6 +144,7 @@ We sincerely appreciate these blogs for helping _distill_ and _promote_ our work
 
 #### 2026
 
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.24392)] Gen2Dex: Learning Dexterous Manipulation from Simulation-Initialized Generated Video Demonstrations [Code] [Page]
 - 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.23551)] Embodiment-Aware Planning for Heterogeneous Bimanual Manipulation [Code] [[Page](<https://sukhvansh2004.github.io/Bimanual-Manipulation/>)]
 - 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.21792)] Trajectory-based Diffusion from One-shot Human Video for Generalizable Manipulation [Code] [Page]
 - 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.20998)] MoCaP: Mobile Code-as-Policies for Zero-Shot Mobile Manipulation from Passive Human Videos [Code] [[Page](<https://mocap-7.github.io/MoCAP-page/>)]
