@@ -163,6 +163,32 @@ class RenderingTests(unittest.TestCase):
 
 
 class EvidenceTests(unittest.TestCase):
+    def test_explicit_api_endpoint_accepts_http_custom_port_but_paper_links_do_not(self):
+        endpoint = "http://43.133.198.249:3000/v1/chat/completions"
+        self.assertEqual(au.public_url(endpoint, trusted_endpoint=True), endpoint)
+        self.assertEqual(au.public_url("https://model.example.org:8443/v1", trusted_endpoint=True), "https://model.example.org:8443/v1")
+        with self.assertRaises(ValueError):
+            au.public_url(endpoint)
+        with self.assertRaises(ValueError):
+            au.public_url("https://model.example.org:8443/v1")
+        for invalid in ("file:///tmp/key", "http://user:password@example.org/v1", "https://example.org:70000/v1"):
+            with self.assertRaises(ValueError):
+                au.public_url(invalid, trusted_endpoint=True)
+
+    def test_model_request_reaches_transport_with_http_custom_port(self):
+        network = au.Network()
+        endpoint = "http://43.133.198.249:3000/v1/chat/completions"
+        response = {"choices": [{"finish_reason": "stop", "message": {"content": json.dumps(assessment())}}]}
+        with patch.dict(au.os.environ, {"LLM_BASE_URL": "http://43.133.198.249:3000/v1", "LLM_MODEL": "gpt-6-astra", "LLM_API_KEY": "dummy-key"}), \
+             patch.object(network.opener, "open") as transport:
+            transport.return_value.__enter__.return_value.read.return_value = json.dumps(response).encode()
+            transport.return_value.__enter__.return_value.geturl.return_value = endpoint
+            self.assertEqual(au.call_model(network, paper(), evidence(), CONFIG)["decision"], "include")
+            request = transport.call_args.args[0]
+            self.assertEqual(request.full_url, endpoint)
+            self.assertEqual(request.get_header("Authorization"), "Bearer dummy-key")
+            self.assertEqual(json.loads(request.data)["model"], "gpt-6-astra")
+
     def test_valid_quotes_and_multiple_categories(self):
         result = au.validate_assessment(assessment(("agent", "wam")), evidence(), CONFIG)
         self.assertEqual(result["decision"], "include")
@@ -281,7 +307,7 @@ class PipelineTests(unittest.TestCase):
              patch.object(au, "fetch_evidence", return_value=evidence()), \
              patch.object(au, "call_model", return_value=model or assessment()) as call, \
              patch.object(au, "verify_links"):
-            au.run(self.args)
+            self.assertEqual(au.run(self.args), 0)
             return call.call_count
 
     def test_dry_run_has_no_repository_writes(self):
@@ -327,6 +353,47 @@ class PipelineTests(unittest.TestCase):
                 au.run(self.args)
         self.assertEqual((self.root / "README.md").read_text(), README)
         self.assertEqual(self.state_path.read_text(), self.initial_state)
+
+    def test_invalid_api_config_fails_before_discovery(self):
+        with patch.dict(au.os.environ, {"LLM_BASE_URL": "43.133.198.249:3000/v1"}), \
+             patch.object(au, "discover") as discover:
+            with self.assertRaisesRegex(ValueError, "LLM_BASE_URL"):
+                au.run(self.args)
+            discover.assert_not_called()
+
+    def test_all_model_errors_fail_run_keep_files_and_preserve_safe_diagnostics(self):
+        with patch.object(au, "discover", return_value={"2610.12345": paper()}), \
+             patch.object(au, "fetch_evidence", return_value=evidence()), \
+             patch.object(au, "call_model", side_effect=ValueError("Model output truncated; test-not-a-real-key")):
+            self.assertEqual(au.run(self.args), 1)
+        self.assertEqual((self.root / "README.md").read_text(), README)
+        self.assertEqual(self.state_path.read_text(), self.initial_state)
+        report = self.args.report.read_text()
+        result = json.loads(self.args.result.read_text())
+        self.assertTrue(result["failed"])
+        self.assertIn("Model output truncated", report)
+        self.assertNotIn("test-not-a-real-key", report + self.args.result.read_text())
+        self.assertIn("[REDACTED]", result["model_errors"][0]["error"])
+
+    def test_partial_model_failure_can_preserve_verified_additions(self):
+        found = {"2610.12345": paper(), "2610.12346": paper("2610.12346")}
+        with patch.object(au, "discover", return_value=found), \
+             patch.object(au, "fetch_evidence", return_value=evidence()), \
+             patch.object(au, "call_model", side_effect=[assessment(), ValueError("Missing decision or reason")]), \
+             patch.object(au, "verify_links"):
+            self.assertEqual(au.run(self.args), 0)
+        result = json.loads(self.args.result.read_text())
+        self.assertFalse(result["failed"])
+        self.assertEqual(len(result["model_errors"]), 1)
+        self.assertEqual(len(result["additions"]), 1)
+        state = json.loads(self.state_path.read_text())["papers"]
+        self.assertEqual(state["2610.12345"]["status"], "accepted")
+        self.assertEqual(state["2610.12346"]["status"], "retry")
+
+    def test_endpoint_change_retries_cached_decisions(self):
+        self.execute(model={"decision": "exclude", "reason": "Test rejection"})
+        with patch.dict(au.os.environ, {"LLM_BASE_URL": "http://43.133.198.249:3000/v1"}):
+            self.assertEqual(self.execute(), 1)
 
     def test_missing_full_text_is_retried_then_requires_review(self):
         with patch.object(au, "discover", return_value={"2610.12345": paper()}), \

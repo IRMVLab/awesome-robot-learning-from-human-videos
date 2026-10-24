@@ -96,10 +96,44 @@ def canonical_url(value: str) -> str:
     return urlunsplit(("https", parts.netloc.lower(), parts.path or "/", parts.query, ""))
 
 
+def configured_api_url(value: str) -> str:
+    """Validate the owner's explicit API endpoint separately from untrusted links."""
+    value = value.strip()
+    if re.search(r'[\s<>"\\]', value):
+        raise ValueError("LLM_BASE_URL contains whitespace or unsafe URL characters")
+    parts = urlsplit(value)
+    if parts.scheme not in {"http", "https"} or not parts.hostname:
+        raise ValueError("LLM_BASE_URL must start with http:// or https:// and include a host")
+    if parts.username or parts.password or parts.query or parts.fragment:
+        raise ValueError("LLM_BASE_URL must not contain credentials, query parameters or a fragment")
+    if parts.port == 0:
+        raise ValueError("LLM_BASE_URL port must be between 1 and 65535")
+    # Accessing .port above also rejects non-numeric and out-of-range ports.
+    return urlunsplit((parts.scheme, parts.netloc, parts.path or "/", "", ""))
+
+
+def model_endpoint() -> str:
+    base = os.environ["LLM_BASE_URL"].strip().rstrip("/")
+    if base.endswith("/chat/completions"):
+        raise ValueError("LLM_BASE_URL must be a base address; remove the /chat/completions suffix")
+    return configured_api_url(base + "/chat/completions")
+
+
+def safe_error(exc: Exception) -> str:
+    """Retain actionable exception details without logging model credentials."""
+    detail = str(exc)
+    secret = os.environ.get("LLM_API_KEY", "")
+    if secret:
+        detail = detail.replace(secret, "[REDACTED]")
+    return f"{type(exc).__name__}: {normalize(detail)[:400]}"
+
+
 def public_url(value: str, *, trusted_endpoint=False) -> str:
+    if trusted_endpoint:
+        return configured_api_url(value)
     url = canonical_url(value)
     host = urlsplit(url).hostname
-    if host in SOURCE_HOSTS or trusted_endpoint:
+    if host in SOURCE_HOSTS:
         return url
     for info in socket.getaddrinfo(host, 443, type=socket.SOCK_STREAM):
         if not ipaddress.ip_address(info[4][0]).is_global:
@@ -301,8 +335,8 @@ def fetch_evidence(network: Network, paper: dict, max_chars: int) -> dict:
 
 
 def call_model(network: Network, paper: dict, evidence: dict, config: dict) -> dict:
-    base = os.environ["LLM_BASE_URL"].rstrip("/")
-    payload = {"model": os.environ["LLM_MODEL"], "max_tokens": 4096,
+    endpoint = model_endpoint()
+    payload = {"model": os.environ["LLM_MODEL"].strip(), "max_tokens": 4096,
                "messages": [{"role": "system", "content": SYSTEM_PROMPT},
                             {"role": "user", "content": json.dumps({
                                 "scope": config["scope"], "categories": config["categories"],
@@ -311,13 +345,13 @@ def call_model(network: Network, paper: dict, evidence: dict, config: dict) -> d
         payload["response_format"] = {"type": "json_object"}
     try:
         # This endpoint is explicitly configured by the repository owner, never by a paper/model.
-        result = network.json(base + "/chat/completions", trusted_endpoint=True, data=json.dumps(payload).encode(), headers={
+        result = network.json(endpoint, trusted_endpoint=True, data=json.dumps(payload).encode(), headers={
             "Authorization": "Bearer " + os.environ["LLM_API_KEY"], "Content-Type": "application/json"})
     except HTTPError as exc:
         raise RuntimeError(f"Model API HTTP {exc.code}; check LLM_BASE_URL, model access, credentials and quota") from None
     message = result["choices"][0]
     if message.get("finish_reason") == "length":
-        raise ValueError("Model output truncated")
+        raise ValueError("Model output truncated (finish_reason=length, max_tokens=4096)")
     text = message["message"]["content"].strip()
     if text.startswith("```"):
         text = re.sub(r"^```(?:json)?\s*|\s*```$", "", text)
@@ -481,6 +515,12 @@ def write_report(path: Path, results: dict, records: dict) -> None:
              f"模式：{'预览（不修改 README 或状态）' if results['dry_run'] else '分支更新'}", "",
              f"检索窗口：{results['start']} — {results['date']}；发现 {results['discovered']} 篇；本次检查 {len(results['checked'])} 篇；新增 {len(results['additions'])} 个分类条目。", "",
              "只维护 Agent+Human Data+Robot、WAM、VLA、ICL & VCL。分类可以重叠；同一论文可能产生多个条目。", ""]
+    if results.get("failed"):
+        lines += ["运行失败：本轮所有模型检查均发生错误；README 和状态文件未写入。", ""]
+    if results.get("model_errors"):
+        lines += ["## 模型调用 / 输出错误", ""]
+        lines += [f"- {error['id']}：{md(error['error'])}" for error in results["model_errors"]]
+        lines += [""]
     for addition in results["additions"]:
         lines.append(f"- 新增：[{md(addition['title'])}](https://arxiv.org/abs/{addition['id']}) → {HEADINGS[addition['category']]}")
     lines += ["", "## 本次检查与证据", ""]
@@ -498,7 +538,7 @@ def write_report(path: Path, results: dict, records: dict) -> None:
             lines += [f"- {HEADINGS[category['id']]}（模型置信度 {category['confidence']}）：{md(category['reason'])}",
                       f"  证据：{md(category['quote'])}", ""]
     pending = [aid for aid, r in records.items() if r["status"] in {"pending", "retry", "review"}]
-    storage = "预览不写入状态文件，以下列出至多 50 篇。" if results["dry_run"] else "完整记录保存在 data/auto-update/state.json。"
+    storage = "本次未写入状态文件，以下列出至多 50 篇。" if results["dry_run"] or results.get("failed") else "完整记录保存在 data/auto-update/state.json。"
     lines += ["## 待处理 / 待人工核查", "", f"共 {len(pending)} 篇；{storage}", ""]
     lines += [f"- [{md(records[aid]['paper']['title'])}](https://arxiv.org/abs/{aid}): {records[aid]['status']} — {md(records[aid].get('assessment', {}).get('reason', '等待批处理'))}" for aid in pending[:50]]
     lines += ["", "## 运行说明", ""] + [f"- {md(note)}" for note in results["notes"]]
@@ -517,9 +557,10 @@ def run(args) -> int:
     if type(config.get("huggingface_daily_days", 0)) is not int or not 0 <= config.get("huggingface_daily_days", 0) <= 7:
         raise ValueError("huggingface_daily_days must be an integer between 0 and 7")
     if not args.discover_only:
-        missing = [key for key in ("LLM_API_KEY", "LLM_BASE_URL", "LLM_MODEL") if not os.environ.get(key)]
+        missing = [key for key in ("LLM_API_KEY", "LLM_BASE_URL", "LLM_MODEL") if not os.environ.get(key, "").strip()]
         if missing:
             raise ValueError("Missing environment settings: " + ", ".join(missing))
+        model_endpoint()  # Reject malformed configuration before collecting or reading papers.
     readme_path = args.root / "README.md"
     original = readme_path.read_text(encoding="utf-8")
     render_readme(original, [])  # Validate bounds before spending any API calls.
@@ -531,12 +572,14 @@ def run(args) -> int:
     today = dt.datetime.now(dt.timezone.utc).date()
     start = search_start(config, state, today, args.lookback_days)
     results = {"dry_run": args.dry_run or args.discover_only, "date": str(today), "start": str(start),
-               "discovered": 0, "checked": [], "additions": [], "notes": []}
+               "discovered": 0, "checked": [], "additions": [], "notes": [], "model_errors": [], "failed": False}
     network = Network()
     found = discover(network, config, start, today, results["notes"])
     results["discovered"] = len(found)
-    rules = hashlib.sha256((SYSTEM_PROMPT + json.dumps({k: config[k] for k in ("scope", "categories", "min_confidence", "max_source_chars")}, sort_keys=True)
-                            + os.environ.get("LLM_MODEL", "")).encode()).hexdigest()
+    # Reconsider cached failures after endpoint/protocol changes as well as model/rule changes.
+    model_config = {key: os.environ.get(key, "").strip() for key in ("LLM_BASE_URL", "LLM_MODEL", "LLM_JSON_MODE")}
+    rules = hashlib.sha256(("model-api-v2" + SYSTEM_PROMPT + json.dumps({k: config[k] for k in ("scope", "categories", "min_confidence", "max_source_chars")}, sort_keys=True)
+                            + json.dumps(model_config, sort_keys=True)).encode()).hexdigest()
     excluded = {identity(aid) for aid in config.get("excluded_arxiv_ids", [])}
     records = state["papers"]
     for aid, paper in found.items():
@@ -548,6 +591,7 @@ def run(args) -> int:
             record.update(status="pending", attempts=0)
     pending = sorted((r for aid, r in records.items() if aid not in excluded and r["status"] in {"pending", "retry"}),
                      key=lambda r: (r["first_seen"], r["paper"]["published"], r["paper"]["id"]))
+    model_attempts = 0
     for record in ([] if args.discover_only else pending[:config["max_candidates_per_run"]]):
         paper = record["paper"]
         results["checked"].append(paper["id"])
@@ -560,20 +604,30 @@ def run(args) -> int:
                           assessment={"decision": "review", "reason": f"Full text unavailable: {type(exc).__name__}", "categories": []})
             continue
         record.update(source_url=evidence["source_url"], truncated=evidence["truncated"])
+        model_attempts += 1
         try:
             assessment = validate_assessment(call_model(network, paper, evidence, config), evidence, config)
         except (ValueError, KeyError, TypeError, AttributeError, IndexError) as exc:
+            detail = safe_error(exc)
+            results["model_errors"].append({"id": paper["id"], "error": detail})
             record.update(status="retry" if record["attempts"] < 3 else "review",
-                          assessment={"decision": "review", "reason": f"Invalid model response: {type(exc).__name__}", "categories": []})
+                          assessment={"decision": "review", "reason": f"Model check failed: {detail}", "categories": []})
             continue
         if assessment["decision"] == "include":
             verify_links(network, assessment, results["notes"])
         record.update(status={"include": "accepted", "exclude": "rejected", "review": "review"}[assessment["decision"]], assessment=assessment)
     accepted = [r for aid, r in records.items() if aid not in excluded and r["status"] == "accepted"]
     updated, results["additions"] = render_readme(original, accepted)
+    results["failed"] = model_attempts > 0 and len(results["model_errors"]) == model_attempts
+    if results["failed"]:
+        results["additions"] = []
+        results["notes"].append("所有模型检查失败，请根据具体错误修正模型接口或返回格式，再重新运行。")
     state["last_search_date"] = str(today)
     write_report(args.report, results, records)
     atomic_write(args.result, json.dumps(results, ensure_ascii=False, indent=2) + "\n")
+    if results["failed"]:
+        print(f"Auto-update failed: all {model_attempts} model checks failed. See {args.report}", file=sys.stderr)
+        return 1
     if not results["dry_run"]:
         if updated != original:
             atomic_write(readme_path, updated)
