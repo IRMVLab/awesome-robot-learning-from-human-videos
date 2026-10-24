@@ -1,5 +1,5 @@
 {
-  "last_search_date": "2026-10-23",
+  "last_search_date": "2026-10-24",
   "papers": {
     "2610.19330": {
       "assessment": {
@@ -1458,6 +1458,33 @@
       "status": "rejected",
       "truncated": true
     },
+    "2610.25376": {
+      "attempts": 0,
+      "first_seen": "2026-10-24",
+      "paper": {
+        "abstract": "Large-scale action pretraining equips Embodied Foundation Models (EFMs) with strong manipulation capabilities, with particular strengths in generalization and closed-loop robustness, but reproducing such pretraining requires substantial robot data and computation. To transfer these capabilities from pretrained EFMs to policies without action pretraining, we introduce TILDE (Teacher-In-the-Loop Distillation from EFMs), which synergizes on-policy distillation at student-induced states with learning from teacher-executed recovery trajectories. We further propose AutoDAgger, an autonomous data aggregation pipeline in which a robotic reward model is utilized to monitor task progress and trigger teacher intervention, thereby collecting recovery experience without human monitoring or manual control. AutoDAgger accelerates recovery-trajectory collection by more than $2\\times$ compared with the human-in-the-loop method. By unifying learning from demonstrations, on-policy teacher supervision, and teacher's corrective behavior, TILDE improves task performance by up to $4.1\\times$ over behavior cloning across three real-world tasks and supports effective cross-architecture distillation.",
+        "authors": [
+          "Yuxiang Lu",
+          "Yantong Liu",
+          "Jinghua Hou",
+          "Xueli Sun",
+          "Ruihua Han",
+          "Zhe Liu",
+          "Hengshuang Zhao"
+        ],
+        "comments": "Project page: https://hku-sail.github.io/TILDE",
+        "id": "2610.25376",
+        "published": "2026-10-18",
+        "sources": [
+          "huggingface_daily"
+        ],
+        "title": "TILDE: Teacher-in-the-Loop Distillation from Embodied Foundation Models",
+        "updated": "2026-10-18T16:26:20Z",
+        "url": "https://arxiv.org/abs/2610.25376",
+        "version": 1
+      },
+      "status": "pending"
+    },
     "2610.25690": {
       "assessment": {
         "categories": [
@@ -1698,7 +1725,12 @@
       "truncated": true
     },
     "2610.26762": {
-      "attempts": 0,
+      "assessment": {
+        "categories": [],
+        "decision": "exclude",
+        "reason": "方法明确以人体动作捕捉数据生成机器人参考轨迹，并通过残差强化学习用于控制；但未证明实际使用人类视频或视觉示范。原文将从 RGB 视频重建轨迹列为未来工作，因此不满足范围要求，也不应将动作捕捉条件化或跨数据集微调强行归入视频条件学习。"
+      },
+      "attempts": 1,
       "first_seen": "2026-10-21",
       "paper": {
         "abstract": "We introduce DexOAK, a learning-based object-aware kinematic retargeting framework for generating contact-consistent robot hand references from human motion-capture data. DexOAK first minimizes an interaction-graph Laplacian objective over a joint hand-object graph, so the robot reproduces the demonstrated object-relative interaction geometry rather than the human hand pose alone. These per-frame solutions form seed retargeted references, from which a feed-forward network conditioned on human keypoints and object point clouds learns the retargeting function. Object-aware finetuning then refines the network under contact, non-penetration, and self-collision losses that position the fingers on the demonstrated contacts and reduce artifacts destabilizing physics-based refinement. Once trained, the network transfers to unseen data by inference alone, without per-frame optimization. DexOAK references improve dynamic retargeting over the state-of-the-art across bimanual tasks with rigid and articulated objects. On the Inspire hand, success rises from 39.5% to 48.4% on OakInk-v2, and ADD-AUC rises from 62.7% to 77.9% on ARCTIC. Ablations trace the gains to object-aware kinematic retargeting and the amortized network refined with contact losses. Trained on OakInk-v2, it transfers to ARCTIC zero-shot and nears in-domain performance after fine-tuning. On hardware, 46/56 open-loop replays succeed across five tasks, enabling dexterous robot data generation from human data. Visualizations and interactive results are at: https://fspinola.github.io/dexoak/.",
@@ -1718,10 +1750,18 @@
         "url": "https://arxiv.org/abs/2610.26762",
         "version": 1
       },
-      "status": "pending"
+      "rules": "e66506b30f22bcdecc6908b76c3bcd2fca5464fa5a41550ce260f6cb13e0a0bb",
+      "source_url": "https://arxiv.org/html/2610.26762v1",
+      "status": "rejected",
+      "truncated": true
     },
     "2610.26765": {
-      "attempts": 0,
+      "assessment": {
+        "categories": [],
+        "decision": "exclude",
+        "reason": "所谓人类示范实际是通过手套和腕部追踪器遥操作仿真机器人所得的轨迹及机器人视角视频，不是人类视觉示范。原文明确说明：“HandsOn pairs a teleoperated demonstration corpus with a re-rendering pipeline.”以及“Retargeted commands drive the simulated arm–hand system while the operator observes the scene.”因此，虽有机器人策略训练，但不满足利用人类视频学习机器人技能的范围。"
+      },
+      "attempts": 1,
       "first_seen": "2026-10-21",
       "paper": {
         "abstract": "General-purpose manipulation requires reliable behavior across embodiments, objects, and task demands. We introduce HandsOn, a composable simulation platform and benchmark for cross-embodiment dexterous manipulation. It supports five robotic arms, six dexterous hands, and approximately 200 rigid, articulated, and deformable assets in randomized scenes. The benchmark pairs 18,000 curated human demonstrations with 66 human-verified tasks: Core-50 supports demonstration-based learning and execution tests, while Transfer-16 evaluates asset and relation transfer, skill composition, and deformable manipulation without target-task training demonstrations. Qualitative real-robot rollouts illustrate sim-to-real transfer. Across diffusion, vision-language-action, world-action, and prompted VLM-based methods, the best trained multi-task policy achieves 29.1% Core-50 success. Without benchmark finetuning, GPT-6 using move_eef for palm-and-finger control achieves 5.2% on Core-50 and 1.9% on Transfer-16 over 660 trials. Trained-policy stage diagnostics expose failures in contact establishment, action coordination, and maintaining achieved goals, with additional sequencing errors in composed tasks. HandsOn provides a shared basis for investigating manipulation generalization and the limits of reliable physical interaction.",
@@ -1755,10 +1795,18 @@
         "url": "https://arxiv.org/abs/2610.26765",
         "version": 1
       },
-      "status": "pending"
+      "rules": "e66506b30f22bcdecc6908b76c3bcd2fca5464fa5a41550ce260f6cb13e0a0bb",
+      "source_url": "https://arxiv.org/html/2610.26765v1",
+      "status": "rejected",
+      "truncated": true
     },
     "2610.26780": {
-      "attempts": 0,
+      "assessment": {
+        "categories": [],
+        "decision": "exclude",
+        "reason": "本文贡献是第一人称视频中的手部与相机轨迹重建，而非机器人技能学习或控制。原文明确说明：“We evaluate V-JEPA Hand on egocentric two-hand reconstruction.” 虽使用人类视觉数据，但机器人学习仅作为应用动机及相关工作出现，未提供将该方法实际用于机器人策略训练、规划或执行的证据，不符合任何指定类别。"
+      },
+      "attempts": 1,
       "first_seen": "2026-10-21",
       "paper": {
         "abstract": "Egocentric video supports diverse applications, including robot learning, augmented reality, and human activity understanding. Recovering metric 3D hand trajectories from such video requires estimating both hand motion and camera egomotion to express the hands in a consistent reference frame. Many existing pipelines recover hand and camera motion in separate stages, combining hand detection, hand reconstruction, camera tracking, and trajectory refinement. We present V-JEPA Hand, a simple feed-forward video model that jointly reconstructs bilateral hand motion and camera motion from egocentric clips. It uses a self-supervised V-JEPA 2.1 encoder to extract spatio-temporal features from full-frame video and a query-based predictor to decode these features into per-frame hand poses, hand presence, and camera motion. We use the predicted camera motion to express the hand trajectories in a common world frame. The model accepts known focal lengths or predicts them when unavailable. It reconstructs each clip in a single forward pass. We train both components end to end in a single stage on a mixture of diverse pseudo-labelled videos and high-precision 3D annotations. A single model achieves the lowest coverage-aware mean per-joint position error (MPJPE) among comparable baselines on ARCTIC, HOT3D, and EgoStandard. It also yields lower world-frame trajectory errors than the compared SLAM-based pipelines. Ablations support the benefits of video pretraining, temporal context, and mixed supervision. V-JEPA Hand achieves a forward-pass throughput of 93.4 FPS on a single RTX A6000. Project page: https://qft-333.github.io/V-JEPA-Hand-Page/.",
@@ -1781,10 +1829,33 @@
         "url": "https://arxiv.org/abs/2610.26780",
         "version": 1
       },
-      "status": "pending"
+      "rules": "e66506b30f22bcdecc6908b76c3bcd2fca5464fa5a41550ce260f6cb13e0a0bb",
+      "source_url": "https://arxiv.org/html/2610.26780v1",
+      "status": "rejected",
+      "truncated": true
     },
     "2610.26855": {
-      "attempts": 0,
+      "assessment": {
+        "categories": [
+          {
+            "confidence": 0.99,
+            "id": "wam",
+            "quote": "World–action modeling. A world–action model jointly predicts future frames and the actions that produce them, so a stronger world model should be a better initialization. We test this by initializing the video backbone of FastWAM [ 131 ] from our pretrained 5B world model and leaving its action head and training recipe unchanged.",
+            "reason": "人类视频用于学习运动条件下的视觉后果；所得世界模型实际用于闭环机器人规划，并初始化联合预测未来帧与动作的FastWAM，符合世界动力学服务机器人控制与动作学习的定义。"
+          }
+        ],
+        "code_quote": "Author comments: Project page: https://ropedia.github.io/ropedia-w0/ ; Code: https://github.com/Ropedia/ropedia-w0",
+        "code_url": "https://github.com/Ropedia/ropedia-w0",
+        "decision": "include",
+        "human_data_quote": "Human pre-training. We first train on large-scale egocentric human videos conditioned on text, camera trajectories, and projected hand skeletons. This stage learns the visual consequences of camera and manipulator motion across diverse environments and interactions, establishing a foundation for cross-embodiment transfer.",
+        "project_quote": "Author comments: Project page: https://ropedia.github.io/ropedia-w0/ ; Code: https://github.com/Ropedia/ropedia-w0",
+        "project_url": "https://ropedia.github.io/ropedia-w0/",
+        "public_code": true,
+        "real_robot_quote": "We evaluate planning on fixed-view manipulation tasks in simulation and on the real robot. The executed plan reaches 92% task progress vs. 53% (random selection) / 85% (best fixed checkpoint) in RoboTwin 2.0, and 55% vs. 26% / 45% on the real G1 (Fig. 9 (c,d)).",
+        "reason": "论文明确使用第一人称人类视频预训练运动条件世界模型，并将其用于机器人闭环规划和世界—动作模型初始化；具备真实机器人执行证据，符合WAM类别，而非仅生成视频或使用遥操作机器人数据。",
+        "robot_learning_quote": "Model-based planning. Following DreamDojo [ 34 ] , Ropedia W0 is used for closed-loop planning: it rolls out multiple candidate action sequences, an external value model scores the predicted rollouts, and the selected plan is executed in the environment."
+      },
+      "attempts": 1,
       "first_seen": "2026-10-21",
       "paper": {
         "abstract": "World models enable embodied agents to anticipate action consequences, yet jointly modeling locomotion and manipulation across diverse embodiments remains challenging due to heterogeneous action spaces and limited multimodal supervision. We present Ropedia W0, the first egocentric loco-manipulation world foundation model spanning humans and robots with diverse embodiments. We curate Xp-Data, comprising 10k hours of egocentric human data and 3k hours of robot data with unified multimodal annotations and systematic quality control. A unified kinematic representation encodes locomotion through camera poses and manipulation through projected skeletons, with robot skeletons combining embodiment-specific forward kinematics with extensive manual keypoint annotation and correction. We also introduce Xp-Teleop, a long-horizon loco-manipulation benchmark based on high-quality dexterous humanoid teleoperation data. Evaluations demonstrate state-of-the-art performance across five cross-embodiment benchmarks (DreamDojo, $Ψ_0$, $ω$-HOME, Xp-Teleop, and AgiBot) and on held-out human egocentric video, from zero-shot inference to few-shot and full-data post-training. Scaling human pre-training data improves performance on both human and robot evaluations. After distillation, our model supports real-time, minute-long rollouts, enabling live VR interaction. Applications in policy evaluation, model-based planning, and world-action modeling further demonstrate the model's utility for embodied decision-making.",
@@ -1816,10 +1887,18 @@
         "url": "https://arxiv.org/abs/2610.26855",
         "version": 1
       },
-      "status": "pending"
+      "rules": "e66506b30f22bcdecc6908b76c3bcd2fca5464fa5a41550ce260f6cb13e0a0bb",
+      "source_url": "https://arxiv.org/html/2610.26855v1",
+      "status": "accepted",
+      "truncated": true
     },
     "2610.27622": {
-      "attempts": 0,
+      "assessment": {
+        "categories": [],
+        "decision": "exclude",
+        "reason": "本文确实将人佩戴头部相机采集的手套视觉示范用于机器人策略训练，并进行了实体机器人实验；但方法是离线 ACT 模仿学习，不符合所给四类中的任何一类。没有证据表明其使用规划智能体、世界/动作动力学模型、VLA，或以人类示范作为测试时上下文、视频条件、视觉目标或快速适应输入。按必须至少匹配一个类别的要求排除。"
+      },
+      "attempts": 1,
       "first_seen": "2026-10-21",
       "paper": {
         "abstract": "Handheld demonstration devices decouple data collection from the robot, but conventional designs burden the hand with a wrist camera, cables and a pose tracker (SLAM, an IMU, a VR controller, or a fixed external camera that the collector's body occludes), and burden the pipeline with as many data streams to timestamp, synchronise and cross-calibrate. We show that a single egocentric camera (USD 122) worn on the collector's head replaces the wrist camera, the pose tracker and their separate streams with one. It reads printed fiducials on an electronics-free glove (USD 22) against paper tiles taped around the workspace, giving the 6-DoF gripper pose and the jaw width from the same frames the policy will see; at deployment the same camera rides a low-cost (USD 120) arm beside the robot that mimics the collector's head from the robot's joint state. Against the robot's encoders the labels are accurate to 6.5 mm and 1.6 degrees median with 93-100% frame coverage, and a policy trained on them instead of encoders pays 3% in validation loss. Adding 194 glove demonstrations to 48 teleoperated episodes lifts rollout success from 10/25 to 17/25, level with 172 teleoperated episodes alone (18/25), and the full co-trained head-camera policy succeeds in 20/25 against 15/25 for the wrist-camera recipe, whose policies drop the object when the goal leaves their view, and 12/25 for a fixed camera.",
@@ -1839,10 +1918,18 @@
         "url": "https://arxiv.org/abs/2610.27622",
         "version": 1
       },
-      "status": "pending"
+      "rules": "e66506b30f22bcdecc6908b76c3bcd2fca5464fa5a41550ce260f6cb13e0a0bb",
+      "source_url": "https://arxiv.org/html/2610.27622v1",
+      "status": "rejected",
+      "truncated": false
     },
     "2610.27946": {
-      "attempts": 0,
+      "assessment": {
+        "categories": [],
+        "decision": "review",
+        "reason": "已提供内容主要支持视频生成贡献，原文为：“Experiments show that EgoACT generates more coherent and physically plausible interaction videos than strong baselines.” 尚无明确证据表明人类视觉示范被实际用于机器人技能学习、规划或控制，也无法据此归入任何指定类别。全文被截断，需复核缺失部分；不能将世界模拟或机器人数据生成的应用愿景视为已完成的机器人学习贡献。"
+      },
+      "attempts": 1,
       "first_seen": "2026-10-21",
       "paper": {
         "abstract": "Egocentric action transfer aims to decouple the semantic action from egocentric observations and reproduce them in new visual contexts, enabling scalable world simulation, embodied policy learning, and robotic data generation. Existing approaches to transferring actions rely on condition-guided video generation, which converts the observation video into explicit geometric controls (e.g., hand poses or meshes) to drive synthesis. However, these methods introduce geometric estimation errors, making it difficult to preserve physically plausible interactions when transferred to new scenes. Alternatively, motion transfer methods directly extract motion patterns from the observation video, yet motion-level features alone cannot encode rich contact dynamics, frequently leading to severe hand structural collapse and implausible contact layout. To address both limitations, we present EgoACT, a test-time framework for egocentric action transfer that operates directly on the denoising process of video diffusion models without requiring additional geometric estimators. EgoACT uses Velocity-guided Structure Anchoring to stabilize reference-consistent hand-object structure in the early denoising stage, and Sparse Correspondence Calibration to refine reliable local correspondences in the mid-to-late denoising stages. Together, these two components preserve transferable action semantics while improving temporal coherence and interaction realism. We further establish EgoActionBench, a benchmark for evaluating action preservation, visual quality, and hand-object plausibility across diverse egocentric manipulation scenarios. Experiments show that EgoACT generates more coherent and physically plausible interaction videos than strong baselines.",
@@ -1872,10 +1959,18 @@
         "url": "https://arxiv.org/abs/2610.27946",
         "version": 1
       },
-      "status": "pending"
+      "rules": "e66506b30f22bcdecc6908b76c3bcd2fca5464fa5a41550ce260f6cb13e0a0bb",
+      "source_url": "https://arxiv.org/html/2610.27946v1",
+      "status": "review",
+      "truncated": true
     },
     "2610.28523": {
-      "attempts": 0,
+      "assessment": {
+        "categories": [],
+        "decision": "review",
+        "reason": "已证实方法将人类交互动捕的多视角渲染用于接触语义验证，并将标注用于机器人策略学习及真机实验。但现有文本不足以确认使用了符合范围的人类视觉示范，而非仅动捕衍生渲染；全文又在相关附录前截断。VLM技能选择使用在线观测，尚不能证明其使用示范进行规划；未来姿态辅助预测也不足以确认为动作条件世界模型。暂不强行归类，需补充视觉示范来源及其使用方式的证据。"
+      },
+      "attempts": 1,
       "first_seen": "2026-10-21",
       "paper": {
         "abstract": "Humanoid-human interaction requires robots to operate under severe partial observability: during close physical contact, the human partner is occluded, truncated, or outside the robot's field of view, causing pose estimation to fail and often necessitating external tracking or privileged human state. At the same time, heavy mutual occlusions introduce errors into the human-human motion-capture data used for learning. We present REACT, a framework for learning deployable humanoid-human interaction policies from human-human demonstrations. REACT treats semantic contact structure as the key supervisory signal connecting demonstration processing, interaction learning, and onboard control. First, a VLM-guided contact modeling and retargeting pipeline identifies semantically meaningful contacts and transfers them onto humanoid-human geometry while preserving interaction structure. Using these annotations, privileged interaction policies learn physically grounded behaviors through interaction-aware contact rewards and are then distilled into deployable egocentric depth policies trained entirely from onboard sensing using photorealistic human depth rendering. To address severe partial observability, we introduce generative partner-state modeling objectives that predict partner motion from occluded egocentric views. We evaluate REACT in simulation and on a real Unitree G1 humanoid across five contact-rich interactions. Semantic contact modeling substantially improves preservation of demonstrated interactions, while generative partner-state modeling improves contact recall on four of five interactions, most under heavy occlusion. On real hardware, REACT performs all five interactions using onboard sensing alone.",
@@ -1899,10 +1994,18 @@
         "url": "https://arxiv.org/abs/2610.28523",
         "version": 1
       },
-      "status": "pending"
+      "rules": "e66506b30f22bcdecc6908b76c3bcd2fca5464fa5a41550ce260f6cb13e0a0bb",
+      "source_url": "https://arxiv.org/html/2610.28523v1",
+      "status": "review",
+      "truncated": true
     },
     "2610.28632": {
-      "attempts": 0,
+      "assessment": {
+        "categories": [],
+        "decision": "review",
+        "reason": "明确使用了人类视频，但现有证据未建立其与机器人技能学习或控制的联系。机器人示例描述的是网格动画渲染：“we show the video alongside the mesh driven by the generated motion and rendered in the scene.” 这不足以证明机器人执行或物理实验，也不足以归入所列类别。全文在附录处截断，缺少后续 Robotics 等内容，需复核是否存在合格的机器人控制贡献。"
+      },
+      "attempts": 1,
       "first_seen": "2026-10-21",
       "paper": {
         "abstract": "Video generation models can now depict remarkably realistic motion. Yet it is unclear how to use this motion beyond pixels: to animate a specific 3D asset and replay the animation in its 3D scene. For instance, a video model can show a monkey jumping over a crossbar, but it cannot return that jump as replayable 3D motion placed in the 3D scene. Here we present a model that directly co-generates the video and 3D motion for any supplied rig, along with a camera that registers this motion to the scene. Prior video-motion models either handle only human skeletons, often adding billions of parameters, or triangulate 3D motion from generated 2D pose maps. We instead keep 3D motion in a separate model that supports arbitrary skeletons, and connect it to a pretrained video model through a small set of cross-attention layers. This separation lets the motion model first learn how skeletons move from motion-only data, which is easier to obtain and augment than paired video. Additionally, our model learns to locate each joint in the video frames, which lets us recover the camera and place the 3D motion in the scene. To train across many skeletons, we use a generative video editor to place animated 3D assets in scenes suited to their actions, curating the edits so their known motion remains valid. Together with human and robot video, this yields nearly 200K training pairs. Our evaluations demonstrate that our model animates diverse rigs from text more faithfully than video-first pipelines, and its motion responds to the surrounding scene. It also turns video into rig motion, rig motion into video, and enables keyframe-based control of the 3D motion. Videos and additional results are available on our project page: https://research.nvidia.com/labs/par/projects/jca/.",
@@ -1927,10 +2030,33 @@
         "url": "https://arxiv.org/abs/2610.28632",
         "version": 1
       },
-      "status": "pending"
+      "rules": "e66506b30f22bcdecc6908b76c3bcd2fca5464fa5a41550ce260f6cb13e0a0bb",
+      "source_url": "https://arxiv.org/html/2610.28632v1",
+      "status": "review",
+      "truncated": true
     },
     "2610.28880": {
-      "attempts": 0,
+      "assessment": {
+        "categories": [
+          {
+            "confidence": 0.99,
+            "id": "vla",
+            "quote": "On two real robots and four tasks, we train a vision-language-action policy on data from one human video per task, and policies trained on our data match or exceed policies trained on teleoperation across diverse object instances.",
+            "reason": "人类视频经示范生成流程形成训练数据，实际用于训练执行机器人任务的VLA策略，而非仅用于视觉感知或高层规划。"
+          }
+        ],
+        "code_quote": "",
+        "code_url": null,
+        "decision": "include",
+        "human_data_quote": "We present Real2Sem2Real (R2Sem2R), a real-to-semantic-to-real pipeline that turns one monocular RGB video of a human demonstration into thousands of robot demonstrations across the semantic object instances of a category.",
+        "project_quote": "The project page is available at https://real2sem2real.github.io/.",
+        "project_url": "https://real2sem2real.github.io/",
+        "public_code": false,
+        "real_robot_quote": "Fig. 7: Tasks. A single RGB human demonstration (left) generates training data for both robots. Real rollouts conducted on the xArm7 and Franka Panda (right).",
+        "reason": "方法将单个人类单目RGB演示视频转化为跨物体实例的机器人示范，用于训练视觉—语言—动作策略，并在真实机器人上验证，明确符合人类视觉示范用于机器人学习的范围及VLA类别。",
+        "robot_learning_quote": "On two real robots and four tasks, we train a vision-language-action policy on data from one human video per task, and policies trained on our data match or exceed policies trained on teleoperation across diverse object instances."
+      },
+      "attempts": 1,
       "first_seen": "2026-10-22",
       "paper": {
         "abstract": "Human video scales easily and does not need robot hardware, but existing methods require depth sensing, overlay the robot onto 2D video, or generate data only for the demonstrated objects. We present Real2Sem2Real (R2Sem2R), a real-to-semantic-to-real pipeline that turns one monocular RGB video of a human demonstration into thousands of robot demonstrations across the semantic object instances of a category. R2Sem2R tracks the SE(3) pose of each object with DINOv3-distilled Gaussian splats, outperforming existing methods and FoundationPose with estimated metric depth. R2Sem2R then aligns digital cousins, each generated from one or a few photographs, to the demonstrated objects with a semantic alignment. This alignment matches whole objects and the functional regions of target objects, such as a coffee machine's tray. R2Sem2R maps the human hand to a feasible robot grasp that extends to the cousins. Robot demonstrations are generated either in IsaacSim, for photorealistic rendering, or MuJoCo, for contact physics, and R2Sem2R can generate over 2,000 episodes in about two hours. On two real robots and four tasks, we train a vision-language-action policy on data from one human video per task, and policies trained on our data match or exceed policies trained on teleoperation across diverse object instances. The project page is available at https://real2sem2real.github.io/.",
@@ -1953,10 +2079,39 @@
         "url": "https://arxiv.org/abs/2610.28880",
         "version": 1
       },
-      "status": "pending"
+      "rules": "e66506b30f22bcdecc6908b76c3bcd2fca5464fa5a41550ce260f6cb13e0a0bb",
+      "source_url": "https://arxiv.org/html/2610.28880v1",
+      "status": "accepted",
+      "truncated": false
     },
     "2610.29716": {
-      "attempts": 0,
+      "assessment": {
+        "categories": [
+          {
+            "confidence": 0.99,
+            "id": "vla",
+            "quote": "The policy grounds the token grid of a pre-trained vision-language model in this geometry through gated residual fusion, is trained to predict future scene geometry alongside wrist and finger actions, and generates finger motion conditioned on the predicted trajectories of both wrists.",
+            "reason": "人类视频监督用于扩展预训练视觉语言模型，使其策略直接输出双手腕部和手指动作，而非仅用于感知或高层规划。"
+          },
+          {
+            "confidence": 0.95,
+            "id": "wam",
+            "quote": "As a target, a training-only predictor estimates future scene geometry from the shared context, which requires the representation to retain spatial structure that the action losses alone do not demand. From the same context, a wrist expert predicts both wrist trajectories and a finger expert predicts finger actions conditioned on them. Using the recovered scene geometry and hand motion from large-scale human videos, we pre-train a geometry-augmented visuomotor policy for bimanual control.",
+            "reason": "人类视频重建数据监督共享上下文中的未来场景几何与动作联合建模，直接服务机器人控制策略训练。这里是训练期辅助动力学预测，不是部署时基于世界模型的搜索规划，也不声称其几何预测以动作作为显式输入。"
+          }
+        ],
+        "code_quote": "",
+        "code_url": null,
+        "decision": "include",
+        "human_data_quote": "We construct a large-scale dataset that pairs visual observations with hand motion and scene geometry recovered from RGB-only human videos, as illustrated in Figure 2 .",
+        "project_quote": "Project page and video: https://spatial-dex.github.io/",
+        "project_url": "https://spatial-dex.github.io/",
+        "public_code": false,
+        "real_robot_quote": "Real-world. For each task, we collect 50 demonstration episodes through teleoperation. We evaluate SpatialDex and seven baselines on six tasks using a bimanual Wuji–Tianji platform (Table II ; the real-world Sweep Trash is a separate task from the simulated one), with ten trials per method and task.",
+        "reason": "该方法实际利用RGB人类视频重建场景几何和手部动作来预训练机器人策略，再以机器人示范微调；符合VLA以及联合预测动作与未来场景状态的WAM类别，并有实体机器人实验。",
+        "robot_learning_quote": "SpatialDex reconstructs scene geometry and estimates hand motion from RGB-only human videos and aligns them at a shared video-level scale to jointly supervise policy pre-training. The policy maps RGB-D observations to bimanual dexterous actions and is adapted to specific tasks through fine-tuning on robot demonstrations."
+      },
+      "attempts": 1,
       "first_seen": "2026-10-22",
       "paper": {
         "abstract": "We present SpatialDex, a framework that learns 3D-grounded bimanual dexterity from RGB-only human videos through reconstruction-augmented visuomotor pre-training. The central idea is to learn human behavior together with its spatial context. From each video, we reconstruct the scene geometry and estimate the hand motion, align them at a shared video-level scale using the hand-size prior of 3D hand estimates. We retain the reconstructed geometry as both a policy input and a prediction target. The policy grounds the token grid of a pre-trained vision-language model in this geometry through gated residual fusion, is trained to predict future scene geometry alongside wrist and finger actions, and generates finger motion conditioned on the predicted trajectories of both wrists. Pre-trained on 1M human-video clips and fine-tuned with a small number of robot demonstrations, SpatialDex outperforms the state-of-the-art methods by 16.5 points on nine simulated dexterous tasks across two embodiments and by 38.3 points on six real-world bimanual dexterous tasks. Under a matched comparison, pre-training with reconstructed geometry improves success by 14.2 points over pre-training on hand motion alone.",
@@ -1981,10 +2136,33 @@
         "url": "https://arxiv.org/abs/2610.29716",
         "version": 1
       },
-      "status": "pending"
+      "rules": "e66506b30f22bcdecc6908b76c3bcd2fca5464fa5a41550ce260f6cb13e0a0bb",
+      "source_url": "https://arxiv.org/html/2610.29716v1",
+      "status": "accepted",
+      "truncated": false
     },
     "2610.29997": {
-      "attempts": 0,
+      "assessment": {
+        "categories": [
+          {
+            "confidence": 0.93,
+            "id": "icl_vcl",
+            "quote": "Given a reference for two hands and an object, one policy controls both robot hands to reproduce the object motion through physical interaction. Following DexTrack [ 19 ] , training combines PPO with BC from executable demonstrations; the policy tracks unseen trajectories and objects without fine-tuning.",
+            "reason": "属于视频条件控制：人类视觉示范经重建、重定向得到任务专属参考轨迹，控制策略据此执行新轨迹。测试时不更新权重，但这是参考轨迹条件控制，不应称为严格ICL，也不是测试时微调。"
+          }
+        ],
+        "code_quote": "",
+        "code_url": null,
+        "decision": "include",
+        "human_data_quote": "We reconstruct metric hand–object trajectories from synchronized RGB recordings.",
+        "project_quote": "Project Page: ropedia.github.io/DONIC",
+        "project_url": "https://ropedia.github.io/DONIC/",
+        "public_code": false,
+        "real_robot_quote": "",
+        "reason": "方法将人类多视角RGB示范重建并重定向为机器人参考轨迹，用于学习双手控制；推理时以新参考轨迹为任务条件，无需微调。符合基于视频衍生参考的条件学习，而非仅通用预训练。",
+        "robot_learning_quote": "We map the reconstructed human motion to the Wuji robot hands through frame-wise kinematic fitting, following standard retargeting practice [ 11 , 27 , 19 ] . After wrist-frame alignment, we fit hand keypoints to robot links under joint limits, initializing and regularizing each frame against the preceding solution. Smoothing occurs only before retargeting. The resulting wrist and finger references are paired with the object trajectory."
+      },
+      "attempts": 1,
       "first_seen": "2026-10-22",
       "paper": {
         "abstract": "Despite recent progress in dexterous reference tracking, existing models focus primarily on single-hand manipulation and a limited range of interactions, leaving the bimanual dexterous behaviors common in real life unaddressed. The scarcity of contact-rich bimanual manipulation data and the increased complexity of coordinating contacts make developing a generalist bimanual tracker particularly challenging. Therefore, we present 1) DONIC, the first generalist bimanual tracker jointly trained across operation categories and human-motion sources, together with 2) BiHOI, a multi-view dataset of 1,575 sequences spanning 229 objects and emphasizing sustained bimanual interaction, where reconstructed interactions are retargeted into robot references. DONIC combines proximal policy optimization with behavioral cloning in a feedback loop that recycles verified successful executions into training demonstrations. An object-centered per-hand reward maintains object-motion feedback while supervising each hand according to its reference contact role. Clip-Centered Advantages remove reference-dependent advantage offsets while preserving within-trajectory differences. Together, these designs enable one single policy to learn coordinated manipulation across heterogeneous references. Without finetuning, a single checkpoint achieves 86.79% success on unseen trajectories of training objects and 57.32% on held-out objects, surpassing the state-of-the-art bimanual tracking baselines by 77.36 and 45.73 percentage points.",
@@ -2012,10 +2190,67 @@
         "url": "https://arxiv.org/abs/2610.29997",
         "version": 1
       },
+      "rules": "e66506b30f22bcdecc6908b76c3bcd2fca5464fa5a41550ce260f6cb13e0a0bb",
+      "source_url": "https://arxiv.org/html/2610.29997v1",
+      "status": "accepted",
+      "truncated": true
+    },
+    "2610.30043": {
+      "attempts": 0,
+      "first_seen": "2026-10-24",
+      "paper": {
+        "abstract": "Robots must act under physical and social constraints while adapting to changes in their environment and human needs. Existing embodied-agent systems often focus on specified goals or abstract execution into symbolic actions, limiting evaluation in an evolving world. We introduce TARSphere, a robot-oriented full-stack framework for physically and socially grounded long-horizon embodied agents. TARSphere-Infra runs robot policies in a physics simulator with embodied NPCs and constrained dialogue. An event-driven finite-state machine (FSM) uses completed actions and delivered information to update task states and evaluate outcomes. TARSphere-Harness, its embodied brain harness, lets a frozen multimodal large language model (MLLM) act through multi-level executable skills, using observations, hierarchical memory, and execution feedback to revise its decisions. On this foundation, agent-in-the-loop curation aligns task semantics, causal dependencies, and scene geometry to construct TARSphere-Bench: 360 episodes across 30 indoor scenes. Five paired conditions assess perceptual robustness, disruption adaptation, task update, human coordination, and intent understanding for navigate-and-report and fetch-and-deliver tasks. Our evaluation of 8 MLLMs shows that general-purpose models can outperform embodied models, while task updates and human interaction remain difficult. Frequent collisions and falls further motivate evaluating execution safety alongside task success, even with a shared action interface and decision budget.",
+        "authors": [
+          "Yicheng Xu",
+          "Zhikai Xu",
+          "Ziyuan Chen",
+          "Yuhang Dong",
+          "Tao Zhang",
+          "Zhucun Xue",
+          "Yong Liu",
+          "Jiangning Zhang"
+        ],
+        "comments": "13 pages, 8 figures, 7 tables. Project page: https://xuyicheng-zju.github.io/TARSphere/ Code: https://github.com/xuyicheng-zju/TARSphere",
+        "id": "2610.30043",
+        "published": "2026-10-21",
+        "sources": [
+          "huggingface_daily"
+        ],
+        "title": "TARSphere: A Robot-Oriented Full-Stack Framework for Long-Horizon Embodied Agents in Evolving Physical and Social Environments",
+        "updated": "2026-10-21T17:02:52Z",
+        "url": "https://arxiv.org/abs/2610.30043",
+        "version": 1
+      },
       "status": "pending"
     },
     "2610.30136": {
-      "attempts": 0,
+      "assessment": {
+        "categories": [
+          {
+            "confidence": 0.98,
+            "id": "agent",
+            "quote": "We present AW-0, an agentic world action model that integrates code-based skill planning with predictive dynamics and continuous control. Through joint denoising, the code expert provides structured semantic guidance for video and action generation. An automated annotation pipeline enables learning this planning interface from large-scale robot and human demonstrations.",
+            "reason": "由机器人及人类示范学习代码技能规划接口，代码专家为视频和动作生成提供规划指导，并非仅将普通策略网络称为智能体。"
+          },
+          {
+            "confidence": 0.99,
+            "id": "wam",
+            "quote": "We first pretrain AW-0 on approximately 2,000 hours of YAM robot data and approximately 1,000 hours of egocentric human manipulation data to learn a general unified generative prior. We apply the automatic annotation pipeline in Section 2.3 to extract two embodiment-specific skill libraries containing 50 skill entries in total (23 for YAM and 27 for egocentric human demonstrations) and annotate demonstrations with temporally aligned program slices. The annotated data support joint pretraining of code, video, and action generation, connecting structured skill plans with visual dynamics and continuous control across embodiments and scenarios.",
+            "reason": "人类视觉示范实际参与代码、未来视频及动作的联合预训练，将视觉动力学与连续控制连接，符合世界动作模型类别。"
+          }
+        ],
+        "code_quote": "",
+        "code_url": null,
+        "decision": "include",
+        "human_data_quote": "We further introduce an automated curation pipeline that labels robot and human video trajectories with aligned programs and consolidates recurring routines into reusable skill libraries.",
+        "project_quote": "Author comments: Project page: https://agentic-wam.github.io/",
+        "project_url": "https://agentic-wam.github.io/",
+        "public_code": false,
+        "real_robot_quote": "We conduct real-world experiments on two platforms: the YAM station, a fixed-base bimanual setup with two 6-DoF arms and parallel grippers, and the Tianji–Sharpa platform, a bimanual robot with two 22-DoF Sharpa dexterous hands.",
+        "reason": "正文明确使用第一人称人类操作数据预训练代码、视频与动作联合模型，并将人类视频轨迹标注为可复用技能程序，连接机器人规划与控制；符合 agent 和 wam，且有实体机器人实验。",
+        "robot_learning_quote": "We first pretrain AW-0 on approximately 2,000 hours of YAM robot data and approximately 1,000 hours of egocentric human manipulation data to learn a general unified generative prior. We apply the automatic annotation pipeline in Section 2.3 to extract two embodiment-specific skill libraries containing 50 skill entries in total (23 for YAM and 27 for egocentric human demonstrations) and annotate demonstrations with temporally aligned program slices. The annotated data support joint pretraining of code, video, and action generation, connecting structured skill plans with visual dynamics and continuous control across embodiments and scenarios."
+      },
+      "attempts": 1,
       "first_seen": "2026-10-22",
       "paper": {
         "abstract": "Recent world action models provide visual foresight and future prediction for robot manipulation, but lack explicit mechanisms for compositional skill reuse. Agentic robotics combines code-based planning and reasoning with reusable skills, but often lacks predictive grounding in physical dynamics. We introduce AW-0, an agentic world action model framework that integrates code-based planning with joint video and action prediction. We jointly model code, future video, and robot actions as three coupled generative streams within a unified mixture-of-transformers architecture. Within this architecture a code expert generates parameterized skill routines and control logic while video and action experts generate future visual states and low-level motor commands. Code serves two complementary roles: it structures multi-step prediction and control within the world model and represents skills as reusable programs for subsequent agentic execution. We further introduce an automated curation pipeline that labels robot and human video trajectories with aligned programs and consolidates recurring routines into reusable skill libraries. Evaluations on RoboTwin 2.0 and physical bimanual manipulation tasks show improved task performance over VLA and WAM baselines, alongside gains in language following, semantic reasoning and robustness, demonstrating that agentic code enables connection between planning, prediction and execution within WAMs.",
@@ -2050,7 +2285,10 @@
         "url": "https://arxiv.org/abs/2610.30136",
         "version": 1
       },
-      "status": "pending"
+      "rules": "e66506b30f22bcdecc6908b76c3bcd2fca5464fa5a41550ce260f6cb13e0a0bb",
+      "source_url": "https://arxiv.org/html/2610.30136v1",
+      "status": "accepted",
+      "truncated": true
     },
     "2610.30320": {
       "attempts": 0,

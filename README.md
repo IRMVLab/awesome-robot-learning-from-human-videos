@@ -88,6 +88,7 @@ We sincerely appreciate these blogs for helping _distill_ and _promote_ our work
 
 #### 2026
 
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.30136)] Agentic World Action Models [Code] [[Page](<https://agentic-wam.github.io/>)]
 - 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.20998)] MoCaP: Mobile Code-as-Policies for Zero-Shot Mobile Manipulation from Passive Human Videos [Code] [[Page](<https://mocap-7.github.io/MoCAP-page/>)]
 
 - 🌟🤖 [[arXiv 2026.09](https://arxiv.org/abs/2609.35318)] DexAgent: An Agentic Human2Sim2Robot Framework for Dexterous Manipulation with Self-Evolving Tool Library [[Code](https://github.com/dexagent1/DexAgent)] [[Page](https://dexagent1.github.io/)]
@@ -96,6 +97,9 @@ We sincerely appreciate these blogs for helping _distill_ and _promote_ our work
 
 #### 2026
 
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.30136)] Agentic World Action Models [Code] [[Page](<https://agentic-wam.github.io/>)]
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.29716)] Reconstruction-Augmented Visuomotor Pre-Training of 3D-Grounded Bimanual Dexterity from RGB-Only Human Videos [Code] [[Page](<https://spatial-dex.github.io/>)]
+- 🌟🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.26855)] Ropedia W0: Scaling Loco-Manipulation World Models across Embodiments with Human Experience [[Code](<https://github.com/Ropedia/ropedia-w0>)] [[Page](<https://ropedia.github.io/ropedia-w0/>)]
 - 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.25690)] ScaleNav: Scalable Internet Video Pretraining for Language-Conditioned Local Navigation [Code] [[Page](<https://zju3dv.github.io/ScaleNav/>)]
 - 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.22363)] Perceive, Predict, and Plan: a Unified World Action Model for Egocentric Dexterous Manipulation [Code] [[Page](<https://p3-wam.pages.dev/>)]
 - 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.21922)] TS-WAM: Temporal Latent Actions and World-Action Coupling for Vision-Language Robot Control [Code] [Page]
@@ -121,6 +125,8 @@ We sincerely appreciate these blogs for helping _distill_ and _promote_ our work
 
 #### 2026
 
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.29716)] Reconstruction-Augmented Visuomotor Pre-Training of 3D-Grounded Bimanual Dexterity from RGB-Only Human Videos [Code] [[Page](<https://spatial-dex.github.io/>)]
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.28880)] Real2Sem2Real: 3D Semantic Augmentations for Robot Learning from a Single Human RGB Demonstration [Code] [[Page](<https://real2sem2real.github.io/>)]
 - 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.25690)] ScaleNav: Scalable Internet Video Pretraining for Language-Conditioned Local Navigation [Code] [[Page](<https://zju3dv.github.io/ScaleNav/>)]
 - 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.22932)] Ego2Contact: Predicting Touch from Egocentric Human Video for Contact-Rich Robot Manipulation [Code] [Page]
 - 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.22342)] Spark-0: Scaling Spatially Aligned Tactile Pretraining for Robot Dexterous Manipulation [[Code](<https://github.com/XsparkAI/Spark-0>)] [[Page](<https://xsparkai.com/Spark-0>)]
@@ -144,6 +150,7 @@ We sincerely appreciate these blogs for helping _distill_ and _promote_ our work
 
 #### 2026
 
+- [[arXiv 2026.10](https://arxiv.org/abs/2610.29997)] DONIC: Generalist Dexterous Bimanual Tracking Control from Human Demonstrations [Code] [[Page](<https://ropedia.github.io/DONIC/>)]
 - 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.24392)] Gen2Dex: Learning Dexterous Manipulation from Simulation-Initialized Generated Video Demonstrations [Code] [Page]
 - 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.23551)] Embodiment-Aware Planning for Heterogeneous Bimanual Manipulation [Code] [[Page](<https://sukhvansh2004.github.io/Bimanual-Manipulation/>)]
 - 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.21792)] Trajectory-based Diffusion from One-shot Human Video for Generalizable Manipulation [Code] [Page]
