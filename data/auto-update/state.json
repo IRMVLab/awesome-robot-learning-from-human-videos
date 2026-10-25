@@ -1,5 +1,5 @@
 {
-  "last_search_date": "2026-10-24",
+  "last_search_date": "2026-10-25",
   "papers": {
     "2610.19330": {
       "assessment": {
@@ -1459,7 +1459,12 @@
       "truncated": true
     },
     "2610.25376": {
-      "attempts": 0,
+      "assessment": {
+        "categories": [],
+        "decision": "exclude",
+        "reason": "文中将人类示范明确描述为遥操作轨迹，方法利用机器人教师监督与恢复轨迹进行策略蒸馏；未提供使用人类自身动作视频或人类视觉示范学习机器人技能的证据，不符合收录范围。"
+      },
+      "attempts": 1,
       "first_seen": "2026-10-24",
       "paper": {
         "abstract": "Large-scale action pretraining equips Embodied Foundation Models (EFMs) with strong manipulation capabilities, with particular strengths in generalization and closed-loop robustness, but reproducing such pretraining requires substantial robot data and computation. To transfer these capabilities from pretrained EFMs to policies without action pretraining, we introduce TILDE (Teacher-In-the-Loop Distillation from EFMs), which synergizes on-policy distillation at student-induced states with learning from teacher-executed recovery trajectories. We further propose AutoDAgger, an autonomous data aggregation pipeline in which a robotic reward model is utilized to monitor task progress and trigger teacher intervention, thereby collecting recovery experience without human monitoring or manual control. AutoDAgger accelerates recovery-trajectory collection by more than $2\\times$ compared with the human-in-the-loop method. By unifying learning from demonstrations, on-policy teacher supervision, and teacher's corrective behavior, TILDE improves task performance by up to $4.1\\times$ over behavior cloning across three real-world tasks and supports effective cross-architecture distillation.",
@@ -1483,7 +1488,10 @@
         "url": "https://arxiv.org/abs/2610.25376",
         "version": 1
       },
-      "status": "pending"
+      "rules": "e66506b30f22bcdecc6908b76c3bcd2fca5464fa5a41550ce260f6cb13e0a0bb",
+      "source_url": "https://arxiv.org/html/2610.25376v1",
+      "status": "rejected",
+      "truncated": true
     },
     "2610.25690": {
       "assessment": {
@@ -2196,7 +2204,12 @@
       "truncated": true
     },
     "2610.30043": {
-      "attempts": 0,
+      "assessment": {
+        "categories": [],
+        "decision": "exclude",
+        "reason": "未见使用人类视频或人类视觉示范来学习、适应或执行机器人技能的证据。本文的闭环控制使用当前观测、记忆和执行反馈；与虚拟人物的交互不等于使用人类视觉示范，因此不满足收录范围，也不归入所列类别。"
+      },
+      "attempts": 1,
       "first_seen": "2026-10-24",
       "paper": {
         "abstract": "Robots must act under physical and social constraints while adapting to changes in their environment and human needs. Existing embodied-agent systems often focus on specified goals or abstract execution into symbolic actions, limiting evaluation in an evolving world. We introduce TARSphere, a robot-oriented full-stack framework for physically and socially grounded long-horizon embodied agents. TARSphere-Infra runs robot policies in a physics simulator with embodied NPCs and constrained dialogue. An event-driven finite-state machine (FSM) uses completed actions and delivered information to update task states and evaluate outcomes. TARSphere-Harness, its embodied brain harness, lets a frozen multimodal large language model (MLLM) act through multi-level executable skills, using observations, hierarchical memory, and execution feedback to revise its decisions. On this foundation, agent-in-the-loop curation aligns task semantics, causal dependencies, and scene geometry to construct TARSphere-Bench: 360 episodes across 30 indoor scenes. Five paired conditions assess perceptual robustness, disruption adaptation, task update, human coordination, and intent understanding for navigate-and-report and fetch-and-deliver tasks. Our evaluation of 8 MLLMs shows that general-purpose models can outperform embodied models, while task updates and human interaction remain difficult. Frequent collisions and falls further motivate evaluating execution safety alongside task success, even with a shared action interface and decision budget.",
@@ -2221,7 +2234,10 @@
         "url": "https://arxiv.org/abs/2610.30043",
         "version": 1
       },
-      "status": "pending"
+      "rules": "e66506b30f22bcdecc6908b76c3bcd2fca5464fa5a41550ce260f6cb13e0a0bb",
+      "source_url": "https://arxiv.org/html/2610.30043v1",
+      "status": "rejected",
+      "truncated": false
     },
     "2610.30136": {
       "assessment": {
@@ -2291,7 +2307,27 @@
       "truncated": true
     },
     "2610.30320": {
-      "attempts": 0,
+      "assessment": {
+        "categories": [
+          {
+            "confidence": 0.99,
+            "id": "wam",
+            "quote": "We present FRED, a framework that improves future video representations generated from noise for action prediction through self-distillation using representations extracted from ground-truth future observations as targets, and short-history conditioning for richer temporal context.",
+            "reason": "该方法学习预测未来视频表征，并将其用于动作预测，而非仅生成视频；结合人类视频共同训练及技能迁移证据，满足人类视觉数据参与世界／动作模型学习并服务机器人控制的要求。"
+          }
+        ],
+        "code_quote": "Project Page https://huiwon-jang.github.io/FRED/ Code https://github.com/suhyeok-jang/FRED/ FRED Models https://huggingface.co/FRED-AGI-LAB/models",
+        "code_url": "https://github.com/suhyeok-jang/FRED/",
+        "decision": "include",
+        "human_data_quote": "We further evaluate FRED on human-to-robot skill transfer by co-training the video model on human videos without action labels, including tasks absent from robot training data.",
+        "project_quote": "Author comments: 27 pages; Project page: https://huiwon-jang.github.io/FRED/",
+        "project_url": "https://huiwon-jang.github.io/FRED/",
+        "public_code": true,
+        "real_robot_quote": "To validate the generality and effectiveness of FRED, we conduct extensive experiments in diverse real-world robotic manipulation scenarios.",
+        "reason": "FRED实际使用无动作标签的人类操作视频与机器人示范共同训练视频模型，并将学习到的未来表征用于机器人动作生成；论文直接评估了人类视频到机器人技能的迁移，符合WAM类别。",
+        "robot_learning_quote": "In Table 2(b) , we observe that FRED achieves strong human-to-robot skill transfer when co-trained with human videos, while other WAM baselines show limited transfer on tasks demonstrated only in the human-video dataset."
+      },
+      "attempts": 1,
       "first_seen": "2026-10-23",
       "paper": {
         "abstract": "World Action Models (WAMs) have emerged as a promising approach to learning generalist robot policies using rich spatiotemporal priors from pre-trained video diffusion models. A recent line of WAMs improves inference efficiency by conditioning a separate action decoder on intermediate future video representations extracted from a single denoising step, avoiding costly iterative denoising required for video generation. This design makes action prediction depend directly on the quality of these future representations. In this paper, we introduce Future REpresentation learning via self-Distillation with temporal context (FRED), a framework that trains WAMs to improve the quality of future video representations from noise in a single denoising step. Specifically, FRED uses self-distillation to predict future representations from noise, using representations extracted from ground-truth future observations as targets. We further condition the video model on historical observations, providing temporal context for predicting future representations better. Across diverse real-world manipulation scenarios, FRED consistently outperforms competing WAMs. It achieves particularly large gains on long-horizon and out-of-domain tasks under zero-shot environment generalization, and substantially improves human-to-robot skill transfer, reaching 50.0% task success on tasks absent from robot training data and demonstrated only in human videos, compared with 19.4% for the best competing WAM.",
@@ -2314,10 +2350,18 @@
         "url": "https://arxiv.org/abs/2610.30320",
         "version": 1
       },
-      "status": "pending"
+      "rules": "e66506b30f22bcdecc6908b76c3bcd2fca5464fa5a41550ce260f6cb13e0a0bb",
+      "source_url": "https://arxiv.org/html/2610.30320v1",
+      "status": "accepted",
+      "truncated": true
     },
     "2610.30540": {
-      "attempts": 0,
+      "assessment": {
+        "categories": [],
+        "decision": "review",
+        "reason": "Missing verifiable human_data_quote"
+      },
+      "attempts": 1,
       "first_seen": "2026-10-23",
       "paper": {
         "abstract": "Human motion retargeting bridges the embodiment gap between humans and humanoid robots by converting human demonstrations into reference trajectories for whole-body control and loco-manipulation. For object-interaction tasks, successful execution depends on accurately preserving body--object relations at critical stages. However, uniform per-frame iteration budgets do not account for these localized accuracy requirements, limiting the computational efficiency of retargeting. To address this limitation, we present Spatiotemporal Retargeting (STR), which uses keyframes and key body parts to allocate optimization effort. Specifically, a vision-language model selects relevant motion signals and body parts, and keyframes are identified from changes in the selected signals. Based on these selections, STR assigns additional solver iterations to keyframes and higher interaction weights to the selected parts. To further improve contact fidelity, we introduce Mechanics-Aware Contact Anchoring (MCA) to refine object-surface contact positions using an approximate object-wrench model while retaining the selected surface directions. Building on the resulting references, we develop Spatiotemporal Reinforcement Learning (STRL), which combines adaptive key-stage sampling with a contact reward based on target proximity and object contact forces for downstream control. Simulation experiments on a Unitree G1 and real-world experiments on a Unitree R1 demonstrate that STR improves geometric contact coverage and continuity at lower computational cost, while the resulting references improve downstream task completion across diverse object-interaction motions.",
@@ -2343,10 +2387,18 @@
         "url": "https://arxiv.org/abs/2610.30540",
         "version": 1
       },
-      "status": "pending"
+      "rules": "e66506b30f22bcdecc6908b76c3bcd2fca5464fa5a41550ce260f6cb13e0a0bb",
+      "source_url": "https://arxiv.org/pdf/2610.30540v1",
+      "status": "review",
+      "truncated": true
     },
     "2610.31020": {
-      "attempts": 0,
+      "assessment": {
+        "categories": [],
+        "decision": "exclude",
+        "reason": "示范学习使用的是动作捕捉系统记录的勺子位姿轨迹，而非人类视频或视觉示范。RGB-D图像用于执行前的嘴部定位，不是技能示范数据；因此不满足人类视觉示范参与机器人学习或控制的范围要求，也无符合所列类别的贡献。"
+      },
+      "attempts": 1,
       "first_seen": "2026-10-23",
       "paper": {
         "abstract": "This paper presents a demonstration-based robotic feeding framework that integrates human demonstration, Dynamic Movement Primitive-based motion planning, vision-based scene perception, and robot control. A human operator first demonstrates the scooping and feeding motions while the position and Euler-angle orientation of the spoon are recorded using a motion-capture system. The recorded trajectory is segmented into scooping and feeding motions, which are encoded using separate Dynamic Movement Primitives. Before task execution, an RGB-D camera estimates the participant's mouth position, while two AprilTags are used for robot-frame registration and tray localization. The detected tray pose is used to position the scooping motion, whereas the detected mouth position defines the positional goal of the feeding motion. The approach, scooping, and feeding trajectories are then executed sequentially by a Kinova Gen3 manipulator through a ROS~2-based framework. A real-world experiment demonstrates the feasibility of the integrated pipeline and shows that the learned spoon motions can be reproduced within the detected experimental scene.",
@@ -2376,10 +2428,18 @@
         "url": "https://arxiv.org/abs/2610.31020",
         "version": 1
       },
-      "status": "pending"
+      "rules": "e66506b30f22bcdecc6908b76c3bcd2fca5464fa5a41550ce260f6cb13e0a0bb",
+      "source_url": "https://arxiv.org/html/2610.31020v1",
+      "status": "rejected",
+      "truncated": false
     },
     "2610.31121": {
-      "attempts": 0,
+      "assessment": {
+        "categories": [],
+        "decision": "exclude",
+        "reason": "本文贡献是机器人视频评估，而非利用人类视觉示范学习或控制机器人。原文明确：“We introduced RGraph-Eval, a reference-based evaluator that represents robot videos with task-grounded scene graphs combining object grounding, interaction changes, and 3D motion.” 未提供人类视觉示范用于机器人学习或控制的证据；人工视频评分不等于人类动作示范，亦无符合所列类别的方法贡献。"
+      },
+      "attempts": 1,
       "first_seen": "2026-10-23",
       "paper": {
         "abstract": "Generated robot videos can look convincing while depicting the wrong interac- tion: a different object is moved, a grasp disappears, or a placement ends out- side its destination. We introduce RGraph-Eval, a reference-based framework that makes these discrepancies explicit through task-grounded temporal scene graphs. Unlike approaches that construct separate evidence representations for different evaluation dimensions, we organize task entities, interactions, and motion within a unified, interpretable scene graph representation. A foundation-model pipeline identifies manipulation roles, grounds persistent object masks, infers and verifies state transitions and action intervals, and reconstructs manipulated- object motion in three dimensions. Applying this representation to a generated video and a reference demonstration supports an interpretable RGraph-Eval score with visible-object, relation-change, and 3D path-shape components. We also introduce ShareRobot-SG, a collection of 1,000 manipulation scenes from ten ShareRobot sources annotated with the multimodal representation. Our eval- uation separates graph-generation quality from agreement with human video judgments, and includes comparisons with adapted SVG2 and SG-Ego, a bench- mark of three video generators. The framework connects robot-video assessment to the observable entities and interactions underlying a task, while making the graph annotations reusable beyond evaluation. Code will be publicly available at https://github.com/SashaDance/rgraph-eval.",
@@ -2402,10 +2462,18 @@
         "url": "https://arxiv.org/abs/2610.31121",
         "version": 1
       },
-      "status": "pending"
+      "rules": "e66506b30f22bcdecc6908b76c3bcd2fca5464fa5a41550ce260f6cb13e0a0bb",
+      "source_url": "https://arxiv.org/html/2610.31121v1",
+      "status": "rejected",
+      "truncated": false
     },
     "2610.31474": {
-      "attempts": 0,
+      "assessment": {
+        "categories": [],
+        "decision": "review",
+        "reason": "已明确使用人类示范视频，但可见证据仅表明其用于条件化生成机器人运动视频，尚未证明这些人类条件被用于机器人技能学习、规划或实际控制。机器人策略评估采用记录动作回放，不能据此认定人类视频参与了策略学习或执行。全文已截断，需补充下游控制或学习证据后再决定是否纳入及分类。"
+      },
+      "attempts": 1,
       "first_seen": "2026-10-23",
       "paper": {
         "abstract": "Robot world models simulate how environments evolve in response to robot actions. Latent action models enable learning dynamics from videos by encoding visual transitions as proxy actions. However, reconstruction-driven latent actions mix robot motion with object responses and other scene changes, complicating their correspondence with robot controls. We propose SkeLAM, a skeleton-guided latent action model for controllable robot world modeling. SkeLAM decomposes latent actions into a kinematic component grounded by robot skeleton supervision and a residual component retaining complementary visual dynamics. Cross-modal swap reconstruction encourages RGB-derived and skeleton-derived kinematic representations to be interchangeable during video reconstruction. The world model incorporates both components through separate conditioning pathways, while branch dropout reduces its dependence on future-derived residual information. A lightweight adapter maps robot actions to the kinematic space, and subsequent world-model fine-tuning adapts generation to these predicted conditions. At inference, the model generates future observations from the current observation and robot actions. On DROID, SkeLAM reduces end-effector ADE by 19.5% and LPIPS by 11.1% compared with DreamDojo. Motion probing supports kinematic specialization, while qualitative results demonstrate zero-shot human-to-robot motion transfer in generated rollouts. Policy evaluation shows agreement between predicted success rates and those measured in real robot executions.",
@@ -2428,10 +2496,18 @@
         "url": "https://arxiv.org/abs/2610.31474",
         "version": 1
       },
-      "status": "pending"
+      "rules": "e66506b30f22bcdecc6908b76c3bcd2fca5464fa5a41550ce260f6cb13e0a0bb",
+      "source_url": "https://arxiv.org/html/2610.31474v1",
+      "status": "review",
+      "truncated": true
     },
     "2610.31494": {
-      "attempts": 0,
+      "assessment": {
+        "categories": [],
+        "decision": "exclude",
+        "reason": "本文贡献是离线视觉问答评测基准，而非利用人类视觉示范学习或控制机器人的方法。原文明确说明：“We introduce AgentVQA, a unified offline benchmark that consolidates 23 datasets across five agentic domains into 1,000 manually verified multiple-choice questions with challenging hard negatives.” 所供证据未建立人类视频与机器人技能学习、规划或执行之间的实际方法联系，不符合纳入范围及任何指定类别。"
+      },
+      "attempts": 1,
       "first_seen": "2026-10-23",
       "paper": {
         "abstract": "Vision-language models (VLMs) can perform a broad range of tasks across diverse settings, yet their performance in agentic contexts remains poorly understood. Although online evaluations in simulators and real-world environments are essential for measuring interactive agent performance, they are costly and challenging to scale. Complementary offline VQA benchmarks can enable faster and more reliable comparisons across agentic domains, yet existing benchmarks remain limited and fragmented. To address this gap, we introduce AgentVQA, an offline benchmark for evaluating VLMs on realistic agentic scenarios across five agent domains: Web Agents, Robotics, Egocentric Videos, Games, and Spatial Planning. We build AgentVQA by manually selecting 1000 challenging, real-world agent examples from 23 source datasets and adapting them for reliable offline evaluation. The resulting benchmark preserves realistic scenarios from interactive environments across diverse domains, and its model rankings track those from corresponding online evaluations. Across the 22 evaluated models, the best achieves only 58.5% accuracy. Our cross-domain analysis shows that errors are driven primarily by failures to ground and maintain accurate representations of the current and evolving visual state, including localizing relevant UI elements, interpreting motion, tracking state changes over time, and inferring 3D spatial relationships, rather than by task misinterpretation or downstream logical reasoning.",
@@ -2453,7 +2529,10 @@
         "url": "https://arxiv.org/abs/2610.31494",
         "version": 1
       },
-      "status": "pending"
+      "rules": "e66506b30f22bcdecc6908b76c3bcd2fca5464fa5a41550ce260f6cb13e0a0bb",
+      "source_url": "https://arxiv.org/html/2610.31494v1",
+      "status": "rejected",
+      "truncated": true
     }
   },
   "schema_version": 1

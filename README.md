@@ -97,6 +97,7 @@ We sincerely appreciate these blogs for helping _distill_ and _promote_ our work
 
 #### 2026
 
+- 🌟🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.30320)] Self-Distilling Future Video Representations for World Action Models [[Code](<https://github.com/suhyeok-jang/FRED/>)] [[Page](<https://huiwon-jang.github.io/FRED/>)]
 - 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.30136)] Agentic World Action Models [Code] [[Page](<https://agentic-wam.github.io/>)]
 - 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.29716)] Reconstruction-Augmented Visuomotor Pre-Training of 3D-Grounded Bimanual Dexterity from RGB-Only Human Videos [Code] [[Page](<https://spatial-dex.github.io/>)]
 - 🌟🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.26855)] Ropedia W0: Scaling Loco-Manipulation World Models across Embodiments with Human Experience [[Code](<https://github.com/Ropedia/ropedia-w0>)] [[Page](<https://ropedia.github.io/ropedia-w0/>)]
