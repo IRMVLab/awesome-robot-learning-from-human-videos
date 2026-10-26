@@ -97,6 +97,7 @@ We sincerely appreciate these blogs for helping _distill_ and _promote_ our work
 
 #### 2026
 
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.31845)] EgoForesight: Effectively Scaling Policy Learning with Noisy Egocentric Actions [Code] [[Page](<https://lin-shan.com/EgoForesight>)]
 - 🌟🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.30320)] Self-Distilling Future Video Representations for World Action Models [[Code](<https://github.com/suhyeok-jang/FRED/>)] [[Page](<https://huiwon-jang.github.io/FRED/>)]
 - 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.30136)] Agentic World Action Models [Code] [[Page](<https://agentic-wam.github.io/>)]
 - 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.29716)] Reconstruction-Augmented Visuomotor Pre-Training of 3D-Grounded Bimanual Dexterity from RGB-Only Human Videos [Code] [[Page](<https://spatial-dex.github.io/>)]
@@ -126,6 +127,8 @@ We sincerely appreciate these blogs for helping _distill_ and _promote_ our work
 
 #### 2026
 
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.32094)] TTT in VLA Models: Exploring Training with Human Demonstrations [Code] [Page]
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.31845)] EgoForesight: Effectively Scaling Policy Learning with Noisy Egocentric Actions [Code] [[Page](<https://lin-shan.com/EgoForesight>)]
 - 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.29716)] Reconstruction-Augmented Visuomotor Pre-Training of 3D-Grounded Bimanual Dexterity from RGB-Only Human Videos [Code] [[Page](<https://spatial-dex.github.io/>)]
 - 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.28880)] Real2Sem2Real: 3D Semantic Augmentations for Robot Learning from a Single Human RGB Demonstration [Code] [[Page](<https://real2sem2real.github.io/>)]
 - 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.25690)] ScaleNav: Scalable Internet Video Pretraining for Language-Conditioned Local Navigation [Code] [[Page](<https://zju3dv.github.io/ScaleNav/>)]
@@ -151,6 +154,7 @@ We sincerely appreciate these blogs for helping _distill_ and _promote_ our work
 
 #### 2026
 
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.32094)] TTT in VLA Models: Exploring Training with Human Demonstrations [Code] [Page]
 - [[arXiv 2026.10](https://arxiv.org/abs/2610.29997)] DONIC: Generalist Dexterous Bimanual Tracking Control from Human Demonstrations [Code] [[Page](<https://ropedia.github.io/DONIC/>)]
 - 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.24392)] Gen2Dex: Learning Dexterous Manipulation from Simulation-Initialized Generated Video Demonstrations [Code] [Page]
 - 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.23551)] Embodiment-Aware Planning for Heterogeneous Bimanual Manipulation [Code] [[Page](<https://sukhvansh2004.github.io/Bimanual-Manipulation/>)]

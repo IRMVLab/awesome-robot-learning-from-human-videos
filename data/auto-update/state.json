@@ -1,5 +1,5 @@
 {
-  "last_search_date": "2026-10-25",
+  "last_search_date": "2026-10-26",
   "papers": {
     "2610.19330": {
       "assessment": {
@@ -2437,12 +2437,12 @@
       "assessment": {
         "categories": [],
         "decision": "exclude",
-        "reason": "本文贡献是机器人视频评估，而非利用人类视觉示范学习或控制机器人。原文明确：“We introduced RGraph-Eval, a reference-based evaluator that represents robot videos with task-grounded scene graphs combining object grounding, interaction changes, and 3D motion.” 未提供人类视觉示范用于机器人学习或控制的证据；人工视频评分不等于人类动作示范，亦无符合所列类别的方法贡献。"
+        "reason": "本文贡献是机器人视频评估，而非利用人类视觉示范学习或控制机器人。原文明确：“We introduced RGraph-Eval, a reference-based evaluator that represents robot videos with task-grounded scene graphs combining object grounding, interaction changes, and 3D motion.” 未提供人类视觉示范用于机器人学习、规划或执行的证据；人类评分不等于人类动作示范，亦无符合所列类别的方法贡献。"
       },
       "attempts": 1,
       "first_seen": "2026-10-23",
       "paper": {
-        "abstract": "Generated robot videos can look convincing while depicting the wrong interac- tion: a different object is moved, a grasp disappears, or a placement ends out- side its destination. We introduce RGraph-Eval, a reference-based framework that makes these discrepancies explicit through task-grounded temporal scene graphs. Unlike approaches that construct separate evidence representations for different evaluation dimensions, we organize task entities, interactions, and motion within a unified, interpretable scene graph representation. A foundation-model pipeline identifies manipulation roles, grounds persistent object masks, infers and verifies state transitions and action intervals, and reconstructs manipulated- object motion in three dimensions. Applying this representation to a generated video and a reference demonstration supports an interpretable RGraph-Eval score with visible-object, relation-change, and 3D path-shape components. We also introduce ShareRobot-SG, a collection of 1,000 manipulation scenes from ten ShareRobot sources annotated with the multimodal representation. Our eval- uation separates graph-generation quality from agreement with human video judgments, and includes comparisons with adapted SVG2 and SG-Ego, a bench- mark of three video generators. The framework connects robot-video assessment to the observable entities and interactions underlying a task, while making the graph annotations reusable beyond evaluation. Code will be publicly available at https://github.com/SashaDance/rgraph-eval.",
+        "abstract": "Generated robot videos can look convincing while depicting the wrong interaction: a different object is moved, a grasp disappears, or a placement ends outside its destination. We introduce RGraph-Eval, a reference-based framework that makes these discrepancies explicit through task-grounded temporal scene graphs. Unlike approaches that construct separate evidence representations for different evaluation dimensions, we organize task entities, interactions, and motion within a unified, interpretable scene graph representation. A foundation-model pipeline identifies manipulation roles, grounds persistent object masks, infers and verifies state transitions and action intervals, and reconstructs manipulated-object motion in three dimensions. Applying this representation to a generated video and a reference demonstration supports an interpretable RGraph-Eval score with visible-object, relation-change, and 3D path-shape components. We also introduce ShareRobot-SG, a collection of 1,000 manipulation scenes from ten ShareRobot sources annotated with the multimodal representation. Our evaluation separates graph-generation quality from agreement with human video judgments and includes comparisons with adapted SVG2 and SG-Ego, as well as a benchmark of three video generators. The framework connects robot-video assessment to the observable entities and interactions underlying a task while making the graph annotations reusable beyond evaluation. Code will be publicly available at https://github.com/SashaDance/rgraph-eval.",
         "authors": [
           "Aleksandr Lazarev",
           "Sofia Zimina",
@@ -2458,14 +2458,48 @@
           "arxiv_search"
         ],
         "title": "RGraph-Eval: Task-Grounded Scene Graphs for Evaluating Robot Video Generation",
-        "updated": "2026-10-22T11:39:01Z",
+        "updated": "2026-10-23T07:54:04Z",
         "url": "https://arxiv.org/abs/2610.31121",
+        "version": 2
+      },
+      "rules": "e66506b30f22bcdecc6908b76c3bcd2fca5464fa5a41550ce260f6cb13e0a0bb",
+      "source_url": "https://arxiv.org/html/2610.31121v2",
+      "status": "rejected",
+      "truncated": false
+    },
+    "2610.31162": {
+      "assessment": {
+        "categories": [],
+        "decision": "exclude",
+        "reason": "本文的贡献是游戏原生界面控制，而非机器人技能学习：原文明确说明“ We represent Minecraft’s native keyboard-and-mouse actions as discrete action tokens, allowing supervised action prediction to use the same next-token prediction objective as language modeling.” 虽使用人类游戏轨迹训练检测器，但未建立人类视觉示范与机器人学习或控制的联系，不能仅因采用VLA和规划器而纳入。"
+      },
+      "attempts": 1,
+      "first_seen": "2026-10-26",
+      "paper": {
+        "abstract": "Building virtual embodied agents that operate in open-ended games like human players is a long-standing goal requiring both long-horizon autonomy and reliable native-interface control. As a procedurally generated open world, Minecraft provides a natural testbed for studying the integration of these capabilities. Existing agents typically provide either native visuomotor control without long-horizon autonomy or high-level planning executed through environment APIs or predefined skills. To bridge this gap, we propose HiSTEVE, a hierarchical VLA agent with a capability-aware agent harness. At the orchestration level, we equip the harness with structured memory for tracking progress and a VLM planner for selecting subtasks within the VLA's capabilities. To reliably determine subtask completion, we further introduce a policy-coupled task completion state detector that conditions on VLA policy context to signal candidate completion. At the control level, a single VLA executes all subtasks with vision-only perception and native keyboard-and-mouse actions. To mitigate interference between heterogeneous GUI and non-GUI interactions, we introduce regime-specific RMSNorm branches and separate mouse-movement token embeddings. We also train the VLA through world knowledge injection, imitation learning, and reinforcement learning with environment feedback to improve reliability and recovery. HiSTEVE achieves state-of-the-art atomic-task performance, scoring 85.0% on MineStudio Bench and a 37.4% average success rate on OpenHA, while also completing long-horizon tasks such as crafting an iron pickaxe from scratch like human players.",
+        "authors": [
+          "Zecong Tang",
+          "Zian Guan",
+          "Yuncheng Guo",
+          "Zhanqiu Zhang",
+          "Yiwen Guo",
+          "Bo Dai"
+        ],
+        "comments": "",
+        "id": "2610.31162",
+        "published": "2026-10-22",
+        "sources": [
+          "huggingface_daily"
+        ],
+        "title": "HiSTEVE 1.0: Harnessing Human-Interface VLA Agents for Open-World Games",
+        "updated": "2026-10-22T12:17:45Z",
+        "url": "https://arxiv.org/abs/2610.31162",
         "version": 1
       },
       "rules": "e66506b30f22bcdecc6908b76c3bcd2fca5464fa5a41550ce260f6cb13e0a0bb",
-      "source_url": "https://arxiv.org/html/2610.31121v1",
+      "source_url": "https://arxiv.org/html/2610.31162v1",
       "status": "rejected",
-      "truncated": false
+      "truncated": true
     },
     "2610.31474": {
       "assessment": {
@@ -2533,6 +2567,324 @@
       "source_url": "https://arxiv.org/html/2610.31494v1",
       "status": "rejected",
       "truncated": true
+    },
+    "2610.31801": {
+      "assessment": {
+        "categories": [],
+        "decision": "exclude",
+        "reason": "本文训练的是基于机器人运动学的轨迹分割模型，人类手部轨迹仅用于零样本迁移评估。原文明确模型不接收图像，且未展示利用人类视觉示范学习、规划或控制机器人技能的贡献，因此不符合范围及任何指定类别。"
+      },
+      "attempts": 1,
+      "first_seen": "2026-10-26",
+      "paper": {
+        "abstract": "Segmenting robot demonstration data into disjoint temporal and semantic subsegments is valuable for learning, cleaning, retrieval, and analysis. Segmentation is often performed manually in a tedious and error prone process. Multimodal Large Language Models (MLLMs) have the potential for automating this process, but directly ingesting raw multi camera video streams into MLLMs can be costly and can quickly exhaust context windows. In this paper, we introduce KiRoSe (Kinematics for Robot Segmentation), a novel framework that focuses on the companion stream of robot kinematic data. Inspired by the principle of classical entropy coding, such as Huffman coding, where frequently occurring symbols are represented more compactly, we propose Sparse Motion Tokens (SMTs), a discrete kinematic vocabulary designed to compactly represent recurring, temporally localized motion patterns, which we refer to as kinematic events. SMTs are learned by encoding kinematic trajectories with temporal segment supervision and quantizing the resulting features. We use increasingly available robot demonstration subtask annotations to supervise an open language model to interpret the resulting token sequences. Evaluation against human labeled segmentation shows that KiRoSe can substantially outperform baseline segmentation methods in F1 quality and transfers zero shot to unseen robot embodiments and egocentric human motion, while preserving the language models open vocabulary knowledge. Beyond segmentation, KiRoSe tracks task progress on an unseen robot and detects when an action is being reversed.(website: https://berkeleyautomation.github.io/kirose/)",
+        "authors": [
+          "Shuangyu Xie",
+          "Kaiyuan Chen",
+          "Muhammad Zubair Irshad",
+          "Richard Cheng",
+          "Sergey Zakharov",
+          "Ken Goldberg"
+        ],
+        "comments": "",
+        "id": "2610.31801",
+        "published": "2026-10-22",
+        "sources": [
+          "arxiv_search"
+        ],
+        "title": "KiRoSe: Using Kinematic Data for Efficient Segmentation of Robot Demonstrations",
+        "updated": "2026-10-22T18:40:43Z",
+        "url": "https://arxiv.org/abs/2610.31801",
+        "version": 1
+      },
+      "rules": "e66506b30f22bcdecc6908b76c3bcd2fca5464fa5a41550ce260f6cb13e0a0bb",
+      "source_url": "https://arxiv.org/html/2610.31801v1",
+      "status": "rejected",
+      "truncated": true
+    },
+    "2610.31845": {
+      "assessment": {
+        "categories": [
+          {
+            "confidence": 0.99,
+            "id": "vla",
+            "quote": "To meet these requirements, we introduce EgoForesight, a VLA framework that reduces the influence of unreliable actions while learning from demonstrated outcomes. Inspired by prior unified video–action and dynamics–action models ( Zhu et al., 2025 ; Lyu et al., 2026 ) , our design couples experts for future visual representations and action chunks and trains them with modality-specific flow-matching paths.",
+            "reason": "人类视频参与VLM协同训练及动作学习；该VLA框架包含动作块生成专家，而非仅用于感知或高层规划。"
+          },
+          {
+            "confidence": 0.98,
+            "id": "wam",
+            "quote": "Figure 1: Overview of EgoForesight. Large-scale human videos expand training data but have less reliable action labels. Reliability-conditioned corruption samples stronger action corruption as reliability falls. The vision–action flow jointly predicts future visual representations and action chunks; during training, an observed-future teacher distills features into the student.",
+            "reason": "人类视频直接训练联合未来视觉表征与动作块模型，满足联合建模未来状态和动作的WAM标准，并用于机器人策略学习。"
+          }
+        ],
+        "code_quote": "",
+        "code_url": null,
+        "decision": "include",
+        "human_data_quote": "S2 retains these sources and adds 20,000 hours of action-annotated egocentric human data, enabling reliability-conditioned corruption and privileged-future representation distillation after the S1 initialization.",
+        "project_quote": "Author comments: Project page: https://lin-shan.com/EgoForesight",
+        "project_url": "https://lin-shan.com/EgoForesight",
+        "public_code": false,
+        "real_robot_quote": "Real world. We evaluate four tasks on a Galaxea R1 Pro with Sharpa Wave hands, as shown in Figure 3 . We control only the two arms and hands, totaling 58 DoF, using relative end-effector commands for the arms and joint commands for the hands.",
+        "reason": "明确使用带动作标注的人类第一视角视频训练机器人策略，并联合预测未来视觉表征与动作，符合VLA和WAM；提供了实体机器人实验。",
+        "robot_learning_quote": "To ground distillation in reliable supervision, we first learn visual–action correspondences from higher-quality robot demonstrations and curated human trajectories through joint flow matching and VLM co-training, without distillation. The resulting checkpoint initializes both the student and its EMA teacher. Stage two retains these sources and adds a much larger collection of action-annotated human videos, enabling both proposed components."
+      },
+      "attempts": 1,
+      "first_seen": "2026-10-26",
+      "paper": {
+        "abstract": "Scaling policy learning requires broad experience and reliable supervision. Robot demonstrations provide high-quality trajectory supervision but are costly to collect. Egocentric videos broaden task and environment coverage, yet motion reconstruction and retargeting introduce noisy action labels. To address this challenge, we introduce EgoForesight, a vision-language-action framework that learns jointly from both sources by reducing the influence of unreliable action labels and exploiting demonstrated outcomes as complementary supervision. A joint vision-action flow couples future visual representation prediction with action generation, unifying reliability-aware action learning with outcome-informed representation transfer. Specifically, reliability-conditioned corruption allocates action supervision across noise levels according to source reliability, while reliability-weighted regression regulates each source's contribution. Complementing this treatment of noisy labels, privileged-future representation distillation draws supervision from demonstrated outcomes. An exponential-moving-average teacher observes the current scene and clean future to encode action-relevant structure from the resulting scene change. Its deeper representations supervise an earlier student layer receiving a corrupted future, providing outcome-informed structure beyond noisy action annotations. Together, these mechanisms support effective scaling with noisy egocentric actions. Over the tested range, EgoForesight exhibits steeper scaling slopes than the baseline, reducing real-world open-loop action MSE by 20.5% and improving RoboCasa few-shot success by 8.1 percentage points at 30,000 hours of pretraining data. After post-training, it also achieves strong absolute performance in both simulated and real-world dexterous manipulation.",
+        "authors": [
+          "Chubin Zhang",
+          "Changyuan Wang",
+          "Yirui Wang",
+          "Ao Li",
+          "Shilin Ma",
+          "Yue Su",
+          "Cai Zhou",
+          "Xiuwei Xu",
+          "Tianle Zhang",
+          "Yansong Tang"
+        ],
+        "comments": "Project page: https://lin-shan.com/EgoForesight",
+        "id": "2610.31845",
+        "published": "2026-10-22",
+        "sources": [
+          "arxiv_search"
+        ],
+        "title": "EgoForesight: Effectively Scaling Policy Learning with Noisy Egocentric Actions",
+        "updated": "2026-10-22T19:28:43Z",
+        "url": "https://arxiv.org/abs/2610.31845",
+        "version": 1
+      },
+      "rules": "e66506b30f22bcdecc6908b76c3bcd2fca5464fa5a41550ce260f6cb13e0a0bb",
+      "source_url": "https://arxiv.org/html/2610.31845v1",
+      "status": "accepted",
+      "truncated": true
+    },
+    "2610.32094": {
+      "assessment": {
+        "categories": [
+          {
+            "confidence": 0.99,
+            "id": "vla",
+            "quote": "We integrate Test-Time Training (TTT), which stores context in fast weights, into InternVLA-A1 and Pi0.5 to study action generation conditioned on human demonstrations through training on paired demonstrations and robot trajectories.",
+            "reason": "人类示范参与VLA配对训练，并通过TTT记忆连接机器人动作生成，不只是感知或高层规划。"
+          },
+          {
+            "confidence": 0.99,
+            "id": "icl_vcl",
+            "quote": "During the human phase, the model reads video observations at the configured frequency and updates fast weights through enabled TTT branches. It generates no robot actions and computes no robot action supervision loss, but still writes memory through the inner reconstruction objective. Thus, the absence of yellow action-prediction arrows in Figure 3 does not imply an absence of forward computation or inner updates. During the robot phase, the model inherits demonstration memory and predicts action chunks from the current observation and state.",
+            "reason": "属于视频条件学习及带快权重更新的TTT适应：任务示范通过内层重建更新快权重，随后用于机器人动作预测；不是无权重更新的严格ICL。"
+          }
+        ],
+        "code_quote": "",
+        "code_url": null,
+        "decision": "include",
+        "human_data_quote": "Each pair consists of a human video identifying the target cup and a robot trajectory recording its grasp. Starting from first-stage weights, the model reads the demonstration, updates memory, and uses that memory to predict robot actions.",
+        "project_quote": "",
+        "project_url": null,
+        "public_code": false,
+        "real_robot_quote": "Both InternVLA-A1 and Pi0.5 showed a fixed directional preference in real-robot tests. For our cup-selection tasks, success rate is the fraction of trials in which the robot selects the cup specified by the demonstration or cue. Both models scored below the theoretical rate of uniform selection among three candidate cups (1/3).",
+        "reason": "论文实际使用人类示范视频与机器人轨迹配对训练，将示范写入TTT快权重并用于VLA动作生成，符合VLA及视频条件学习范围。纳入的是已实现和测试的方法，而非成功效果：论文明确报告未形成稳定的示范依赖。",
+        "robot_learning_quote": "We integrate Test-Time Training (TTT), which stores context in fast weights, into InternVLA-A1 and Pi0.5 to study action generation conditioned on human demonstrations through training on paired demonstrations and robot trajectories."
+      },
+      "attempts": 1,
+      "first_seen": "2026-10-26",
+      "paper": {
+        "abstract": "Long-horizon robot tasks require retaining and using past information. We integrate Test-Time Training (TTT), which stores context in fast weights, into InternVLA-A1 and Pi0.5 to study action generation conditioned on human demonstrations through training on paired demonstrations and robot trajectories. We implement memory transfer between the two phases and truncated backpropagation, and examine training objectives, gradient coverage, and contrastive regularization across video, short-video, and single-frame cue tasks. In our experiments, adding TTT and training on paired data at the current scale did not lead to consistent target selection based on demonstrations. Under the tested settings, shorter sequences, full trajectory gradient connectivity, and contrastive regularization did not clearly improve responsiveness to demonstrations. When demonstrations were reduced to single-frame cues, real-robot execution still showed a preference for cups at fixed positions. We document the implementation, training configurations, and observations to support further inspection and replication.",
+        "authors": [
+          "Qiangong Zhou",
+          "Jiafeng Liang",
+          "Yimin Dong",
+          "Yang He",
+          "Hongxiang Li"
+        ],
+        "comments": "22 pages, 6 figures, a techreport form standard-robots company",
+        "id": "2610.32094",
+        "published": "2026-10-23",
+        "sources": [
+          "arxiv_search"
+        ],
+        "title": "TTT in VLA Models: Exploring Training with Human Demonstrations",
+        "updated": "2026-10-23T02:55:23Z",
+        "url": "https://arxiv.org/abs/2610.32094",
+        "version": 1
+      },
+      "rules": "e66506b30f22bcdecc6908b76c3bcd2fca5464fa5a41550ce260f6cb13e0a0bb",
+      "source_url": "https://arxiv.org/html/2610.32094v1",
+      "status": "accepted",
+      "truncated": true
+    },
+    "2610.32525": {
+      "assessment": {
+        "categories": [],
+        "decision": "review",
+        "reason": "明确使用专家徒手扫描时采集的视觉示范学习机器人扫描策略，但现有方法证据不足以归入指定类别：流策略生成探头轨迹不等于动作条件世界模型，在线观测历史也不等于人类示范视频条件化。正文已截断，虽提及微调π₀对照实验，却未明确其是否使用这些人类视觉示范训练；需补充实验部分核实VLA类别。"
+      },
+      "attempts": 1,
+      "first_seen": "2026-10-26",
+      "paper": {
+        "abstract": "Ultrasound imaging is highly operator-dependent, motivating robotic systems that reproduce expert scanning skills consistently. These skills involve coordinated interpretation of anatomical landmarks, ultrasound images, and probe-tissue interactions that are difficult to encode in hand-designed control strategies. Imitation learning offers an alternative, but its observation and action representations should reflect the anatomically structured nature of scanning. We propose an anatomy-anchored imitation-learning framework that combines anatomy-guided probe placement with learned ultrasound navigation. The placement module identifies a task-specific anatomical starting point from external visual observations and establishes the initial probe pose as the reference frame for scanning. A flow-based policy then generates scanning motions from anchor-relative probe poses, ultrasound images, probe-mounted camera views, and contact forces, while a termination head predicts task completion. This avoids continuous reliance on third-person vision and reduces dependence on the robot-patient configuration. A handheld acquisition platform enables multimodal demonstrations to be collected during natural freehand scanning without a robot. On 16 unseen participants, task success reaches 96%, 94%, 88%, and 94% for kidney, gallbladder, and liver standard-plane acquisition and radial artery sweeping, respectively. Compared with a fine-tuned pi_0 model, success on the abdominal tasks improves by 10-42 percentage points, with lower time-to-target, peak contact force, and trajectory jerk. Ablations support the complementary roles of anatomical anchoring, egocentric vision, and force feedback. End-to-end trials with automatic placement achieve 90-100% success, and the policies transfer without retraining to a second robot with 83-100% success.",
+        "authors": [
+          "Yuan Bi",
+          "Fangxu Han",
+          "Ye Su",
+          "Yiping Zhou",
+          "Zhongliang Jiang",
+          "Nassir Navab"
+        ],
+        "comments": "",
+        "id": "2610.32525",
+        "published": "2026-10-23",
+        "sources": [
+          "arxiv_search"
+        ],
+        "title": "From Freehand Demonstrations to Autonomous Robotic Ultrasound: An Anatomy-Anchored Learning Framework",
+        "updated": "2026-10-23T11:58:26Z",
+        "url": "https://arxiv.org/abs/2610.32525",
+        "version": 1
+      },
+      "rules": "e66506b30f22bcdecc6908b76c3bcd2fca5464fa5a41550ce260f6cb13e0a0bb",
+      "source_url": "https://arxiv.org/html/2610.32525v1",
+      "status": "review",
+      "truncated": true
+    },
+    "2610.32909": {
+      "assessment": {
+        "categories": [],
+        "decision": "exclude",
+        "reason": "全文未提供实际使用人类视频或视觉示范的证据；所述训练使用参考运动与机器人测量状态，不足以满足人类视觉数据要求。也未有证据支持任一指定类别，不能仅凭“planner”或未来身体目标解码器归为 agent 或 WAM。"
+      },
+      "attempts": 1,
+      "first_seen": "2026-10-26",
+      "paper": {
+        "abstract": "HoloBoxing presents a simple recipe for learning humanoid boxing by building on a pretrained whole-body controller. The recipe separates reusable motor skills from task decisions: a compact planner requests future body-point targets, while the frozen controller handles joint-level execution. A learned decoder maps 32-dimensional actions to structured target windows, and measured-state imitation initializes the planner before reinforcement learning. Task learning then refines interaction behavior while reusing the decoder and controller, avoiding the need to relearn whole-body control. This combination keeps task optimization focused on a compact upper policy and supplies an initial behavior before reward-driven exploration. Starting from that available controller, the recipe accounts for about seven minutes of additional training, including reused representation fitting and a single-GPU task run. This excludes controller pretraining, data preparation, evaluation, and search. Simulated boxing experiments and component controls evaluate the resulting behavior and the roles of imitation initialization and the target representation.",
+        "authors": [
+          "Xihan Ma",
+          "Bo Zhang",
+          "Boxiong Li",
+          "Yuhan Bao",
+          "Ziyue Liu",
+          "Yucheng Wang"
+        ],
+        "comments": "",
+        "id": "2610.32909",
+        "published": "2026-10-23",
+        "sources": [
+          "huggingface_daily"
+        ],
+        "title": "HoloBoxing: A Simple Recipe for Humanoid Boxing with 7 Minutes of Single-GPU Training",
+        "updated": "2026-10-23T17:11:28Z",
+        "url": "https://arxiv.org/abs/2610.32909",
+        "version": 1
+      },
+      "rules": "e66506b30f22bcdecc6908b76c3bcd2fca5464fa5a41550ce260f6cb13e0a0bb",
+      "source_url": "https://arxiv.org/html/2610.32909v1",
+      "status": "rejected",
+      "truncated": false
+    },
+    "2610.32961": {
+      "assessment": {
+        "categories": [],
+        "decision": "review",
+        "reason": "已明确使用用户引导示范学习OCT闭环机器人控制，但现有文本未说明示范是否包含人类自身操作的视觉演示，还是仅记录操作员控制机器人的动作与组织OCT观测。全文被截断，示范采集附录C未提供，无法确认关键数据来源；也不能将一般OCT目标条件策略直接归为人类视频条件学习。需补充采集流程后判断范围及类别。"
+      },
+      "attempts": 1,
+      "first_seen": "2026-10-26",
+      "paper": {
+        "abstract": "In medical robotics, data-driven soft-tissue shape control requires deforming tissue toward desired morphologies through sequential physical interactions. This challenge is particularly important in microscale manipulation, where localized deformation is difficult to observe, represent, and control, while physics-based models can be computationally expensive and difficult to adapt to realistic environments. Optical coherence tomography (OCT) provides high-resolution volumetric perception of tissue deformation, but target-conditioned control requires effective representations of both observed and desired tissue states. In this work, we introduce an OCT-guided data-driven framework for tissue shape control, learned from user-guided demonstrations and executed with closed-loop OCT feedback. We study full-volume, tissue-masked sparse-volume, and voxelized point-cloud representations, with or without residual conditioning, using deterministic (Explicit) and generative diffusion (Diffusion) policies. Across 12 configurations and 576 phantom rollouts on 3-DoF depth and 6-DoF directional tasks, OCT-derived 3D representations support both Explicit and Diffusion policies, with performance depending on representation and residual conditioning. Residual conditioning reduces directional Shape RMSE from 0.748 to 0.555 mm for full-volume Diffusion, while voxelized point-cloud Explicit with residuals achieves 0.534 mm for depth and 0.443 mm for directional control, with comparable accuracy at intermediate unseen targets and consistent performance across deployments. We further evaluate the framework in 60 ex vivo porcine rollouts, extending to biological tissue with final geometric errors comparable to human demonstrations. These results establish volumetric OCT as current and goal representations for learned closed-loop tissue shape control across deterministic and generative action models.",
+        "authors": [
+          "Chaoyu Zhang",
+          "Guangshen Ma",
+          "Mark Draelos"
+        ],
+        "comments": "30 pages, 18 figures",
+        "id": "2610.32961",
+        "published": "2026-10-23",
+        "sources": [
+          "arxiv_search"
+        ],
+        "title": "Robotic Optical Coherence Tomography-Guided Geometric Modeling of Soft Tissue: 3D Representations for Data-Driven Closed-Loop Shape Control",
+        "updated": "2026-10-23T17:52:30Z",
+        "url": "https://arxiv.org/abs/2610.32961",
+        "version": 1
+      },
+      "rules": "e66506b30f22bcdecc6908b76c3bcd2fca5464fa5a41550ce260f6cb13e0a0bb",
+      "source_url": "https://arxiv.org/html/2610.32961v1",
+      "status": "review",
+      "truncated": true
+    },
+    "2610.32966": {
+      "assessment": {
+        "categories": [],
+        "decision": "review",
+        "reason": "Missing verifiable robot_learning_quote"
+      },
+      "attempts": 1,
+      "first_seen": "2026-10-26",
+      "paper": {
+        "abstract": "Learning humanoid control from monocular human videos offers a scalable way to acquire diverse whole-body behaviors. Yet, existing reconstruction-retargeting-tracking pipelines are limited in system-level scalability by separately optimized intermediate stages and cannot directly optimize reference motion executability using downstream tracking feedback. We present ViT-H, a video-to-humanoid control framework following a generation-and-tracking paradigm. ViT-H directly generates humanoid reference motions from videos with a diffusion model, bypassing human motion reconstruction and retargeting, and uses motion-tracking outcomes to post-train the generator with direct preference optimization. We further introduce an autoregressive variant that enables real-time humanoid video teleoperation with sub-400 ms latency. Extensive experiments on the Unitree G1 demonstrate that ViT-H outperforms state-of-the-art reconstruction-retargeting-tracking pipelines in both motion quality and executability. We further show that ViT-H scales favorably with model size and with both pre-training and post-training data scale, while motion-tracking feedback consistently improves executability across different motion trackers.",
+        "authors": [
+          "Zimo He",
+          "Tianyi Bian",
+          "Zizhong Yang",
+          "Hongjie Li",
+          "Nan Jiang",
+          "Jieming Cui",
+          "Baoxiong Jia",
+          "Yizhou Wang",
+          "Siyuan Huang",
+          "Yixin Zhu"
+        ],
+        "comments": "The first four authors contributed equally. Project website: https://awfuact.github.io/vit-h/",
+        "id": "2610.32966",
+        "published": "2026-10-23",
+        "sources": [
+          "arxiv_search"
+        ],
+        "title": "ViT-H: Generative Video-To-Humanoid Control with Motion Tracking Feedback",
+        "updated": "2026-10-23T17:54:09Z",
+        "url": "https://arxiv.org/abs/2610.32966",
+        "version": 1
+      },
+      "rules": "e66506b30f22bcdecc6908b76c3bcd2fca5464fa5a41550ce260f6cb13e0a0bb",
+      "source_url": "https://arxiv.org/html/2610.32966v1",
+      "status": "review",
+      "truncated": true
+    },
+    "2610.32969": {
+      "assessment": {
+        "categories": [],
+        "decision": "exclude",
+        "reason": "排除：论文的训练数据来自手持机器人手-相机模块，而非人类视觉演示视频；文中明确将 human hand data 视为不用于训练的对照性数据来源，并指出其不具备部署机器人的动作数据。论文确实学习并部署了机器人策略，但未满足“实际使用人类视觉数据”的范围要求。"
+      },
+      "attempts": 1,
+      "first_seen": "2026-10-26",
+      "paper": {
+        "abstract": "Collecting high-quality demonstrations remains a central bottleneck for learning dexterous manipulation. Teleoperation records executable robot actions, but it requires a complete robot setup and places the burden of coordinating many finger joints on the operator. Human demonstrations are easier to collect, but their motions must be estimated and retargeted to the robot, and they do not directly provide robot actions. In this paper, we introduce DexPort, a portable data-collection interface for high-DoF robot hands. It uses the same hand hardware for collection and deployment, avoiding a hand embodiment gap, and records both commanded joint targets and measured joint states. Our key observation is that a small set of skills can support a wide range of dexterous tasks. During collection, the operator moves the hand-held interface to specify the robot wrist motion and selects or adjusts skills that coordinate the finger motion. This removes the need to control each joint independently while retaining behaviors such as precise grasping and in-hand manipulation. We collect demonstrations across several real-world tasks and in unstructured environments without a robot arm. We then use behavior cloning to train visuomotor policies directly on the recorded wrist motions and hand commands, without skill labels. We evaluate across 4 tasks: pick-and-place with diverse objects, screwing with in-hand tool use, drawer stowage which requires simultaneous grasp and pulling, and a bimanual scanning task. We collect over 2,500 demonstrations with our portable device, in both laboratory and in-the-wild settings. Across our tasks, we see an improvement from 11% to 64% when using recorded robot commands instead of states, and an improvement from 36% to 78% for task success when using in-the-wild data.",
+        "authors": [
+          "Amber Xie",
+          "Jiawei Fu",
+          "Xiaofeng Guo",
+          "Carmelo Sferrazza",
+          "Guanya Shi",
+          "Haozhi Qi"
+        ],
+        "comments": "Website: https://amberxie88.github.io/dexport/",
+        "id": "2610.32969",
+        "published": "2026-10-23",
+        "sources": [
+          "arxiv_search"
+        ],
+        "title": "DexPort: A Hand-Held Skill Interface for Dexterous Hand Data Collection",
+        "updated": "2026-10-23T17:56:28Z",
+        "url": "https://arxiv.org/abs/2610.32969",
+        "version": 1
+      },
+      "rules": "e66506b30f22bcdecc6908b76c3bcd2fca5464fa5a41550ce260f6cb13e0a0bb",
+      "source_url": "https://arxiv.org/html/2610.32969v1",
+      "status": "rejected",
+      "truncated": false
     }
   },
   "schema_version": 1
