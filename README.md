@@ -88,6 +88,7 @@ We sincerely appreciate these blogs for helping _distill_ and _promote_ our work
 
 #### 2026
 
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.30540)] Motion Retargeting with Spatiotemporal Preferences for Humanoid Loco-Manipulation [Code] [Page]
 - 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.30136)] Agentic World Action Models [Code] [[Page](<https://agentic-wam.github.io/>)]
 - 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.20998)] MoCaP: Mobile Code-as-Policies for Zero-Shot Mobile Manipulation from Passive Human Videos [Code] [[Page](<https://mocap-7.github.io/MoCAP-page/>)]
 
@@ -127,6 +128,9 @@ We sincerely appreciate these blogs for helping _distill_ and _promote_ our work
 
 #### 2026
 
+- 🌟🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.34356)] RynnVLA-Latent: Scaling Robotic Manipulation Foundation Models with 3D-Grounded Latent Actions [[Code](<https://github.com/alibaba-damo-academy/RynnVLA-Latent>)] [[Page](<https://alibaba-damo-academy.github.io/RynnVLA-Latent.github.io/>)]
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.34186)] HuGe: Scaling Humanoid Generalist Vision-Language-Action Models with Egocentric Experience [Code] [Page]
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.33685)] EXE: Egocentric Cross-Embodiment Pretraining via Factorized Latent Actions for VLA Models [Code] [Page]
 - 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.32094)] TTT in VLA Models: Exploring Training with Human Demonstrations [Code] [Page]
 - 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.31845)] EgoForesight: Effectively Scaling Policy Learning with Noisy Egocentric Actions [Code] [[Page](<https://lin-shan.com/EgoForesight>)]
 - 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.29716)] Reconstruction-Augmented Visuomotor Pre-Training of 3D-Grounded Bimanual Dexterity from RGB-Only Human Videos [Code] [[Page](<https://spatial-dex.github.io/>)]
