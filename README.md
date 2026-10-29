@@ -98,6 +98,9 @@ We sincerely appreciate these blogs for helping _distill_ and _promote_ our work
 
 #### 2026
 
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.37666)] ThinkWorld: World Imagination Reinforces Chain-of-Dynamics Reasoning [Code] [[Page](<https://thinkworld-project.github.io/>)]
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.36823)] TAPESTRY: A Single Backbone for Video Generation and Robot Control [Code] [[Page](<https://tapestry-wam.github.io/>)]
+- 🌟🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.36791)] RynnWorld-Latent: A Cross-Embodiment World Model Conditioned on Universal Latent Actions [[Code](<https://github.com/alibaba-damo-academy/RynnWorld-Latent>)] [[Page](<https://alibaba-damo-academy.github.io/RynnWorld-Latent.github.io>)]
 - 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.31845)] EgoForesight: Effectively Scaling Policy Learning with Noisy Egocentric Actions [Code] [[Page](<https://lin-shan.com/EgoForesight>)]
 - 🌟🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.30320)] Self-Distilling Future Video Representations for World Action Models [[Code](<https://github.com/suhyeok-jang/FRED/>)] [[Page](<https://huiwon-jang.github.io/FRED/>)]
 - 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.30136)] Agentic World Action Models [Code] [[Page](<https://agentic-wam.github.io/>)]
@@ -128,6 +131,11 @@ We sincerely appreciate these blogs for helping _distill_ and _promote_ our work
 
 #### 2026
 
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.37666)] ThinkWorld: World Imagination Reinforces Chain-of-Dynamics Reasoning [Code] [[Page](<https://thinkworld-project.github.io/>)]
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.37509)] Ego-CEVR: Learning Cross-Embodiment Visual Representations from Human Egocentric Videos [Code] [Page]
+- [[arXiv 2026.10](https://arxiv.org/abs/2610.37381)] PDRVLA: A Vision-Language-Action Model with Physical Dynamics Representations [Code] [Page]
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.36823)] TAPESTRY: A Single Backbone for Video Generation and Robot Control [Code] [[Page](<https://tapestry-wam.github.io/>)]
+- 🌟🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.36791)] RynnWorld-Latent: A Cross-Embodiment World Model Conditioned on Universal Latent Actions [[Code](<https://github.com/alibaba-damo-academy/RynnWorld-Latent>)] [[Page](<https://alibaba-damo-academy.github.io/RynnWorld-Latent.github.io>)]
 - 🌟🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.34356)] RynnVLA-Latent: Scaling Robotic Manipulation Foundation Models with 3D-Grounded Latent Actions [[Code](<https://github.com/alibaba-damo-academy/RynnVLA-Latent>)] [[Page](<https://alibaba-damo-academy.github.io/RynnVLA-Latent.github.io/>)]
 - 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.34186)] HuGe: Scaling Humanoid Generalist Vision-Language-Action Models with Egocentric Experience [Code] [Page]
 - 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.33685)] EXE: Egocentric Cross-Embodiment Pretraining via Factorized Latent Actions for VLA Models [Code] [Page]
@@ -158,6 +166,8 @@ We sincerely appreciate these blogs for helping _distill_ and _promote_ our work
 
 #### 2026
 
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.37509)] Ego-CEVR: Learning Cross-Embodiment Visual Representations from Human Egocentric Videos [Code] [Page]
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.36539)] CARD: Contact-Anchored Retargeting for Dexterous Manipulation [Code] [[Page](<https://card-retargeting.github.io/>)]
 - 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.32094)] TTT in VLA Models: Exploring Training with Human Demonstrations [Code] [Page]
 - [[arXiv 2026.10](https://arxiv.org/abs/2610.29997)] DONIC: Generalist Dexterous Bimanual Tracking Control from Human Demonstrations [Code] [[Page](<https://ropedia.github.io/DONIC/>)]
 - 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.24392)] Gen2Dex: Learning Dexterous Manipulation from Simulation-Initialized Generated Video Demonstrations [Code] [Page]
