@@ -86,10 +86,31 @@ We sincerely appreciate these blogs for helping _distill_ and _promote_ our work
 
 > Agent-based methods that use human videos or visual demonstrations for robot planning, skill composition, or execution.
 
+#### 2026
+
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.30540)] Motion Retargeting with Spatiotemporal Preferences for Humanoid Loco-Manipulation [Code] [Page]
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.30136)] Agentic World Action Models [Code] [[Page](<https://agentic-wam.github.io/>)]
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.20998)] MoCaP: Mobile Code-as-Policies for Zero-Shot Mobile Manipulation from Passive Human Videos [Code] [[Page](<https://mocap-7.github.io/MoCAP-page/>)]
+
+- 🌟🤖 [[arXiv 2026.09](https://arxiv.org/abs/2609.35318)] DexAgent: An Agentic Human2Sim2Robot Framework for Dexterous Manipulation with Self-Evolving Tool Library [[Code](https://github.com/dexagent1/DexAgent)] [[Page](https://dexagent1.github.io/)]
+
 #### World Action Model (WAM)
 
 #### 2026
 
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.37666)] ThinkWorld: World Imagination Reinforces Chain-of-Dynamics Reasoning [Code] [[Page](<https://thinkworld-project.github.io/>)]
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.36823)] TAPESTRY: A Single Backbone for Video Generation and Robot Control [Code] [[Page](<https://tapestry-wam.github.io/>)]
+- 🌟🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.36791)] RynnWorld-Latent: A Cross-Embodiment World Model Conditioned on Universal Latent Actions [[Code](<https://github.com/alibaba-damo-academy/RynnWorld-Latent>)] [[Page](<https://alibaba-damo-academy.github.io/RynnWorld-Latent.github.io>)]
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.31845)] EgoForesight: Effectively Scaling Policy Learning with Noisy Egocentric Actions [Code] [[Page](<https://lin-shan.com/EgoForesight>)]
+- 🌟🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.30320)] Self-Distilling Future Video Representations for World Action Models [[Code](<https://github.com/suhyeok-jang/FRED/>)] [[Page](<https://huiwon-jang.github.io/FRED/>)]
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.30136)] Agentic World Action Models [Code] [[Page](<https://agentic-wam.github.io/>)]
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.29716)] Reconstruction-Augmented Visuomotor Pre-Training of 3D-Grounded Bimanual Dexterity from RGB-Only Human Videos [Code] [[Page](<https://spatial-dex.github.io/>)]
+- 🌟🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.26855)] Ropedia W0: Scaling Loco-Manipulation World Models across Embodiments with Human Experience [[Code](<https://github.com/Ropedia/ropedia-w0>)] [[Page](<https://ropedia.github.io/ropedia-w0/>)]
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.25690)] ScaleNav: Scalable Internet Video Pretraining for Language-Conditioned Local Navigation [Code] [[Page](<https://zju3dv.github.io/ScaleNav/>)]
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.22363)] Perceive, Predict, and Plan: a Unified World Action Model for Egocentric Dexterous Manipulation [Code] [[Page](<https://p3-wam.pages.dev/>)]
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.21922)] TS-WAM: Temporal Latent Actions and World-Action Coupling for Vision-Language Robot Control [Code] [Page]
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.21798)] Cross-Embodiment Causal Transfer from Human Videos to Robot Manipulation [Code] [Page]
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.20904)] EgoJEPA: Beyond Retargeting for Dexterous Manipulation from Egocentric Videos [Code] [[Page](<https://mengcaopku.github.io/EgoJEPA>)]
 - 🌟🤖 [[arXiv 2026.09](https://arxiv.org/abs/2609.00188)] ZimaBlue: Evolving Generalizable World Action Models through Scalable Video Pre-training [[Code](https://github.com/ZimaBlue-WAM/ZimaBlue)] [[Page](https://zimablue-wam.github.io/)]
 - 🌟🤖 [[arXiv 2026.08](https://arxiv.org/abs/2608.27406)] CLAP: Cross-Embodiment Video World Models are Zero-Shot Physical Simulators [[Code](https://github.com/omni-CLAP/clap)] [[Page](https://omni-clap.github.io/)]
 - 🌟🤖 [[arXiv 2026.08](https://arxiv.org/abs/2608.26103)] Zero-WAM: In-Context World-Action Modeling from Human Videos for Open-Ended Task Generalization [[Code](https://github.com/robbyant-research/Zero-WAM)] [[Page](https://robbyant-research.github.io/Zero-WAM/)]
@@ -110,6 +131,27 @@ We sincerely appreciate these blogs for helping _distill_ and _promote_ our work
 
 #### 2026
 
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.37666)] ThinkWorld: World Imagination Reinforces Chain-of-Dynamics Reasoning [Code] [[Page](<https://thinkworld-project.github.io/>)]
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.37509)] Ego-CEVR: Learning Cross-Embodiment Visual Representations from Human Egocentric Videos [Code] [Page]
+- [[arXiv 2026.10](https://arxiv.org/abs/2610.37381)] PDRVLA: A Vision-Language-Action Model with Physical Dynamics Representations [Code] [Page]
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.36823)] TAPESTRY: A Single Backbone for Video Generation and Robot Control [Code] [[Page](<https://tapestry-wam.github.io/>)]
+- 🌟🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.36791)] RynnWorld-Latent: A Cross-Embodiment World Model Conditioned on Universal Latent Actions [[Code](<https://github.com/alibaba-damo-academy/RynnWorld-Latent>)] [[Page](<https://alibaba-damo-academy.github.io/RynnWorld-Latent.github.io>)]
+- 🌟🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.34356)] RynnVLA-Latent: Scaling Robotic Manipulation Foundation Models with 3D-Grounded Latent Actions [[Code](<https://github.com/alibaba-damo-academy/RynnVLA-Latent>)] [[Page](<https://alibaba-damo-academy.github.io/RynnVLA-Latent.github.io/>)]
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.34186)] HuGe: Scaling Humanoid Generalist Vision-Language-Action Models with Egocentric Experience [Code] [Page]
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.33685)] EXE: Egocentric Cross-Embodiment Pretraining via Factorized Latent Actions for VLA Models [Code] [Page]
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.32094)] TTT in VLA Models: Exploring Training with Human Demonstrations [Code] [Page]
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.31845)] EgoForesight: Effectively Scaling Policy Learning with Noisy Egocentric Actions [Code] [[Page](<https://lin-shan.com/EgoForesight>)]
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.29716)] Reconstruction-Augmented Visuomotor Pre-Training of 3D-Grounded Bimanual Dexterity from RGB-Only Human Videos [Code] [[Page](<https://spatial-dex.github.io/>)]
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.28880)] Real2Sem2Real: 3D Semantic Augmentations for Robot Learning from a Single Human RGB Demonstration [Code] [[Page](<https://real2sem2real.github.io/>)]
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.25690)] ScaleNav: Scalable Internet Video Pretraining for Language-Conditioned Local Navigation [Code] [[Page](<https://zju3dv.github.io/ScaleNav/>)]
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.22932)] Ego2Contact: Predicting Touch from Egocentric Human Video for Contact-Rich Robot Manipulation [Code] [Page]
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.22342)] Spark-0: Scaling Spatially Aligned Tactile Pretraining for Robot Dexterous Manipulation [[Code](<https://github.com/XsparkAI/Spark-0>)] [[Page](<https://xsparkai.com/Spark-0>)]
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.22178)] REKI: Registering Knowledge in VLAs [[Code](<https://github.com/kyutai-labs/reki>)] [Page]
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.21922)] TS-WAM: Temporal Latent Actions and World-Action Coupling for Vision-Language Robot Control [Code] [Page]
+- [[arXiv 2026.10](https://arxiv.org/abs/2610.21152)] KODA: Kinematics--Observation Data Alignment for Humanoid Learning from Human Egocentric Demonstration [Code] [[Page](<https://koda-humanoid.github.io/koda/>)]
+- 🌟🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.20320)] TacClaw-Infinity: A Large-Scale Vision-Tactile-Language-Action Dataset for Dexterous Manipulation [[Code](<https://github.com/daimon-robotics/TacClaw-Infinity>)] [[Page](<https://daimon-robotics.github.io/tacclaw-infinity-page/>)]
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.19839)] FOMI: A Force-Feedback Manipulation Interface for Teaching Contact-Rich Manipulation [Code] [[Page](<https://robbyant-research.github.io/FOMI/>)]
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.19746)] One-shot Human Video-Guided Adaptation for Vision-Language-Action Models [Code] [[Page](<https://chenqi20020226.github.io/cappro-project/>)]
 - 🤖 [[arXiv 2026.08](https://arxiv.org/abs/2608.05215)] VLAff: Vision-Language-Affordance Model for Unified Actionable Affordances [Code] [[Page](https://ojh6404.github.io/vlaff/)]
 - 🤖 [[arXiv 2026.07](https://arxiv.org/abs/2607.09701)] EgoSteer: A Full-Stack System Towards Steerable Dexterous Manipulation from Egocentric Videos [Code] [[Page](https://egosteer.github.io/)]
 - [[arXiv 2026.06](https://arxiv.org/abs/2606.32009)] Human-as-Humanoid: Enabling Zero-Shot Humanoid Learning from Ego-Exo Human Videos with Human-Aligned Embodiments [Code] [[Page](https://zgc-embodyai.github.io/Human-as-Humanoid/)]
@@ -124,6 +166,15 @@ We sincerely appreciate these blogs for helping _distill_ and _promote_ our work
 
 #### 2026
 
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.37509)] Ego-CEVR: Learning Cross-Embodiment Visual Representations from Human Egocentric Videos [Code] [Page]
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.36539)] CARD: Contact-Anchored Retargeting for Dexterous Manipulation [Code] [[Page](<https://card-retargeting.github.io/>)]
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.32094)] TTT in VLA Models: Exploring Training with Human Demonstrations [Code] [Page]
+- [[arXiv 2026.10](https://arxiv.org/abs/2610.29997)] DONIC: Generalist Dexterous Bimanual Tracking Control from Human Demonstrations [Code] [[Page](<https://ropedia.github.io/DONIC/>)]
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.24392)] Gen2Dex: Learning Dexterous Manipulation from Simulation-Initialized Generated Video Demonstrations [Code] [Page]
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.23551)] Embodiment-Aware Planning for Heterogeneous Bimanual Manipulation [Code] [[Page](<https://sukhvansh2004.github.io/Bimanual-Manipulation/>)]
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.21792)] Trajectory-based Diffusion from One-shot Human Video for Generalizable Manipulation [Code] [Page]
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.20998)] MoCaP: Mobile Code-as-Policies for Zero-Shot Mobile Manipulation from Passive Human Videos [Code] [[Page](<https://mocap-7.github.io/MoCAP-page/>)]
+- 🤖 [[arXiv 2026.10](https://arxiv.org/abs/2610.19746)] One-shot Human Video-Guided Adaptation for Vision-Language-Action Models [Code] [[Page](<https://chenqi20020226.github.io/cappro-project/>)]
 - 🌟🤖 [[arXiv 2026.08](https://arxiv.org/abs/2608.26103)] Zero-WAM: In-Context World-Action Modeling from Human Videos for Open-Ended Task Generalization [[Code](https://github.com/robbyant-research/Zero-WAM)] [[Page](https://robbyant-research.github.io/Zero-WAM/)]
 - 🤖 [[Skild AI 2026.08](https://skild.ai/blogs/s1)] Introducing S1: In-Context Learning for Robotics [Code] [[Page](https://skild.ai/blogs/s1)]
 - 🤖 [[Generalist AI 2026.08](https://generalistai.com/blog/gen-1.5)] GEN-1.5: Embodied Foundation Models are One-Shot Learners [Code] [[Page](https://generalistai.com/blog/gen-1.5)]
@@ -595,6 +646,10 @@ This section gathers HOI analysis techniques, including hand/object detection an
 - 🌟 [[CVPRW](https://arxiv.org/abs/2006.10214)] MediaPipe Hands: On-Device Real-Time Hand Tracking [[Code](https://github.com/google-ai-edge/mediapipe/blob/master/docs/solutions/hands.md)] [[Page](https://ai.google.dev/edge/mediapipe/solutions/guide?hl=zh-cn)]
 
 > Other vision foundation models like Grounding DINO, YOLO series, SAM series are also widely used in the LfHV literature.
+
+## 🙏 Acknowledgments
+
+We thank [jin-s13/awesome-hub-generator](https://github.com/jin-s13/awesome-hub-generator) for inspiring our automated paper-maintenance workflow, particularly its approach to scheduled discovery, AI-assisted curation, and structured paper records. Our implementation is tailored to this repository's four Learning Paradigms categories, with source-based evidence checks and human review through pull requests.
 
 ## 📄 LICENSE
 This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
