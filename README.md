@@ -461,6 +461,7 @@ This section collects open-source human video datasets.
 
 | Dataset | Year | Venue | Website | Viewpoint | Organization (first author) |
 |---|---:|---|---|---|---|
+| [Talos Electrician Tactile Glove Sample](https://huggingface.co/datasets/talosdataworks/electrician-conduit-subpanel-two-hand-tactile-glove-sample) | 2026 | - | [Code] [[Page](https://talosdataworks.com/datasets)] | Ego | Talos Dataworks |
 | [EgoSuite-Open100K](https://huggingface.co/collections/LightwheelAI/egosuite-open100k) | 2026 | - | [Code] [[Page](https://huggingface.co/collections/LightwheelAI/egosuite-open100k)] | Ego | Lightwheel AI |
 | [HumanTouch](https://xsparkai.com/sparklab/humantouch/) | 2026 | - | [Code] [[Page](https://xsparkai.com/sparklab/humantouch/)] | Ego | Xspark AI |
 | [RekaDaily-10k](https://huggingface.co/datasets/RekaAI/RekaDaily-10k-raw) | 2026 | - | [Code] [[Page](https://huggingface.co/datasets/RekaAI/RekaDaily-10k-raw)] | Ego | Reka AI |
