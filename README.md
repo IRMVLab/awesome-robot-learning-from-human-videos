@@ -110,6 +110,7 @@ We sincerely appreciate these blogs for helping _distill_ and _promote_ our work
 
 #### 2026
 
+- 🌟🤖 [[arXiv 2026.11](https://arxiv.org/abs/2611.04391)] Human-to-Robot Transfer via Bridging Representation and Action Space in VLAs [[Code](https://github.com/jun-brro/h2rb-code)] [[Page](https://junhyeong-park.me/h2rb/)]
 - 🤖 [[arXiv 2026.08](https://arxiv.org/abs/2608.05215)] VLAff: Vision-Language-Affordance Model for Unified Actionable Affordances [Code] [[Page](https://ojh6404.github.io/vlaff/)]
 - 🤖 [[arXiv 2026.07](https://arxiv.org/abs/2607.09701)] EgoSteer: A Full-Stack System Towards Steerable Dexterous Manipulation from Egocentric Videos [Code] [[Page](https://egosteer.github.io/)]
 - [[arXiv 2026.06](https://arxiv.org/abs/2606.32009)] Human-as-Humanoid: Enabling Zero-Shot Humanoid Learning from Ego-Exo Human Videos with Human-Aligned Embodiments [Code] [[Page](https://zgc-embodyai.github.io/Human-as-Humanoid/)]
@@ -312,6 +313,7 @@ This section includes methods that transfer actionable motion knowledge from hum
 - 🌟🤖 [[ICRA](https://arxiv.org/abs/2506.20668)] DemoDiffusion: One-Shot Human Imitation Using Pre-Trained Diffusion Policy [[Code](https://github.com/demodiffusion/demodiffusion)] [[Page](https://demodiffusion.github.io/)] [`Affordances`]
 - 🌟🤖 [[ICRA](https://arxiv.org/abs/2510.08568)] NovaFlow: Zero-Shot Manipulation via Actionable Flow from Generated Videos [[Code](https://github.com/rai-opensource/NovaFlow/)] [[Page](https://novaflow.lhy.xyz/)] [`Affordances`]
 - 🌟🤖 [[ICRA](https://arxiv.org/abs/2510.12971)] Actron3D: Learning Actionable Neural Functions from Videos for Transferable Robotic Manipulation [[Code](https://github.com/ethz-mrl/Actron3D)] [[Page](https://dipan-zhang.github.io/Actron3D-project/)] [`Affordances`]
+- 🌟🤖 [[arXiv 2026.11](https://arxiv.org/abs/2611.04391)] Human-to-Robot Transfer via Bridging Representation and Action Space in VLAs [[Code](https://github.com/jun-brro/h2rb-code)] [[Page](https://junhyeong-park.me/h2rb/)] [`VLA`]
 - 🤖 [[arXiv 2026.06](https://arxiv.org/abs/2606.17385)] EgoInfinity: A Web-Scale 4D Hand-Object Interaction Data Engine for Any-View Robot Retargeting and Video-to-Action Robot Learning [Code] [[Page](https://huggingface.co/spaces/Rice-RobotPI-Lab/EgoInfinity)] [`Affordances`]
 - 🌟🤖 [[arXiv 2026.06](https://arxiv.org/pdf/2606.17200)] Unifying Egocentric Human and Robotic Data for VLA Pretraining [[Code](https://github.com/ACERobotics-VLA/ACE-Ego-0)] [[Page](https://acerobotics-vla.github.io/ACE-Ego/)] [`VLA`]
 - 🤖 [[arXiv 2026.06](https://arxiv.org/abs/2606.17054)] Human Universal Grasping [Code] [[Page](https://grasping.io/)] [`Affordances`]
